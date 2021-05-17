@@ -11,10 +11,16 @@ import GoogleSignIn
 class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+      super.viewDidLoad()
+        signingInstance()
     }
 
+    func signingInstance() {
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+
+        // Automatically sign in the user.
+        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+    }
 
 }
 
