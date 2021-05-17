@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import GoogleSignIn
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

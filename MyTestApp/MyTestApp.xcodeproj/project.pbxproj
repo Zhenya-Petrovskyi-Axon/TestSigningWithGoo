@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		452201A226528E9F003C8215 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201A126528E9F003C8215 /* LoginViewModel.swift */; };
+		452201A42652900F003C8215 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 452201A32652900F003C8215 /* credentials.plist */; };
 		45A732E926528BF800598FC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A732E826528BF800598FC2 /* AppDelegate.swift */; };
 		45A732EB26528BF800598FC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A732EA26528BF800598FC2 /* SceneDelegate.swift */; };
-		45A732ED26528BF800598FC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A732EC26528BF800598FC2 /* ViewController.swift */; };
+		45A732ED26528BF800598FC2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A732EC26528BF800598FC2 /* LoginViewController.swift */; };
 		45A732F026528BF800598FC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A732EE26528BF800598FC2 /* Main.storyboard */; };
 		45A732F326528BF800598FC2 /* MyTestApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45A732F126528BF800598FC2 /* MyTestApp.xcdatamodeld */; };
 		45A732F526528BF900598FC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45A732F426528BF900598FC2 /* Assets.xcassets */; };
@@ -19,10 +21,12 @@
 
 /* Begin PBXFileReference section */
 		174D9B6C98CE93608F1E8A68 /* Pods-MyTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTestApp.debug.xcconfig"; path = "Target Support Files/Pods-MyTestApp/Pods-MyTestApp.debug.xcconfig"; sourceTree = "<group>"; };
+		452201A126528E9F003C8215 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		452201A32652900F003C8215 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = credentials.plist; path = ../../../../../Downloads/credentials.plist; sourceTree = "<group>"; };
 		45A732E526528BF800598FC2 /* MyTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A732E826528BF800598FC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45A732EA26528BF800598FC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		45A732EC26528BF800598FC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		45A732EC26528BF800598FC2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		45A732EF26528BF800598FC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45A732F226528BF800598FC2 /* MyTestApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyTestApp.xcdatamodel; sourceTree = "<group>"; };
 		45A732F426528BF900598FC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,7 +54,6 @@
 				174D9B6C98CE93608F1E8A68 /* Pods-MyTestApp.debug.xcconfig */,
 				734264BDB1B532F0FA6C5D6A /* Pods-MyTestApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -80,6 +83,7 @@
 				45A7330126528CB500598FC2 /* MainViewModule */,
 				45A732F426528BF900598FC2 /* Assets.xcassets */,
 				45A732F926528BF900598FC2 /* Info.plist */,
+				452201A32652900F003C8215 /* credentials.plist */,
 				45A732F126528BF800598FC2 /* MyTestApp.xcdatamodeld */,
 			);
 			path = MyTestApp;
@@ -106,7 +110,8 @@
 		45A7330126528CB500598FC2 /* MainViewModule */ = {
 			isa = PBXGroup;
 			children = (
-				45A732EC26528BF800598FC2 /* ViewController.swift */,
+				45A732EC26528BF800598FC2 /* LoginViewController.swift */,
+				452201A126528E9F003C8215 /* LoginViewModel.swift */,
 			);
 			path = MainViewModule;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45A732F826528BF900598FC2 /* LaunchScreen.storyboard in Resources */,
+				452201A42652900F003C8215 /* credentials.plist in Resources */,
 				45A732F526528BF900598FC2 /* Assets.xcassets in Resources */,
 				45A732F026528BF800598FC2 /* Main.storyboard in Resources */,
 			);
@@ -251,9 +257,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45A732ED26528BF800598FC2 /* ViewController.swift in Sources */,
+				45A732ED26528BF800598FC2 /* LoginViewController.swift in Sources */,
 				45A732F326528BF800598FC2 /* MyTestApp.xcdatamodeld in Sources */,
 				45A732E926528BF800598FC2 /* AppDelegate.swift in Sources */,
+				452201A226528E9F003C8215 /* LoginViewModel.swift in Sources */,
 				45A732EB26528BF800598FC2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
