@@ -8,7 +8,7 @@
 import UIKit
 import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var signInButton: GIDSignInButton!
     @IBOutlet weak var titleLabel: UILabel!

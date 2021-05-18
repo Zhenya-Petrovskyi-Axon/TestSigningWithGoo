@@ -8,7 +8,7 @@
 import UIKit
 import GoogleSignIn
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var titleLabel: UILabel!
     override func viewDidLoad() {

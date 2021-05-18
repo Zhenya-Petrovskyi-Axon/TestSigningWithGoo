@@ -10,6 +10,9 @@
 		452201A226528E9F003C8215 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201A126528E9F003C8215 /* LoginViewModel.swift */; };
 		452201A42652900F003C8215 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 452201A32652900F003C8215 /* credentials.plist */; };
 		452201A72652BB63003C8215 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201A62652BB63003C8215 /* MainViewController.swift */; };
+		452201AA2653A4CD003C8215 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201A92653A4CD003C8215 /* CoordinatorProtocol.swift */; };
+		452201AC2653A547003C8215 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201AB2653A547003C8215 /* MainCoordinator.swift */; };
+		452201AE2653A720003C8215 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201AD2653A720003C8215 /* Storyboarded.swift */; };
 		45A732E926528BF800598FC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A732E826528BF800598FC2 /* AppDelegate.swift */; };
 		45A732EB26528BF800598FC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A732EA26528BF800598FC2 /* SceneDelegate.swift */; };
 		45A732ED26528BF800598FC2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A732EC26528BF800598FC2 /* LoginViewController.swift */; };
@@ -25,6 +28,9 @@
 		452201A126528E9F003C8215 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		452201A32652900F003C8215 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = credentials.plist; path = ../../../../../Downloads/credentials.plist; sourceTree = "<group>"; };
 		452201A62652BB63003C8215 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		452201A92653A4CD003C8215 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		452201AB2653A547003C8215 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		452201AD2653A720003C8215 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		45A732E526528BF800598FC2 /* MyTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A732E826528BF800598FC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45A732EA26528BF800598FC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +73,16 @@
 			path = MainViewModule;
 			sourceTree = "<group>";
 		};
+		452201A82653A4AD003C8215 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				452201A92653A4CD003C8215 /* CoordinatorProtocol.swift */,
+				452201AD2653A720003C8215 /* Storyboarded.swift */,
+				452201AB2653A547003C8215 /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		45A732DC26528BF800598FC2 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +104,7 @@
 		45A732E726528BF800598FC2 /* MyTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				452201A82653A4AD003C8215 /* Coordinator */,
 				45A732FF26528C8500598FC2 /* MainAppDelegates */,
 				45A7330026528C9A00598FC2 /* Storyboards */,
 				45A7330126528CB500598FC2 /* LoginViewModule */,
@@ -269,11 +286,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				45A732ED26528BF800598FC2 /* LoginViewController.swift in Sources */,
+				452201AC2653A547003C8215 /* MainCoordinator.swift in Sources */,
 				45A732F326528BF800598FC2 /* MyTestApp.xcdatamodeld in Sources */,
 				45A732E926528BF800598FC2 /* AppDelegate.swift in Sources */,
 				452201A72652BB63003C8215 /* MainViewController.swift in Sources */,
+				452201AE2653A720003C8215 /* Storyboarded.swift in Sources */,
 				452201A226528E9F003C8215 /* LoginViewModel.swift in Sources */,
 				45A732EB26528BF800598FC2 /* SceneDelegate.swift in Sources */,
+				452201AA2653A4CD003C8215 /* CoordinatorProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

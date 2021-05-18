@@ -12,6 +12,7 @@ import GoogleSignIn
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
+    var coordinator: MainCoordinator?
     var window: UIWindow?
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
@@ -35,7 +36,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Override point for customization after application launch.
         GIDSignIn.sharedInstance().clientID = "841354916093-e2oknqnmbqsr76e6bpftc4o6sf7tlbkv.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self
-        
+        let navControlleer = UINavigationController()
+        coordinator = MainCoordinator(navigationController: navControlleer)
+        coordinator?.start()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = navControlleer
+        window?.makeKeyAndVisible()
         return true
     }
     
