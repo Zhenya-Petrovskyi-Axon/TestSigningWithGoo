@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         }
     }
     
-    
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
         return GIDSignIn.sharedInstance().handle(url)
     }
@@ -36,11 +35,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Override point for customization after application launch.
         GIDSignIn.sharedInstance().clientID = "841354916093-e2oknqnmbqsr76e6bpftc4o6sf7tlbkv.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self
-        let navControlleer = UINavigationController()
-        coordinator = MainCoordinator(navigationController: navControlleer)
+        let navController = UINavigationController()
+        coordinator = MainCoordinator(navigationController: navController)
         coordinator?.start()
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navControlleer
+        window?.rootViewController = navController
         window?.makeKeyAndVisible()
         return true
     }

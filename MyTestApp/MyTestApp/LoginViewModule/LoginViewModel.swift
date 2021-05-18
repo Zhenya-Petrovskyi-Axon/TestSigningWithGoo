@@ -18,6 +18,7 @@ class LoginViewModel: LoginViewModelProtocol {
     
     func signOut() {
         GIDSignIn.sharedInstance().signOut()
+        print("Successfuly signed out ")
     }
     
     var viewDidLoad: () = { }()

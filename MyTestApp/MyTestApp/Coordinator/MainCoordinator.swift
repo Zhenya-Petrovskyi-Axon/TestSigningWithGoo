@@ -20,10 +20,11 @@ class MainCoordinator: Coordinator {
     func start() {
         if GIDSignIn.sharedInstance().hasPreviousSignIn() {
             let vc = MainViewController.instantiate()
-            navigationController.pushViewController(vc, animated: false)
+            navigationController.pushViewController(vc, animated: true)
+            print("Rooting to \(vc)")
         } else {
             let vc = LoginViewController.instantiate()
-            navigationController.pushViewController(vc, animated: false)
+            navigationController.pushViewController(vc, animated: true)
         }
     }
 }

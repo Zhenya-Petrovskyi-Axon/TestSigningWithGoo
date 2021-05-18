@@ -12,7 +12,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     
-    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -20,19 +19,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
     }
     
-    func changeRootViewController(_ vc: UIViewController, animated: Bool = true) {
-            guard let window = self.window else {return}
-            
-            // Change the root view controller to your specific view controller
-            window.rootViewController = vc
-            
-            // Adding some root animation animation
-            UIView.transition(with: window,
-                              duration: 1,
-                              options: [.transitionCrossDissolve],
-                              animations: nil,
-                              completion: nil)
-        }
+//    func changeRootViewController(_ vc: UIViewController, animated: Bool = true) {
+//        guard let window = self.window else {return}
+//        
+//        // Change the root view controller to your specific view controller
+//        window.rootViewController = vc
+//        
+//        // Adding some root animation animation
+//        UIView.transition(with: window,
+//                          duration: 1,
+//                          options: [.transitionCrossDissolve],
+//                          animations: nil,
+//                          completion: nil)
+//    }
     
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
