@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		452201A226528E9F003C8215 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201A126528E9F003C8215 /* LoginViewModel.swift */; };
 		452201A42652900F003C8215 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 452201A32652900F003C8215 /* credentials.plist */; };
+		452201A72652BB63003C8215 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201A62652BB63003C8215 /* MainViewController.swift */; };
 		45A732E926528BF800598FC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A732E826528BF800598FC2 /* AppDelegate.swift */; };
 		45A732EB26528BF800598FC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A732EA26528BF800598FC2 /* SceneDelegate.swift */; };
 		45A732ED26528BF800598FC2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A732EC26528BF800598FC2 /* LoginViewController.swift */; };
@@ -23,6 +24,7 @@
 		174D9B6C98CE93608F1E8A68 /* Pods-MyTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTestApp.debug.xcconfig"; path = "Target Support Files/Pods-MyTestApp/Pods-MyTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		452201A126528E9F003C8215 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		452201A32652900F003C8215 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = credentials.plist; path = ../../../../../Downloads/credentials.plist; sourceTree = "<group>"; };
+		452201A62652BB63003C8215 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		45A732E526528BF800598FC2 /* MyTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A732E826528BF800598FC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45A732EA26528BF800598FC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		452201A52652BB29003C8215 /* MainViewModule */ = {
+			isa = PBXGroup;
+			children = (
+				452201A62652BB63003C8215 /* MainViewController.swift */,
+			);
+			path = MainViewModule;
+			sourceTree = "<group>";
+		};
 		45A732DC26528BF800598FC2 = {
 			isa = PBXGroup;
 			children = (
@@ -80,7 +90,8 @@
 			children = (
 				45A732FF26528C8500598FC2 /* MainAppDelegates */,
 				45A7330026528C9A00598FC2 /* Storyboards */,
-				45A7330126528CB500598FC2 /* MainViewModule */,
+				45A7330126528CB500598FC2 /* LoginViewModule */,
+				452201A52652BB29003C8215 /* MainViewModule */,
 				45A732F426528BF900598FC2 /* Assets.xcassets */,
 				45A732F926528BF900598FC2 /* Info.plist */,
 				452201A32652900F003C8215 /* credentials.plist */,
@@ -107,13 +118,13 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		45A7330126528CB500598FC2 /* MainViewModule */ = {
+		45A7330126528CB500598FC2 /* LoginViewModule */ = {
 			isa = PBXGroup;
 			children = (
 				45A732EC26528BF800598FC2 /* LoginViewController.swift */,
 				452201A126528E9F003C8215 /* LoginViewModel.swift */,
 			);
-			path = MainViewModule;
+			path = LoginViewModule;
 			sourceTree = "<group>";
 		};
 		CD3415E50444FD8690F96A07 /* Frameworks */ = {
@@ -260,6 +271,7 @@
 				45A732ED26528BF800598FC2 /* LoginViewController.swift in Sources */,
 				45A732F326528BF800598FC2 /* MyTestApp.xcdatamodeld in Sources */,
 				45A732E926528BF800598FC2 /* AppDelegate.swift in Sources */,
+				452201A72652BB63003C8215 /* MainViewController.swift in Sources */,
 				452201A226528E9F003C8215 /* LoginViewModel.swift in Sources */,
 				45A732EB26528BF800598FC2 /* SceneDelegate.swift in Sources */,
 			);

@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,6 +29,16 @@
                                     <constraint firstAttribute="height" constant="35" id="2It-Vn-Qr7"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADf-tE-JFL">
+                                <rect key="frame" x="176" y="611" width="62" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="wGj-nY-lz1"/>
+                                </constraints>
+                                <state key="normal" title="LOGOUT"/>
+                                <connections>
+                                    <action selector="logoutButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EA7-Q3-Wnq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -37,7 +47,9 @@
                             <constraint firstItem="qMf-jb-5Oj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3lv-QN-XeR"/>
                             <constraint firstItem="qMf-jb-5Oj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6AW-aC-sga"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qMf-jb-5Oj" secondAttribute="trailing" constant="20" id="8ZH-8I-bQ6"/>
+                            <constraint firstItem="ADf-tE-JFL" firstAttribute="centerX" secondItem="qMf-jb-5Oj" secondAttribute="centerX" id="Fxr-fq-UTH"/>
                             <constraint firstItem="lKt-7B-Tqk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="86" id="VaT-0t-9bi"/>
+                            <constraint firstItem="ADf-tE-JFL" firstAttribute="top" secondItem="qMf-jb-5Oj" secondAttribute="bottom" constant="145.5" id="lac-ck-Fcw"/>
                             <constraint firstItem="lKt-7B-Tqk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="ncv-Th-JZh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lKt-7B-Tqk" secondAttribute="trailing" constant="15" id="wMu-Eg-VZh"/>
                         </constraints>
@@ -50,6 +62,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="29" y="89"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="2ob-hb-w5Y">
+            <objects>
+                <viewController storyboardIdentifier="MainView" id="ocB-rm-nHk" customClass="MainViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VyJ-v4-R9p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ey5-eK-ZEk">
+                                <rect key="frame" x="138.5" y="425.5" width="137" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="EPY-5a-1Ge"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="UpV-iu-k2y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOutButtonAction:" destination="ocB-rm-nHk" eventType="touchUpInside" id="Odc-1y-zTX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8SF-Rd-fhr">
+                                <rect key="frame" x="15" y="59" width="384" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nTp-Ur-ptV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nTp-Ur-ptV" firstAttribute="trailing" secondItem="8SF-Rd-fhr" secondAttribute="trailing" constant="15" id="D2L-j2-iCd"/>
+                            <constraint firstItem="ey5-eK-ZEk" firstAttribute="centerX" secondItem="VyJ-v4-R9p" secondAttribute="centerX" id="PFi-zZ-clX"/>
+                            <constraint firstItem="8SF-Rd-fhr" firstAttribute="top" secondItem="nTp-Ur-ptV" secondAttribute="top" constant="15" id="TUd-6u-Yxv"/>
+                            <constraint firstItem="ey5-eK-ZEk" firstAttribute="centerY" secondItem="VyJ-v4-R9p" secondAttribute="centerY" id="Y4J-vp-4Yj"/>
+                            <constraint firstItem="8SF-Rd-fhr" firstAttribute="leading" secondItem="nTp-Ur-ptV" secondAttribute="leading" constant="15" id="bFH-Qg-ILC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="8SF-Rd-fhr" id="0md-dP-0Yj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sJY-Bf-VfO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="801" y="88"/>
         </scene>
     </scenes>
     <resources>
