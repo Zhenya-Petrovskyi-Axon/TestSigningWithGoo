@@ -10,6 +10,11 @@ import GoogleSignIn
 
 class MainViewController: UIViewController, Storyboarded {
     
+    var mainViewModel: MainViewModelProtocol? = MainViewModel()
+    weak var coordinator: MainCoordinator?
+    
+    var logoutAction: (() -> Void)?
+    
     @IBOutlet weak var titleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +22,6 @@ class MainViewController: UIViewController, Storyboarded {
     }
     
     @IBAction func logOutButtonAction(_ sender: UIButton) {
-        GIDSignIn.sharedInstance().signOut()
+        logoutAction?()
     }
 }

@@ -9,17 +9,11 @@ import Foundation
 import GoogleSignIn
 
 protocol LoginViewModelProtocol {
-    func signOut()
     var viewDidLoad: () { get set }
 }
 
 class LoginViewModel: LoginViewModelProtocol {
     var logedIn: () -> Void = { }
-    
-    func signOut() {
-        GIDSignIn.sharedInstance().signOut()
-        print("Successfuly signed out ")
-    }
     
     var viewDidLoad: () = { }()
     

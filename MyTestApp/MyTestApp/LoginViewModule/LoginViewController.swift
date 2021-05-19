@@ -14,12 +14,24 @@ class LoginViewController: UIViewController, Storyboarded {
     @IBOutlet weak var titleLabel: UILabel!
     
     var viewModel: LoginViewModelProtocol! = LoginViewModel()
+    var loginAction: (() -> Void)?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("View will appear")
+        isUserCurrent()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loginViewPresenter()
         setupButton()
         titleLabel.text = "Hello User"
+        loginAction?()
+    }
+    
+    func isUserCurrent() {
+        GIDSignIn.sharedInstance().restorePreviousSignIn()
     }
     
     func setupButton() {
@@ -34,8 +46,5 @@ class LoginViewController: UIViewController, Storyboarded {
         GIDSignIn.sharedInstance()?.presentingViewController = self
     }
     
-    @IBAction func logoutButtonAction(_ sender: UIButton) {
-        viewModel.signOut()
-    }
 }
 

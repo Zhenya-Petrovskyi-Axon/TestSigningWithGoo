@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import GoogleSignIn
 
-protocol Coordinator {
-    var childCoordinators: [Coordinator] { get set }
+protocol CoordinatorProtocol {
+    var childCoordinators: [CoordinatorProtocol] { get set }
     var navigationController: UINavigationController { get set }
-    
     func start()
+    func logoutSuccess()
 }
 
 

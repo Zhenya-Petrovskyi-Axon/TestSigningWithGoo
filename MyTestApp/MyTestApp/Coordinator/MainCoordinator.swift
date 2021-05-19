@@ -8,23 +8,37 @@
 import UIKit
 import GoogleSignIn
 
-class MainCoordinator: Coordinator {
-    var childCoordinators = [Coordinator]()
+class MainCoordinator: CoordinatorProtocol {
     
+    var childCoordinators = [CoordinatorProtocol]()
     var navigationController = UINavigationController()
-    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     func start() {
-        if GIDSignIn.sharedInstance().hasPreviousSignIn() {
-            let vc = MainViewController.instantiate()
-            navigationController.pushViewController(vc, animated: true)
-            print("Rooting to \(vc)")
-        } else {
+        GIDSignIn.sharedInstance().restorePreviousSignIn()
+        if GIDSignIn.sharedInstance().hasPreviousSignIn() == false {
             let vc = LoginViewController.instantiate()
-            navigationController.pushViewController(vc, animated: true)
+            navigationController.setViewControllers([vc], animated: true)
+        } else {
+            let vc = MainViewController.instantiate()
+            vc.logoutAction = { [weak self] in
+                GIDSignIn.sharedInstance().signOut()
+                self?.rootLoginVC()
+            }
+            navigationController.setViewControllers([vc], animated: true)
         }
+    }
+    
+    func logoutSuccess() {
+//        GIDSignIn.sharedInstance().signOut()
+//        let vc = MainViewController.instantiate()
+        
+    }
+    
+    func rootLoginVC() {
+        let vcToPresent = LoginViewController.instantiate()
+        navigationController.setViewControllers([vcToPresent], animated: true)
     }
 }

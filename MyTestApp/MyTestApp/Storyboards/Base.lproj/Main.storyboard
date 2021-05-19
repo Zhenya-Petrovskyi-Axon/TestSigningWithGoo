@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9AG-7x-moV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="lKt-7B-Tqk">
-                                <rect key="frame" x="15" y="174" width="384" height="42"/>
+                                <rect key="frame" x="15" y="130" width="384" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -29,16 +29,6 @@
                                     <constraint firstAttribute="height" constant="35" id="2It-Vn-Qr7"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADf-tE-JFL">
-                                <rect key="frame" x="176" y="611" width="62" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="wGj-nY-lz1"/>
-                                </constraints>
-                                <state key="normal" title="LOGOUT"/>
-                                <connections>
-                                    <action selector="logoutButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EA7-Q3-Wnq"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -47,9 +37,7 @@
                             <constraint firstItem="qMf-jb-5Oj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3lv-QN-XeR"/>
                             <constraint firstItem="qMf-jb-5Oj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6AW-aC-sga"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qMf-jb-5Oj" secondAttribute="trailing" constant="20" id="8ZH-8I-bQ6"/>
-                            <constraint firstItem="ADf-tE-JFL" firstAttribute="centerX" secondItem="qMf-jb-5Oj" secondAttribute="centerX" id="Fxr-fq-UTH"/>
                             <constraint firstItem="lKt-7B-Tqk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="86" id="VaT-0t-9bi"/>
-                            <constraint firstItem="ADf-tE-JFL" firstAttribute="top" secondItem="qMf-jb-5Oj" secondAttribute="bottom" constant="145.5" id="lac-ck-Fcw"/>
                             <constraint firstItem="lKt-7B-Tqk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="ncv-Th-JZh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lKt-7B-Tqk" secondAttribute="trailing" constant="15" id="wMu-Eg-VZh"/>
                         </constraints>
@@ -108,24 +96,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJY-Bf-VfO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1710.144927536232" y="87.723214285714278"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="vMB-sd-egG">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9AG-7x-moV" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HHT-6e-l2R">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ez6-wG-AHc"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jLd-mv-lCT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="28.985507246376812" y="88.392857142857139"/>
         </scene>
     </scenes>
     <resources>
