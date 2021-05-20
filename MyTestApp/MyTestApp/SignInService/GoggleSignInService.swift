@@ -12,7 +12,7 @@ class GoogleSignInService: NSObject, GIDSignInDelegate {
     
     private static let clientID = "841354916093-e2oknqnmbqsr76e6bpftc4o6sf7tlbkv.apps.googleusercontent.com"
     var completion: ((_ user: GIDGoogleUser?, _ error: Error?) -> Void)?
-    var gid: GIDSignIn = GIDSignIn.sharedInstance()
+    private var gid: GIDSignIn = GIDSignIn.sharedInstance()
     
     func setup() {
         print("GoogleSignInService - setup")
