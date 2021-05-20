@@ -8,20 +8,30 @@
 import UIKit
 import GoogleSignIn
 
+protocol MainViewControllerDelegate: AnyObject {
+    func signOut()
+}
+
 class MainViewController: UIViewController, Storyboarded {
     
-    var mainViewModel: MainViewModelProtocol? = MainViewModel()
-    weak var coordinator: MainCoordinator?
-    
-    var logoutAction: (() -> Void)?
+    var viewModel: MainViewModelProtocol!
+    weak var coordinator: AppCoordinator?
+    weak var delegate: MainViewControllerDelegate?
     
     @IBOutlet weak var titleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = "You're in the app, Congratulations"
+        setupCompletion()
+    }
+    
+    func setupCompletion() {
+        viewModel.onLogout = {
+            self.delegate?.signOut()
+        }
     }
     
     @IBAction func logOutButtonAction(_ sender: UIButton) {
-        logoutAction?()
+        viewModel.logout()
     }
 }

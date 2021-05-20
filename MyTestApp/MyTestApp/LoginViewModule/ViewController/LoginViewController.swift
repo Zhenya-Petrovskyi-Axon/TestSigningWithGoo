@@ -8,30 +8,28 @@
 import UIKit
 import GoogleSignIn
 
+protocol LoginViewControllerDelegate: AnyObject {
+    func loginSuccess()
+}
+
 class LoginViewController: UIViewController, Storyboarded {
-    
     @IBOutlet weak var signInButton: GIDSignInButton!
     @IBOutlet weak var titleLabel: UILabel!
-    
-    var viewModel: LoginViewModelProtocol! = LoginViewModel()
-    var loginAction: (() -> Void)?
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("View will appear")
-        isUserCurrent()
-    }
+    var viewModel: LoginViewModelProtocol!
+    weak var delegate: LoginViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCompletions()
         loginViewPresenter()
         setupButton()
         titleLabel.text = "Hello User"
-        loginAction?()
     }
     
-    func isUserCurrent() {
-        GIDSignIn.sharedInstance().restorePreviousSignIn()
+    func setupCompletions() {
+        viewModel.onLogedIn = {
+            self.delegate?.loginSuccess()
+        }
     }
     
     func setupButton() {
@@ -44,7 +42,6 @@ class LoginViewController: UIViewController, Storyboarded {
     
     func loginViewPresenter() {
         GIDSignIn.sharedInstance()?.presentingViewController = self
-    }
-    
+    } 
 }
 

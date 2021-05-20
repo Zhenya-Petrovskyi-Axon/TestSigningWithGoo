@@ -11,9 +11,12 @@
 		452201A42652900F003C8215 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 452201A32652900F003C8215 /* credentials.plist */; };
 		452201A72652BB63003C8215 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201A62652BB63003C8215 /* MainViewController.swift */; };
 		452201AA2653A4CD003C8215 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201A92653A4CD003C8215 /* CoordinatorProtocol.swift */; };
-		452201AC2653A547003C8215 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201AB2653A547003C8215 /* MainCoordinator.swift */; };
+		452201AC2653A547003C8215 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201AB2653A547003C8215 /* AppCoordinator.swift */; };
 		452201AE2653A720003C8215 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201AD2653A720003C8215 /* Storyboarded.swift */; };
 		452201B02653D5BF003C8215 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201AF2653D5BF003C8215 /* MainViewModel.swift */; };
+		45333E0F26564FCE00954176 /* GoggleSignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E0E26564FCE00954176 /* GoggleSignInService.swift */; };
+		45333E12265653FD00954176 /* MainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E11265653FD00954176 /* MainFlowCoordinator.swift */; };
+		45333E1426565A9300954176 /* LoginFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E1326565A9300954176 /* LoginFlowCoordinator.swift */; };
 		45A732E926528BF800598FC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A732E826528BF800598FC2 /* AppDelegate.swift */; };
 		45A732ED26528BF800598FC2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A732EC26528BF800598FC2 /* LoginViewController.swift */; };
 		45A732F026528BF800598FC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A732EE26528BF800598FC2 /* Main.storyboard */; };
@@ -29,9 +32,12 @@
 		452201A32652900F003C8215 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = credentials.plist; path = ../../../../../Downloads/credentials.plist; sourceTree = "<group>"; };
 		452201A62652BB63003C8215 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		452201A92653A4CD003C8215 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
-		452201AB2653A547003C8215 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		452201AB2653A547003C8215 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		452201AD2653A720003C8215 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		452201AF2653D5BF003C8215 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		45333E0E26564FCE00954176 /* GoggleSignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoggleSignInService.swift; sourceTree = "<group>"; };
+		45333E11265653FD00954176 /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
+		45333E1326565A9300954176 /* LoginFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowCoordinator.swift; sourceTree = "<group>"; };
 		45A732E526528BF800598FC2 /* MyTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A732E826528BF800598FC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45A732EC26528BF800598FC2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -68,20 +74,76 @@
 		452201A52652BB29003C8215 /* MainViewModule */ = {
 			isa = PBXGroup;
 			children = (
-				452201A62652BB63003C8215 /* MainViewController.swift */,
-				452201AF2653D5BF003C8215 /* MainViewModel.swift */,
+				45333E1826568F1900954176 /* Coordinator's */,
+				45333E1C26568F4200954176 /* ViewModel's */,
+				45333E1A26568F2E00954176 /* ViewController's */,
 			);
 			path = MainViewModule;
 			sourceTree = "<group>";
 		};
-		452201A82653A4AD003C8215 /* Coordinator */ = {
+		452201A82653A4AD003C8215 /* CoordinatorService */ = {
 			isa = PBXGroup;
 			children = (
 				452201A92653A4CD003C8215 /* CoordinatorProtocol.swift */,
 				452201AD2653A720003C8215 /* Storyboarded.swift */,
-				452201AB2653A547003C8215 /* MainCoordinator.swift */,
+			);
+			path = CoordinatorService;
+			sourceTree = "<group>";
+		};
+		45333E10265650AC00954176 /* SignInService */ = {
+			isa = PBXGroup;
+			children = (
+				45333E0E26564FCE00954176 /* GoggleSignInService.swift */,
+			);
+			path = SignInService;
+			sourceTree = "<group>";
+		};
+		45333E1526568ED700954176 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				45333E1326565A9300954176 /* LoginFlowCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		45333E1626568EE600954176 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				452201A126528E9F003C8215 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		45333E1726568EF300954176 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				45A732EC26528BF800598FC2 /* LoginViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		45333E1826568F1900954176 /* Coordinator's */ = {
+			isa = PBXGroup;
+			children = (
+				45333E11265653FD00954176 /* MainFlowCoordinator.swift */,
+			);
+			path = "Coordinator's";
+			sourceTree = "<group>";
+		};
+		45333E1A26568F2E00954176 /* ViewController's */ = {
+			isa = PBXGroup;
+			children = (
+				452201A62652BB63003C8215 /* MainViewController.swift */,
+			);
+			path = "ViewController's";
+			sourceTree = "<group>";
+		};
+		45333E1C26568F4200954176 /* ViewModel's */ = {
+			isa = PBXGroup;
+			children = (
+				452201AF2653D5BF003C8215 /* MainViewModel.swift */,
+			);
+			path = "ViewModel's";
 			sourceTree = "<group>";
 		};
 		45A732DC26528BF800598FC2 = {
@@ -105,9 +167,11 @@
 		45A732E726528BF800598FC2 /* MyTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				452201A82653A4AD003C8215 /* Coordinator */,
+				452201AB2653A547003C8215 /* AppCoordinator.swift */,
 				45A732FF26528C8500598FC2 /* MainAppDelegates */,
 				45A7330026528C9A00598FC2 /* Storyboards */,
+				45333E10265650AC00954176 /* SignInService */,
+				452201A82653A4AD003C8215 /* CoordinatorService */,
 				45A7330126528CB500598FC2 /* LoginViewModule */,
 				452201A52652BB29003C8215 /* MainViewModule */,
 				45A732F426528BF900598FC2 /* Assets.xcassets */,
@@ -138,8 +202,9 @@
 		45A7330126528CB500598FC2 /* LoginViewModule */ = {
 			isa = PBXGroup;
 			children = (
-				45A732EC26528BF800598FC2 /* LoginViewController.swift */,
-				452201A126528E9F003C8215 /* LoginViewModel.swift */,
+				45333E1526568ED700954176 /* Coordinator */,
+				45333E1626568EE600954176 /* ViewModel */,
+				45333E1726568EF300954176 /* ViewController */,
 			);
 			path = LoginViewModule;
 			sourceTree = "<group>";
@@ -286,12 +351,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				45A732ED26528BF800598FC2 /* LoginViewController.swift in Sources */,
-				452201AC2653A547003C8215 /* MainCoordinator.swift in Sources */,
+				452201AC2653A547003C8215 /* AppCoordinator.swift in Sources */,
 				45A732F326528BF800598FC2 /* MyTestApp.xcdatamodeld in Sources */,
 				45A732E926528BF800598FC2 /* AppDelegate.swift in Sources */,
 				452201A72652BB63003C8215 /* MainViewController.swift in Sources */,
 				452201AE2653A720003C8215 /* Storyboarded.swift in Sources */,
+				45333E1426565A9300954176 /* LoginFlowCoordinator.swift in Sources */,
+				45333E0F26564FCE00954176 /* GoggleSignInService.swift in Sources */,
 				452201A226528E9F003C8215 /* LoginViewModel.swift in Sources */,
+				45333E12265653FD00954176 /* MainFlowCoordinator.swift in Sources */,
 				452201AA2653A4CD003C8215 /* CoordinatorProtocol.swift in Sources */,
 				452201B02653D5BF003C8215 /* MainViewModel.swift in Sources */,
 			);
