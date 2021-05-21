@@ -23,6 +23,16 @@ class MainViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         titleLabel.text = "You're in the app, Congratulations"
         setupCompletion()
+        viewModel.didLoadData = { [weak self] in
+            DispatchQueue.main.async {
+                self?.view.backgroundColor = .red
+            }
+        }
+        viewModel.onError = { [weak self] error in
+            DispatchQueue.main.async {
+                self?.showAlert(text: error.description)
+            }
+        }
     }
     
     func setupCompletion() {

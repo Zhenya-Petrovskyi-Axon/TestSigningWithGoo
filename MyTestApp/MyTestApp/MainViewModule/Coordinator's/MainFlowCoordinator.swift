@@ -13,18 +13,20 @@ protocol MainFlowCoordinatorDelegate: AnyObject {
 
 class MainFlowCoordinator: CoordinatorProtocol {
     let service: GoogleSignInService
+    let networkService: NetworkService
     weak var delegate: MainFlowCoordinatorDelegate?
     var childCoordinators = [CoordinatorProtocol]()
     var navigationController: UINavigationController
     
-    init(navigationController: UINavigationController, service: GoogleSignInService) {
+    init(navigationController: UINavigationController, service: GoogleSignInService, networkService: NetworkService) {
         self.navigationController = navigationController
         self.service = service
+        self.networkService = networkService
     }
     
     func start() {
         let vc = MainViewController.instantiate()
-        let viewModel = MainViewModel(service: service)
+        let viewModel = MainViewModel(service: service, networkService: networkService)
         vc.viewModel = viewModel
         vc.delegate = self
         navigationController.setViewControllers([vc], animated: true)

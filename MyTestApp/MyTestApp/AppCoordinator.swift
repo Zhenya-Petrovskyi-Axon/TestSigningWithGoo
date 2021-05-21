@@ -11,6 +11,7 @@ import GoogleSignIn
 // MARK: - Main Coordinator Class
 class AppCoordinator: CoordinatorProtocol {
     let service = GoogleSignInService()
+    let networkService = NetworkService()
     var childCoordinators = [CoordinatorProtocol]()
     var navigationController: UINavigationController
     init(navigationController: UINavigationController) {
@@ -32,7 +33,7 @@ class AppCoordinator: CoordinatorProtocol {
 extension AppCoordinator {
     func goToMainFlow() {
         childCoordinators.removeAll()
-        let coordinator = MainFlowCoordinator(navigationController: navigationController, service: service)
+        let coordinator = MainFlowCoordinator(navigationController: navigationController, service: service, networkService: networkService)
         coordinator.delegate = self
         childCoordinators.append(coordinator)
         coordinator.start()
