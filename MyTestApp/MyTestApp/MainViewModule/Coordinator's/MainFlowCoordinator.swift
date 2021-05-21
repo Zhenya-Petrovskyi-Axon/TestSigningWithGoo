@@ -27,7 +27,7 @@ class MainFlowCoordinator: CoordinatorProtocol {
     func start() {
         let vc = MainViewController.instantiate()
         let viewModel = MainViewModel(service: service, networkService: networkService)
-        vc.viewModel = viewModel
+        vc.mainViewModel = viewModel
         vc.delegate = self
         navigationController.setViewControllers([vc], animated: true)
     }

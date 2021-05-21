@@ -14,34 +14,71 @@ protocol MainViewControllerDelegate: AnyObject {
 
 class MainViewController: UIViewController, Storyboarded {
     
-    var viewModel: MainViewModelProtocol!
+    var mainViewModel: MainViewModelProtocol!
     weak var coordinator: AppCoordinator?
     weak var delegate: MainViewControllerDelegate?
     
-    @IBOutlet weak var titleLabel: UILabel!
+    let cellId = "MainTableViewCell"
+    
+    @IBOutlet weak var mainTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = "You're in the app, Congratulations"
         setupCompletions()
+        registerCell()
+        setupDelegates()
+    }
+    
+    func registerCell() {
+        self.mainTableView.register(UINib(nibName: cellId, bundle: nil), forCellReuseIdentifier: cellId)
+    }
+    
+    func setupDelegates() {
+        mainTableView.delegate = self
+        mainTableView.dataSource = self
     }
     
     func setupCompletions() {
-        viewModel.onLogout = {
+        mainViewModel.onLogout = {
             self.delegate?.signOut()
         }
-        viewModel.onError = { [weak self] error in
+        mainViewModel.onError = { [weak self] error in
             DispatchQueue.main.async {
                 self?.showAlert(text: error.description)
             }
         }
-        viewModel.didLoadData = { [weak self] in
+        mainViewModel.didLoadData = { [weak self] in
             DispatchQueue.main.async {
-                self?.view.backgroundColor = .red
+                self?.updateDataSource()
             }
         }
     }
     
-    @IBAction func logOutButtonAction(_ sender: UIButton) {
-        viewModel.logout()
+    func updateDataSource() {
+        DispatchQueue.main.async {
+            self.mainTableView.reloadData()
+        }
     }
+    
+    @IBAction func logOutButtonAction(_ sender: UIButton) {
+        mainViewModel.logout()
+    }
+}
+
+extension MainViewController: UITableViewDelegate {
+    
+}
+
+extension MainViewController: UITableViewDataSource {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        mainViewModel.itemsCount
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       let cell = mainTableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MainTableViewCell
+        cell.viewModel = mainViewModel.viewModelForCell(indexPath)
+        return cell
+    }
+    
+    
 }
