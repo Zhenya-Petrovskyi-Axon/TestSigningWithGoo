@@ -53,7 +53,7 @@ class MainViewModel: MainViewModelProtocol {
             case .success(let data):
                 self?.teams.append(contentsOf: data)
                 self?.currentPage += 1
-                print("\(String(describing: self?.teams.first?.city))")
+                print("\(String(describing: self?.teams))")
             case .failure(let error):
                 self?.onError("\(error)")
             }
