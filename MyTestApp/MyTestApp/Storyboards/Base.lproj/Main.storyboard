@@ -60,37 +60,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ey5-eK-ZEk">
-                                <rect key="frame" x="138.5" y="425.5" width="137" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="EPY-5a-1Ge"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="UpV-iu-k2y"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="Log Out"/>
-                                <connections>
-                                    <action selector="logOutButtonAction:" destination="ocB-rm-nHk" eventType="touchUpInside" id="Odc-1y-zTX"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8SF-Rd-fhr">
-                                <rect key="frame" x="15" y="59" width="384" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yyi-z8-UNv">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nTp-Ur-ptV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="nTp-Ur-ptV" firstAttribute="trailing" secondItem="8SF-Rd-fhr" secondAttribute="trailing" constant="15" id="D2L-j2-iCd"/>
-                            <constraint firstItem="ey5-eK-ZEk" firstAttribute="centerX" secondItem="VyJ-v4-R9p" secondAttribute="centerX" id="PFi-zZ-clX"/>
-                            <constraint firstItem="8SF-Rd-fhr" firstAttribute="top" secondItem="nTp-Ur-ptV" secondAttribute="top" constant="15" id="TUd-6u-Yxv"/>
-                            <constraint firstItem="ey5-eK-ZEk" firstAttribute="centerY" secondItem="VyJ-v4-R9p" secondAttribute="centerY" id="Y4J-vp-4Yj"/>
-                            <constraint firstItem="8SF-Rd-fhr" firstAttribute="leading" secondItem="nTp-Ur-ptV" secondAttribute="leading" constant="15" id="bFH-Qg-ILC"/>
+                            <constraint firstItem="nTp-Ur-ptV" firstAttribute="trailing" secondItem="yyi-z8-UNv" secondAttribute="trailing" id="LnV-nb-rPG"/>
+                            <constraint firstItem="yyi-z8-UNv" firstAttribute="leading" secondItem="nTp-Ur-ptV" secondAttribute="leading" id="d0i-Am-Rco"/>
+                            <constraint firstItem="nTp-Ur-ptV" firstAttribute="bottom" secondItem="yyi-z8-UNv" secondAttribute="bottom" id="d5m-HH-8kn"/>
+                            <constraint firstItem="yyi-z8-UNv" firstAttribute="top" secondItem="nTp-Ur-ptV" secondAttribute="top" id="hIh-cu-soB"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="titleLabel" destination="8SF-Rd-fhr" id="0md-dP-0Yj"/>
+                        <outlet property="mainTableView" destination="yyi-z8-UNv" id="ZiY-WR-0xd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJY-Bf-VfO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

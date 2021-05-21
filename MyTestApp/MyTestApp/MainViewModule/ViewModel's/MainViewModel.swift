@@ -13,6 +13,8 @@ protocol MainViewModelDlelegate {
 }
 
 protocol MainViewModelProtocol {
+    func viewModelForCell(_ indexPath: IndexPath) -> TeamCellViewModel
+    var itemsCount: Int { get }
     func logout()
     func getData()
     var didLoadData: () -> Void { get set }
@@ -21,6 +23,7 @@ protocol MainViewModelProtocol {
 }
 
 class MainViewModel: MainViewModelProtocol {
+    
     private(set) var teams: [Team] = [] {
         didSet {
             self.didLoadData()
@@ -28,7 +31,7 @@ class MainViewModel: MainViewModelProtocol {
     }
     
     var itemsCount: Int {
-        teams.count
+        return teams.count
     }
     
     let service: GoogleSignInService
@@ -62,5 +65,10 @@ class MainViewModel: MainViewModelProtocol {
     
     func logout() {
         service.logout(completion: onLogout)
+    }
+    
+    func viewModelForCell(_ indexPath: IndexPath) -> TeamCellViewModel {
+        let team = teams[indexPath.row]
+        return TeamCellViewModel(teamModel: TeamCellModel(fullName: team.fullName, cityName: team.city, devisionName: team.division))
     }
 }
