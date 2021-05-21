@@ -21,10 +21,8 @@ class TeamCellViewModel {
 }
 
 class MainTableViewCell: UITableViewCell {
-    @IBOutlet weak var fullnameDescriptionLabel: UILabel!
-    @IBOutlet weak var cityDescriptionLabel: UILabel!
-    @IBOutlet weak var devisionDescriptionLabel: UILabel!
     
+    @IBOutlet weak var underLabelView: UIView!
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var devisionNameLabel: UILabel!
@@ -39,6 +37,15 @@ class MainTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setupView()
+    }
+    
+    func setupView() {
+        underLabelView.layer.masksToBounds = true
+        underLabelView.layer.cornerRadius = 8
+        underLabelView.layer.borderWidth = 0.8
+        underLabelView.layer.borderColor = UIColor.systemGray.cgColor
+        
     }
 }
+

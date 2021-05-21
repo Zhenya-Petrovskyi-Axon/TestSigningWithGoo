@@ -18,7 +18,8 @@ class MainViewController: UIViewController, Storyboarded {
     weak var coordinator: AppCoordinator?
     weak var delegate: MainViewControllerDelegate?
     
-    let cellId = "MainTableViewCell"
+    let mainCellId = "mainCell"
+    let mainCellNibName = "MainTableViewCell"
     
     @IBOutlet weak var mainTableView: UITableView!
     
@@ -30,7 +31,7 @@ class MainViewController: UIViewController, Storyboarded {
     }
     
     func registerCell() {
-        self.mainTableView.register(UINib(nibName: cellId, bundle: nil), forCellReuseIdentifier: cellId)
+        self.mainTableView.register(UINib(nibName: mainCellNibName, bundle: nil), forCellReuseIdentifier: mainCellId)
     }
     
     func setupDelegates() {
@@ -75,7 +76,7 @@ extension MainViewController: UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let cell = mainTableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MainTableViewCell
+       let cell = mainTableView.dequeueReusableCell(withIdentifier: mainCellId, for: indexPath) as! MainTableViewCell
         cell.viewModel = mainViewModel.viewModelForCell(indexPath)
         return cell
     }
