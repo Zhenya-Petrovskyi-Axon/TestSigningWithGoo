@@ -22,12 +22,22 @@ class MainViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = "You're in the app, Congratulations"
-        setupCompletion()
+        setupCompletions()
     }
     
-    func setupCompletion() {
+    func setupCompletions() {
         viewModel.onLogout = {
             self.delegate?.signOut()
+        }
+        viewModel.onError = { [weak self] error in
+            DispatchQueue.main.async {
+                self?.showAlert(text: error.description)
+            }
+        }
+        viewModel.didLoadData = { [weak self] in
+            DispatchQueue.main.async {
+                self?.view.backgroundColor = .red
+            }
         }
     }
     
