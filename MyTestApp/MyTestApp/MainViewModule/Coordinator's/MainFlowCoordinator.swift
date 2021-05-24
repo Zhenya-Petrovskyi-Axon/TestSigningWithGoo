@@ -9,7 +9,7 @@ import UIKit
 
 protocol MainFlowCoordinatorDelegate: AnyObject {
     func didLogout()
-}
+} 
 
 class MainFlowCoordinator: CoordinatorProtocol {
     let service: GoogleSignInService
@@ -32,15 +32,20 @@ class MainFlowCoordinator: CoordinatorProtocol {
         navigationController.setViewControllers([vc], animated: true)
     }
     
-    func goToDetails() {
-        let vc = DetailsViewController.instantiate()
-        navigationController.pushViewController(vc, animated: true)
+    func goToDetails(viewModel: TeamDetailViewModel) {
+        print(viewModel.teamModel.fullName)
+        let vcToPresent = DetailsViewController.instantiate()
+//        let vc = DetailsViewController()
+        vcToPresent.detailsViewModel = viewModel
+        print(viewModel)
+        navigationController.pushViewController(vcToPresent, animated: true)
     }
 }
 
 extension MainFlowCoordinator: MainViewControllerDelegate {
-    func showDetails() {
-        goToDetails()
+    func showDetails(viewModel: TeamDetailViewModel) {
+        print(viewModel.teamModel.fullName)
+        goToDetails(viewModel: viewModel)
     }
     
     func signOut() {

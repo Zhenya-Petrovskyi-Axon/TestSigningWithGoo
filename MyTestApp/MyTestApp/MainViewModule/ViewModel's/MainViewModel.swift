@@ -8,9 +8,9 @@
 import UIKit
 import GoogleSignIn
 
-protocol MainViewModelDlelegate {
-    func logout()
-}
+//protocol MainViewModelDelegate: AnyObject {
+//    func showDetails(user: TeamDetailViewModel)
+//}
 
 protocol MainViewModelProtocol {
     var itemsCount: Int { get }
@@ -18,11 +18,11 @@ protocol MainViewModelProtocol {
     var onLogout: () -> Void { get set }
     var onError: (String) -> Void { get set }
     var cellSelected: () -> Void { get set }
-    func viewModelForCell(_ indexPath: IndexPath) -> TeamCellViewModel
     func logout()
     func getData()
+    func viewModelForCell(_ indexPath: IndexPath) -> TeamCellViewModel
     func viewModelForDetailsVC(_ indexPath: IndexPath) -> TeamDetailViewModel
-    func didSelectCell(_ indexPath: IndexPath)
+//    func didSelectCell(_ indexPath: IndexPath)
     
     
 }
@@ -63,7 +63,6 @@ class MainViewModel: MainViewModelProtocol {
             case .success(let data):
                 self?.teams.append(contentsOf: data)
                 self?.currentPage += 1
-                print("\(String(describing: self?.teams))")
             case .failure(let error):
                 self?.onError("\(error)")
             }
@@ -74,21 +73,30 @@ class MainViewModel: MainViewModelProtocol {
         service.logout(completion: onLogout)
     }
     
-    func didSelectCell(_ indexPath: IndexPath) {
-        let vc = DetailsViewController()
-        vc.detailsViewModel = viewModelForDetailsVC(indexPath)
-        print(vc.detailsViewModel.teamModel.fullName)
-        cellSelected()
-    }
+//    func didSelectCell(_ indexPath: IndexPath) {
+//        let viewModel = viewModelForDetailsVC(indexPath)
+//        self.delegate?.showDetails(user: viewModel)
+////        // Create view model for details
+////        let teamViewModel = viewModelForDetailsVC(indexPath)
+////        coordinator?.goToDetails(viewModel: teamViewModel)
+//        //        let viewModelForDetails = viewModelForCell(indexPath)
+//        //        View model to coordinator
+//        //        Coordinator crate DetailsVC
+//        //        Присвоить View model coordinator to Details viewModel
+//        //        print(vc.detailsViewModel.teamModel.fullName)
+//
+//
+//    }
     
     func viewModelForDetailsVC(_ indexPath: IndexPath) -> TeamDetailViewModel {
         let item = teams[indexPath.row]
-        return TeamDetailViewModel(teamModel: TeamDetailModel(abbreviation: item.abbreviation,
-                                                              city: item.city,
-                                                              conference: item.conference,
-                                                              division: item.division,
-                                                              fullName: item.fullName,
-                                                              name: item.name))
+        return TeamDetailViewModel(teamModel: TeamDetailModel(
+                                                abbreviation: item.abbreviation,
+                                                city: item.city,
+                                                conference: item.conference,
+                                                division: item.division,
+                                                fullName: item.fullName,
+                                                name: item.name))
     }
     
     func viewModelForCell(_ indexPath: IndexPath) -> TeamCellViewModel {

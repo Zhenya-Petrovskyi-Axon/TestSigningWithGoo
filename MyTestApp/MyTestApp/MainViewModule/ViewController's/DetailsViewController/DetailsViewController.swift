@@ -23,19 +23,26 @@ class TeamDetailViewModel {
     }
 }
 
-
-
 class DetailsViewController: UIViewController, Storyboarded {
     
-//    @IBOutlet weak var 
+    //    @IBOutlet weak var
+    @IBOutlet weak var shortNameLabel: UILabel!
+    @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var divisionNameLabel: UILabel!
+    @IBOutlet weak var conferenceNameLabel: UILabel!
+    @IBOutlet weak var cityNameLabel: UILabel!
+    @IBOutlet weak var abbreviationLabel: UILabel!
     
-    var detailsViewModel: TeamDetailViewModel! {
-        didSet {
-            // TODO: Crate DetailsVC description
-        }
-    }
+    var detailsViewModel: TeamDetailViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // TODO: Crate DetailsVC description
+        shortNameLabel?.text = detailsViewModel.teamModel.name
+        fullNameLabel?.text = detailsViewModel.teamModel.fullName
+        divisionNameLabel?.text = detailsViewModel.teamModel.division
+        conferenceNameLabel?.text = detailsViewModel.teamModel.conference
+        cityNameLabel?.text = detailsViewModel.teamModel.city
+        abbreviationLabel?.text = detailsViewModel.teamModel.abbreviation
     }
 }

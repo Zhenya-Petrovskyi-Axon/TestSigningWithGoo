@@ -10,13 +10,12 @@ import GoogleSignIn
 
 protocol MainViewControllerDelegate: AnyObject {
     func signOut()
-    func showDetails()
+    func showDetails(viewModel: TeamDetailViewModel)
 }
 
 class MainViewController: UIViewController, Storyboarded {
     
     var mainViewModel: MainViewModelProtocol!
-    weak var coordinator: AppCoordinator?
     weak var delegate: MainViewControllerDelegate?
     
     let mainCellId = "mainCell"
@@ -42,7 +41,7 @@ class MainViewController: UIViewController, Storyboarded {
     
     func setupCompletions() {
         mainViewModel.cellSelected = {
-            self.delegate?.showDetails()
+//            self.delegate?.showDetails()
         }
         mainViewModel.onLogout = {
             self.delegate?.signOut()
@@ -87,7 +86,8 @@ extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        mainViewModel.didSelectCell(indexPath)
+        let viewModel = mainViewModel.viewModelForDetailsVC(indexPath)
+        delegate?.showDetails(viewModel: viewModel)
     }
     
 }
