@@ -9,7 +9,6 @@ import UIKit
 
 protocol MainFlowCoordinatorDelegate: AnyObject {
     func didLogout()
-    func goToDetails()
 }
 
 class MainFlowCoordinator: CoordinatorProtocol {
@@ -32,11 +31,16 @@ class MainFlowCoordinator: CoordinatorProtocol {
         vc.delegate = self
         navigationController.setViewControllers([vc], animated: true)
     }
+    
+    func goToDetails() {
+        let vc = DetailsViewController.instantiate()
+        navigationController.pushViewController(vc, animated: true)
+    }
 }
 
 extension MainFlowCoordinator: MainViewControllerDelegate {
-    func didSelectCell() {
-        delegate?.goToDetails()
+    func showDetails() {
+        goToDetails()
     }
     
     func signOut() {

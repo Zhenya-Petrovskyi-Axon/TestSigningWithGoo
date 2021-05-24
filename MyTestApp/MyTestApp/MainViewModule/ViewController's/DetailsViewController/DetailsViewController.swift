@@ -25,7 +25,9 @@ class TeamDetailViewModel {
 
 
 
-class DetailsViewController: UIViewController {
+class DetailsViewController: UIViewController, Storyboarded {
+    
+//    @IBOutlet weak var 
     
     var detailsViewModel: TeamDetailViewModel! {
         didSet {

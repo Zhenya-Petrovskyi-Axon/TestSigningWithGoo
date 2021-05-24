@@ -17,11 +17,12 @@ protocol MainViewModelProtocol {
     var didLoadData: () -> Void { get set }
     var onLogout: () -> Void { get set }
     var onError: (String) -> Void { get set }
-    var didSelectCell: () -> Void { get set }
+    var cellSelected: () -> Void { get set }
     func viewModelForCell(_ indexPath: IndexPath) -> TeamCellViewModel
     func logout()
     func getData()
     func viewModelForDetailsVC(_ indexPath: IndexPath) -> TeamDetailViewModel
+    func didSelectCell(_ indexPath: IndexPath)
     
     
 }
@@ -50,7 +51,7 @@ class MainViewModel: MainViewModelProtocol {
     
     var didLoadData = { }
     
-    var didSelectCell: () -> Void = {  }
+    var cellSelected: () -> Void = {  }
     
     var onError: (String) -> Void = { _ in }
     
@@ -73,9 +74,15 @@ class MainViewModel: MainViewModelProtocol {
         service.logout(completion: onLogout)
     }
     
+    func didSelectCell(_ indexPath: IndexPath) {
+        let vc = DetailsViewController()
+        vc.detailsViewModel = viewModelForDetailsVC(indexPath)
+        print(vc.detailsViewModel.teamModel.fullName)
+        cellSelected()
+    }
+    
     func viewModelForDetailsVC(_ indexPath: IndexPath) -> TeamDetailViewModel {
         let item = teams[indexPath.row]
-        didSelectCell()
         return TeamDetailViewModel(teamModel: TeamDetailModel(abbreviation: item.abbreviation,
                                                               city: item.city,
                                                               conference: item.conference,

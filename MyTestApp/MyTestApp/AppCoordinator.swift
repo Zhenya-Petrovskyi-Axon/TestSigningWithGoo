@@ -46,15 +46,10 @@ extension AppCoordinator {
         childCoordinators.append(coordinator)
         coordinator.start()
     }
-    
-    func showDetailsVC() {
-        let vc = DetailsViewController()
-        navigationController.pushViewController(vc, animated: true)
-    }
-
 }
 
 extension AppCoordinator: LoginFlowCoordinatorDelegate, MainFlowCoordinatorDelegate {
+    
     // MARK : - Login flow delegate
     func didLogin() {
         goToMainFlow()
@@ -63,9 +58,5 @@ extension AppCoordinator: LoginFlowCoordinatorDelegate, MainFlowCoordinatorDeleg
     // MARK: - Main flow delegate
     func didLogout() {
         goToLoginFlow()
-    }
-    
-    func goToDetails() {
-        showDetailsVC()
     }
 }
