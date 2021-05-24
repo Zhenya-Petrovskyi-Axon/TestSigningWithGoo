@@ -189,6 +189,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		45333E34265B8F0F00954176 /* DetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailsViewController;
+			sourceTree = "<group>";
+		};
 		45A732DC26528BF800598FC2 = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +217,7 @@
 		45A732E726528BF800598FC2 /* MyTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				45333E34265B8F0F00954176 /* DetailsViewController */,
 				452201AB2653A547003C8215 /* AppCoordinator.swift */,
 				45333E262657DD4100954176 /* Extensions */,
 				45333E1D2657973E00954176 /* NetworkService */,
