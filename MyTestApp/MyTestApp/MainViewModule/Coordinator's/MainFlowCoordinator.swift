@@ -9,6 +9,7 @@ import UIKit
 
 protocol MainFlowCoordinatorDelegate: AnyObject {
     func didLogout()
+    func goToDetails()
 }
 
 class MainFlowCoordinator: CoordinatorProtocol {
@@ -34,6 +35,10 @@ class MainFlowCoordinator: CoordinatorProtocol {
 }
 
 extension MainFlowCoordinator: MainViewControllerDelegate {
+    func didSelectCell() {
+        delegate?.goToDetails()
+    }
+    
     func signOut() {
         delegate?.didLogout()
     }

@@ -24,6 +24,7 @@
 		45333E2E2657F7D800954176 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E2C2657F7D800954176 /* MainTableViewCell.swift */; };
 		45333E2F2657F7D800954176 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45333E2D2657F7D800954176 /* MainTableViewCell.xib */; };
 		45333E33265B8CC200954176 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E32265B8CC200954176 /* UIViewExtension.swift */; };
+		45333E37265B8F9000954176 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E36265B8F9000954176 /* DetailsViewController.swift */; };
 		45A732E926528BF800598FC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A732E826528BF800598FC2 /* AppDelegate.swift */; };
 		45A732ED26528BF800598FC2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A732EC26528BF800598FC2 /* LoginViewController.swift */; };
 		45A732F026528BF800598FC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A732EE26528BF800598FC2 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		45333E2C2657F7D800954176 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		45333E2D2657F7D800954176 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		45333E32265B8CC200954176 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		45333E36265B8F9000954176 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		45A732E526528BF800598FC2 /* MyTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A732E826528BF800598FC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45A732EC26528BF800598FC2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -148,7 +150,8 @@
 		45333E1A26568F2E00954176 /* ViewController's */ = {
 			isa = PBXGroup;
 			children = (
-				452201A62652BB63003C8215 /* MainViewController.swift */,
+				45333E35265B8F5C00954176 /* MainViewController */,
+				45333E34265B8F0F00954176 /* DetailsViewController */,
 			);
 			path = "ViewController's";
 			sourceTree = "<group>";
@@ -192,8 +195,17 @@
 		45333E34265B8F0F00954176 /* DetailsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				45333E36265B8F9000954176 /* DetailsViewController.swift */,
 			);
 			path = DetailsViewController;
+			sourceTree = "<group>";
+		};
+		45333E35265B8F5C00954176 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				452201A62652BB63003C8215 /* MainViewController.swift */,
+			);
+			path = MainViewController;
 			sourceTree = "<group>";
 		};
 		45A732DC26528BF800598FC2 = {
@@ -217,7 +229,6 @@
 		45A732E726528BF800598FC2 /* MyTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				45333E34265B8F0F00954176 /* DetailsViewController */,
 				452201AB2653A547003C8215 /* AppCoordinator.swift */,
 				45333E262657DD4100954176 /* Extensions */,
 				45333E1D2657973E00954176 /* NetworkService */,
@@ -417,6 +428,7 @@
 				45333E252657B40400954176 /* ViewControllerExtensions.swift in Sources */,
 				45333E1426565A9300954176 /* LoginFlowCoordinator.swift in Sources */,
 				45333E0F26564FCE00954176 /* GoggleSignInService.swift in Sources */,
+				45333E37265B8F9000954176 /* DetailsViewController.swift in Sources */,
 				452201A226528E9F003C8215 /* LoginViewModel.swift in Sources */,
 				45333E12265653FD00954176 /* MainFlowCoordinator.swift in Sources */,
 				452201AA2653A4CD003C8215 /* CoordinatorProtocol.swift in Sources */,

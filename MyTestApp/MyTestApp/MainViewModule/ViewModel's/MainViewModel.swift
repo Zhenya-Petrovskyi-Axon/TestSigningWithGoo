@@ -13,13 +13,17 @@ protocol MainViewModelDlelegate {
 }
 
 protocol MainViewModelProtocol {
-    func viewModelForCell(_ indexPath: IndexPath) -> TeamCellViewModel
     var itemsCount: Int { get }
-    func logout()
-    func getData()
     var didLoadData: () -> Void { get set }
     var onLogout: () -> Void { get set }
     var onError: (String) -> Void { get set }
+    var didSelectCell: () -> Void { get set }
+    func viewModelForCell(_ indexPath: IndexPath) -> TeamCellViewModel
+    func logout()
+    func getData()
+    func viewModelForDetailsVC(_ indexPath: IndexPath) -> TeamDetailViewModel
+    
+    
 }
 
 class MainViewModel: MainViewModelProtocol {
@@ -46,6 +50,8 @@ class MainViewModel: MainViewModelProtocol {
     
     var didLoadData = { }
     
+    var didSelectCell: () -> Void = {  }
+    
     var onError: (String) -> Void = { _ in }
     
     var currentPage: Int = 1
@@ -67,8 +73,21 @@ class MainViewModel: MainViewModelProtocol {
         service.logout(completion: onLogout)
     }
     
+    func viewModelForDetailsVC(_ indexPath: IndexPath) -> TeamDetailViewModel {
+        let item = teams[indexPath.row]
+        didSelectCell()
+        return TeamDetailViewModel(teamModel: TeamDetailModel(abbreviation: item.abbreviation,
+                                                              city: item.city,
+                                                              conference: item.conference,
+                                                              division: item.division,
+                                                              fullName: item.fullName,
+                                                              name: item.name))
+    }
+    
     func viewModelForCell(_ indexPath: IndexPath) -> TeamCellViewModel {
         let team = teams[indexPath.row]
-        return TeamCellViewModel(teamModel: TeamCellModel(fullName: team.fullName, cityName: team.city, devisionName: team.division))
+        return TeamCellViewModel(teamModel: TeamCellModel(fullName: team.fullName,
+                                                          cityName: team.city,
+                                                          devisionName: team.division))
     }
 }
