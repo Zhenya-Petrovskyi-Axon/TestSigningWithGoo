@@ -10,7 +10,7 @@ import GoogleSignIn
 
 protocol MainViewControllerDelegate: AnyObject {
     func signOut()
-    func showDetails(viewModel: TeamDetailViewModel)
+    func showDetails(teamModel: TeamDetailViewModel)
 }
 
 class MainViewController: UIViewController, Storyboarded {
@@ -40,9 +40,9 @@ class MainViewController: UIViewController, Storyboarded {
     }
     
     func setupCompletions() {
-        mainViewModel.cellSelected = {
-//            self.delegate?.showDetails()
-        }
+        //        mainViewModel.cellSelected = {
+        //            //            self.delegate?.showDetails()
+        //        }
         mainViewModel.onLogout = {
             self.delegate?.signOut()
         }
@@ -53,14 +53,8 @@ class MainViewController: UIViewController, Storyboarded {
         }
         mainViewModel.didLoadData = { [weak self] in
             DispatchQueue.main.async {
-                self?.updateDataSource()
+                self?.mainTableView.reloadData()
             }
-        }
-    }
-    
-    func updateDataSource() {
-        DispatchQueue.main.async {
-            self.mainTableView.reloadData()
         }
     }
     
@@ -70,7 +64,18 @@ class MainViewController: UIViewController, Storyboarded {
 }
 
 extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let teamModel = mainViewModel.viewModelForDetailsVC(indexPath)
+        delegate?.showDetails(teamModel: teamModel)
+    }
     
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        if indexPath.row == mainViewModel.itemsCount - 1 {
+//            print("Bottom reached - user need's more data")
+//            mainViewModel.getData()
+//        }
+//    }
 }
 
 extension MainViewController: UITableViewDataSource {
@@ -82,12 +87,6 @@ extension MainViewController: UITableViewDataSource {
         let cell = mainTableView.dequeueReusableCell(withIdentifier: mainCellId, for: indexPath) as! MainTableViewCell
         cell.viewModel = mainViewModel.viewModelForCell(indexPath)
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let viewModel = mainViewModel.viewModelForDetailsVC(indexPath)
-        delegate?.showDetails(viewModel: viewModel)
     }
     
 }

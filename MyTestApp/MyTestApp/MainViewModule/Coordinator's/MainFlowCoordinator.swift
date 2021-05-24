@@ -35,7 +35,6 @@ class MainFlowCoordinator: CoordinatorProtocol {
     func goToDetails(viewModel: TeamDetailViewModel) {
         print(viewModel.teamModel.fullName)
         let vcToPresent = DetailsViewController.instantiate()
-//        let vc = DetailsViewController()
         vcToPresent.detailsViewModel = viewModel
         print(viewModel)
         navigationController.pushViewController(vcToPresent, animated: true)
@@ -43,9 +42,9 @@ class MainFlowCoordinator: CoordinatorProtocol {
 }
 
 extension MainFlowCoordinator: MainViewControllerDelegate {
-    func showDetails(viewModel: TeamDetailViewModel) {
-        print(viewModel.teamModel.fullName)
-        goToDetails(viewModel: viewModel)
+    func showDetails(teamModel: TeamDetailViewModel) {
+        print(teamModel.teamModel.fullName)
+        goToDetails(viewModel: teamModel)
     }
     
     func signOut() {
