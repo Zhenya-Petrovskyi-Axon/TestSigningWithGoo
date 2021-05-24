@@ -8,32 +8,28 @@
 import UIKit
 import GoogleSignIn
 
-protocol MainViewModelDlelegate {
-    func logout()
-}
-
 protocol MainViewModelProtocol {
-    func viewModelForCell(_ indexPath: IndexPath) -> TeamCellViewModel
+    var currentPage: Int { get set }
     var itemsCount: Int { get }
-    func logout()
-    func getData()
     var didLoadData: () -> Void { get set }
     var onLogout: () -> Void { get set }
     var onError: (String) -> Void { get set }
+    var cellSelected: () -> Void { get set }
+    func logout()
+    func getData()
+    func viewModelForCell(_ indexPath: IndexPath) -> TeamCellViewModel
+    func viewModelForDetailsVC(_ indexPath: IndexPath) -> TeamDetailViewModel
 }
 
 class MainViewModel: MainViewModelProtocol {
-    
     private(set) var teams: [Team] = [] {
         didSet {
             self.didLoadData()
         }
     }
-    
     var itemsCount: Int {
         return teams.count
     }
-    
     let service: GoogleSignInService
     let networkService: NetworkService
     init(service: GoogleSignInService, networkService: NetworkService) {
@@ -41,14 +37,12 @@ class MainViewModel: MainViewModelProtocol {
         self.networkService = networkService
         getData()
     }
-    
     var onLogout = { }
-    
     var didLoadData = { }
-    
+    var cellSelected: () -> Void = {  }
     var onError: (String) -> Void = { _ in }
-    
     var currentPage: Int = 1
+    var isPaginating: Bool = false
     
     func getData() {
         networkService.getTeamData(page: currentPage, method: .get) { [weak self] result in
@@ -56,7 +50,7 @@ class MainViewModel: MainViewModelProtocol {
             case .success(let data):
                 self?.teams.append(contentsOf: data)
                 self?.currentPage += 1
-                print("\(String(describing: self?.teams))")
+                print(self!.currentPage)
             case .failure(let error):
                 self?.onError("\(error)")
             }
@@ -67,8 +61,21 @@ class MainViewModel: MainViewModelProtocol {
         service.logout(completion: onLogout)
     }
     
+    func viewModelForDetailsVC(_ indexPath: IndexPath) -> TeamDetailViewModel {
+        let item = teams[indexPath.row]
+        return TeamDetailViewModel(teamModel: TeamDetailModel(
+                                    abbreviation: item.abbreviation,
+                                    city: item.city,
+                                    conference: item.conference,
+                                    division: item.division,
+                                    fullName: item.fullName,
+                                    name: item.name))
+    }
+    
     func viewModelForCell(_ indexPath: IndexPath) -> TeamCellViewModel {
         let team = teams[indexPath.row]
-        return TeamCellViewModel(teamModel: TeamCellModel(fullName: team.fullName, cityName: team.city, devisionName: team.division))
+        return TeamCellViewModel(teamModel: TeamCellModel(fullName: team.fullName,
+                                                          cityName: team.city,
+                                                          devisionName: team.division))
     }
 }

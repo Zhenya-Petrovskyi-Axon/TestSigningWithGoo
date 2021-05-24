@@ -49,6 +49,7 @@ extension AppCoordinator {
 }
 
 extension AppCoordinator: LoginFlowCoordinatorDelegate, MainFlowCoordinatorDelegate {
+    
     // MARK : - Login flow delegate
     func didLogin() {
         goToMainFlow()
