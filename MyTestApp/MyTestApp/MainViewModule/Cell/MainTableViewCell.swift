@@ -46,6 +46,10 @@ class MainTableViewCell: UITableViewCell {
         underLabelView.layer.borderWidth = 0.8
         underLabelView.layer.borderColor = UIColor.systemGray.cgColor
         
+        underLabelView.addShadow(offset: CGSize.init(width: 0, height: 3), color: .black, radius: 8, opacity: 0.7)
+        
     }
+    
+    
 }
 
