@@ -31,6 +31,12 @@
 		45333E42265CD98400954176 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E40265CD98400954176 /* SideMenuCell.swift */; };
 		45333E43265CD98400954176 /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45333E41265CD98400954176 /* SideMenuCell.xib */; };
 		45333E47265D063900954176 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E46265D063900954176 /* TabBarCoordinator.swift */; };
+		45333E49265D301D00954176 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E48265D301D00954176 /* TabBarController.swift */; };
+		45333E52265D3DE300954176 /* BlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E51265D3DE300954176 /* BlueViewController.swift */; };
+		45333E54265D3E0600954176 /* GreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E53265D3E0600954176 /* GreenViewController.swift */; };
+		45333E56265D3E3B00954176 /* YellowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E55265D3E3B00954176 /* YellowViewController.swift */; };
+		45333E58265D3E6400954176 /* BlackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E57265D3E6400954176 /* BlackViewController.swift */; };
+		45333E5A265D3E8900954176 /* PinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E59265D3E8900954176 /* PinkViewController.swift */; };
 		45A732E926528BF800598FC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A732E826528BF800598FC2 /* AppDelegate.swift */; };
 		45A732ED26528BF800598FC2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A732EC26528BF800598FC2 /* LoginViewController.swift */; };
 		45A732F026528BF800598FC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A732EE26528BF800598FC2 /* Main.storyboard */; };
@@ -66,6 +72,12 @@
 		45333E40265CD98400954176 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		45333E41265CD98400954176 /* SideMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
 		45333E46265D063900954176 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		45333E48265D301D00954176 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		45333E51265D3DE300954176 /* BlueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueViewController.swift; sourceTree = "<group>"; };
+		45333E53265D3E0600954176 /* GreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenViewController.swift; sourceTree = "<group>"; };
+		45333E55265D3E3B00954176 /* YellowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowViewController.swift; sourceTree = "<group>"; };
+		45333E57265D3E6400954176 /* BlackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackViewController.swift; sourceTree = "<group>"; };
+		45333E59265D3E8900954176 /* PinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinkViewController.swift; sourceTree = "<group>"; };
 		45A732E526528BF800598FC2 /* MyTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A732E826528BF800598FC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45A732EC26528BF800598FC2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +268,52 @@
 			path = SideMenuModel;
 			sourceTree = "<group>";
 		};
+		45333E4A265D32B600954176 /* TabBarModule */ = {
+			isa = PBXGroup;
+			children = (
+				45333E4C265D32E200954176 /* TabBarCoordinator */,
+				45333E4B265D32D400954176 /* TabBarController */,
+			);
+			path = TabBarModule;
+			sourceTree = "<group>";
+		};
+		45333E4B265D32D400954176 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				45333E48265D301D00954176 /* TabBarController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		45333E4C265D32E200954176 /* TabBarCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				45333E46265D063900954176 /* TabBarCoordinator.swift */,
+			);
+			path = TabBarCoordinator;
+			sourceTree = "<group>";
+		};
+		45333E4D265D334C00954176 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				45333E1D2657973E00954176 /* NetworkService */,
+				45333E10265650AC00954176 /* SignInService */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		45333E50265D3B2900954176 /* MenuViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				45333E51265D3DE300954176 /* BlueViewController.swift */,
+				45333E53265D3E0600954176 /* GreenViewController.swift */,
+				45333E55265D3E3B00954176 /* YellowViewController.swift */,
+				45333E57265D3E6400954176 /* BlackViewController.swift */,
+				45333E59265D3E8900954176 /* PinkViewController.swift */,
+			);
+			path = MenuViewControllers;
+			sourceTree = "<group>";
+		};
 		45A732DC26528BF800598FC2 = {
 			isa = PBXGroup;
 			children = (
@@ -277,17 +335,17 @@
 		45A732E726528BF800598FC2 /* MyTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				45333E50265D3B2900954176 /* MenuViewControllers */,
 				452201AB2653A547003C8215 /* AppCoordinator.swift */,
-				45333E46265D063900954176 /* TabBarCoordinator.swift */,
-				45333E3A265CD7CF00954176 /* SideMenuModule */,
-				45333E262657DD4100954176 /* Extensions */,
-				45333E1D2657973E00954176 /* NetworkService */,
-				45A732FF26528C8500598FC2 /* MainAppDelegates */,
-				45A7330026528C9A00598FC2 /* Storyboards */,
-				45333E10265650AC00954176 /* SignInService */,
-				452201A82653A4AD003C8215 /* CoordinatorService */,
 				45A7330126528CB500598FC2 /* LoginViewModule */,
 				452201A52652BB29003C8215 /* MainViewModule */,
+				45333E4D265D334C00954176 /* Service */,
+				452201A82653A4AD003C8215 /* CoordinatorService */,
+				45333E4A265D32B600954176 /* TabBarModule */,
+				45333E3A265CD7CF00954176 /* SideMenuModule */,
+				45A732FF26528C8500598FC2 /* MainAppDelegates */,
+				45333E262657DD4100954176 /* Extensions */,
+				45A7330026528C9A00598FC2 /* Storyboards */,
 				45A732F426528BF900598FC2 /* Assets.xcassets */,
 				45A732F926528BF900598FC2 /* Info.plist */,
 				452201A32652900F003C8215 /* credentials.plist */,
@@ -474,19 +532,25 @@
 				45333E21265798E800954176 /* TeamModel.swift in Sources */,
 				452201A72652BB63003C8215 /* MainViewController.swift in Sources */,
 				45333E33265B8CC200954176 /* UIViewExtension.swift in Sources */,
+				45333E52265D3DE300954176 /* BlueViewController.swift in Sources */,
 				45333E39265BDE9D00954176 /* TeamDetailsModel.swift in Sources */,
 				45333E2E2657F7D800954176 /* MainTableViewCell.swift in Sources */,
 				45333E232657992800954176 /* TeamEndpoint.swift in Sources */,
 				452201AE2653A720003C8215 /* Storyboarded.swift in Sources */,
 				45333E252657B40400954176 /* ViewControllerExtensions.swift in Sources */,
+				45333E49265D301D00954176 /* TabBarController.swift in Sources */,
 				45333E47265D063900954176 /* TabBarCoordinator.swift in Sources */,
 				45333E1426565A9300954176 /* LoginFlowCoordinator.swift in Sources */,
 				45333E0F26564FCE00954176 /* GoggleSignInService.swift in Sources */,
+				45333E54265D3E0600954176 /* GreenViewController.swift in Sources */,
 				45333E37265B8F9000954176 /* DetailsViewController.swift in Sources */,
+				45333E58265D3E6400954176 /* BlackViewController.swift in Sources */,
 				452201A226528E9F003C8215 /* LoginViewModel.swift in Sources */,
 				45333E3E265CD80400954176 /* SideMenuModel.swift in Sources */,
 				45333E12265653FD00954176 /* MainFlowCoordinator.swift in Sources */,
+				45333E5A265D3E8900954176 /* PinkViewController.swift in Sources */,
 				452201AA2653A4CD003C8215 /* CoordinatorProtocol.swift in Sources */,
+				45333E56265D3E3B00954176 /* YellowViewController.swift in Sources */,
 				45333E1F2657976900954176 /* NetworkManager.swift in Sources */,
 				452201B02653D5BF003C8215 /* MainViewModel.swift in Sources */,
 				45333E42265CD98400954176 /* SideMenuCell.swift in Sources */,

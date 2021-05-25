@@ -17,7 +17,6 @@ class AppCoordinator: CoordinatorProtocol {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         service.setup()
-//        navigationController.viewControllers = [tabBarController]
     }
     
     // MARK: - App delegate flow handler
@@ -35,6 +34,7 @@ extension AppCoordinator {
     func goToMainFlow() {
         childCoordinators.removeAll()
         let coordinator = TabBarCoordinator(navigationController: navigationController, service: service, networkService: networkService)
+//        coordinator.delegate = self
         childCoordinators.append(coordinator)
         navigationController.setNavigationBarHidden(true, animated: false)
         coordinator.start()

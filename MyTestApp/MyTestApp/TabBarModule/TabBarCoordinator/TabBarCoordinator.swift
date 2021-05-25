@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class TabBarCoordinator: CoordinatorProtocol {
     var childCoordinators = [CoordinatorProtocol]()
     let service: GoogleSignInService
@@ -21,7 +19,6 @@ class TabBarCoordinator: CoordinatorProtocol {
         self.networkService = networkService
         self.navigationController = navigationController
         tabBarController = UITabBarController()
-        
     }
     
     func start() {
@@ -32,7 +29,10 @@ class TabBarCoordinator: CoordinatorProtocol {
     func setTabs() {
         let mainCoordNavVC = UINavigationController()
         let mainCoordinator = MainFlowCoordinator(navigationController: mainCoordNavVC, service: service, networkService: networkService)
+        
+        childCoordinators.append(mainCoordinator)
         tabBarController.setViewControllers([mainCoordNavVC], animated: false)
+        tabBarController.tabBar.isHidden = true
         mainCoordinator.start()
     }
     
