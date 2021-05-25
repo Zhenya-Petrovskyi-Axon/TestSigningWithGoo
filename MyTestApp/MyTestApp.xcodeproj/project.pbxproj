@@ -222,9 +222,9 @@
 		45333E3A265CD7CF00954176 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				45333E45265CF09400954176 /* SideMenuModel */,
+				45333E44265CE15A00954176 /* SideMenuVC */,
 				45333E3F265CD95900954176 /* SideMenuCell */,
-				45333E3B265CD7F500954176 /* SideMenuVC.swift */,
-				45333E3D265CD80400954176 /* SideMenuModel.swift */,
 			);
 			path = SideMenu;
 			sourceTree = "<group>";
@@ -236,6 +236,22 @@
 				45333E41265CD98400954176 /* SideMenuCell.xib */,
 			);
 			path = SideMenuCell;
+			sourceTree = "<group>";
+		};
+		45333E44265CE15A00954176 /* SideMenuVC */ = {
+			isa = PBXGroup;
+			children = (
+				45333E3B265CD7F500954176 /* SideMenuVC.swift */,
+			);
+			path = SideMenuVC;
+			sourceTree = "<group>";
+		};
+		45333E45265CF09400954176 /* SideMenuModel */ = {
+			isa = PBXGroup;
+			children = (
+				45333E3D265CD80400954176 /* SideMenuModel.swift */,
+			);
+			path = SideMenuModel;
 			sourceTree = "<group>";
 		};
 		45A732DC26528BF800598FC2 = {
@@ -259,8 +275,8 @@
 		45A732E726528BF800598FC2 /* MyTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				45333E3A265CD7CF00954176 /* SideMenu */,
 				452201AB2653A547003C8215 /* AppCoordinator.swift */,
+				45333E3A265CD7CF00954176 /* SideMenu */,
 				45333E262657DD4100954176 /* Extensions */,
 				45333E1D2657973E00954176 /* NetworkService */,
 				45A732FF26528C8500598FC2 /* MainAppDelegates */,
