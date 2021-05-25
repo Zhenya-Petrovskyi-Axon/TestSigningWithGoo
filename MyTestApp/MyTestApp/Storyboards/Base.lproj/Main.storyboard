@@ -52,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jF6-m8-5nC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="286" y="784"/>
+            <point key="canvasLocation" x="-214" y="783"/>
         </scene>
         <!--Green View Controller-->
         <scene sceneID="Ly0-Pr-StX">
@@ -67,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kd3-6x-d4o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="987" y="783"/>
+            <point key="canvasLocation" x="483" y="783"/>
         </scene>
         <!--Yellow View Controller-->
         <scene sceneID="3rO-W9-d9W">
@@ -82,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kts-RR-48P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1697" y="783"/>
+            <point key="canvasLocation" x="1193" y="783"/>
         </scene>
         <!--Black View Controller-->
         <scene sceneID="SU9-6h-4gr">
@@ -97,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ooD-7h-exV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2394" y="783"/>
+            <point key="canvasLocation" x="1903" y="783"/>
         </scene>
         <!--Pink View Controller-->
         <scene sceneID="Zkt-vK-zUG">
@@ -112,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gon-ch-muf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3071" y="783"/>
+            <point key="canvasLocation" x="2609" y="783"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">

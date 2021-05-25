@@ -335,8 +335,8 @@
 		45A732E726528BF800598FC2 /* MyTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				45333E50265D3B2900954176 /* MenuViewControllers */,
 				452201AB2653A547003C8215 /* AppCoordinator.swift */,
+				45333E50265D3B2900954176 /* MenuViewControllers */,
 				45A7330126528CB500598FC2 /* LoginViewModule */,
 				452201A52652BB29003C8215 /* MainViewModule */,
 				45333E4D265D334C00954176 /* Service */,
