@@ -29,6 +29,10 @@ class HomeViewController: BaseViewController, Storyboarded {
         setupDelegates()
     }
     
+    func setUpView() {
+        mainTableView.separatorStyle = .none
+    }
+    
     func registerCell() {
         self.mainTableView.register(UINib(nibName: mainCellNibName, bundle: nil), forCellReuseIdentifier: mainCellId)
     }

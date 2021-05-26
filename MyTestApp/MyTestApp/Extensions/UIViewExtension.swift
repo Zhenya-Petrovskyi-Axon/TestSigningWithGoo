@@ -8,7 +8,6 @@
 import UIKit
 
 extension UIView {
-
     func addShadow(offset: CGSize, color: UIColor, radius: CGFloat, opacity: Float) {
         layer.masksToBounds = false
         layer.shadowOffset = offset

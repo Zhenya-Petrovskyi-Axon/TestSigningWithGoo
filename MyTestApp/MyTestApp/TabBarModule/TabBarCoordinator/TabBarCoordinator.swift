@@ -18,7 +18,7 @@ class TabBarCoordinator: CoordinatorProtocol {
         self.service = service
         self.networkService = networkService
         self.navigationController = navigationController
-        tabBarController = UITabBarController()
+        tabBarController = TabBarController()
     }
     
     func start() {
@@ -27,7 +27,7 @@ class TabBarCoordinator: CoordinatorProtocol {
     }
     
     func setTabs() {
-        // Main
+        // Home
         let mainCoordNavVC = UINavigationController()
         let homeVCCoordinator = HomeVCCoordinator(navigationController: mainCoordNavVC, service: service, networkService: networkService)
         childCoordinators.append(homeVCCoordinator)
@@ -55,7 +55,6 @@ class TabBarCoordinator: CoordinatorProtocol {
         // Set Tab Bar tabs
         tabBarController.setViewControllers([mainCoordNavVC, greenCoordNavVC, yellowCoordNavVC, blackNavVC, pinkNavVC], animated: false)
         tabBarController.tabBar.isHidden = true
-        
     }
     
     func didSelectProfile() {

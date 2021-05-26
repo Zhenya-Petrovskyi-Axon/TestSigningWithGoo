@@ -8,10 +8,12 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-    private weak var controller: TabBarController?
+    private weak var controller: TabBarController? {
+        return tabBarController as? TabBarController
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let button = UIBarButtonItem(title: "Menu", style: .plain, target: controller?.revealViewController, action: #selector(controller?.revealViewController()?.revealSideMenu))
+        let button = UIBarButtonItem(title: "Menu", style: .plain, target: controller?.revealViewController(), action: #selector(controller?.revealViewController()?.revealSideMenu))
         navigationItem.leftBarButtonItem = button
     }
 }

@@ -7,17 +7,11 @@
 
 import UIKit
 
-protocol BurgerMenuDelegate: AnyObject {
-    func didSelectProfile()
-    func didSelectMain()
-//    ...
-}
-
 class TabBarController: UITabBarController {
     // MARK: - Side menu
     private var sideMenuViewController: SideMenuVC?
     private var sideMenuShadowView: UIView!
-    private var sideMenuRevealWidth: CGFloat = 260
+    private var sideMenuRevealWidth: CGFloat = 200
     private var paddingForRotation: CGFloat = 150
     var isExpanded: Bool = false
     // MARK: - Collapse side menu by changing trailing's constant
@@ -41,7 +35,7 @@ class TabBarController: UITabBarController {
         tapGestureRecognizer.delegate = self
         view.addGestureRecognizer(tapGestureRecognizer)
         if self.revealSideMenuOnTop {
-            view.insertSubview(self.sideMenuShadowView, at: 1)
+            view.insertSubview(self.sideMenuShadowView!, at: 1)
         }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -60,9 +54,6 @@ class TabBarController: UITabBarController {
             sideMenuViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             sideMenuViewController.view.topAnchor.constraint(equalTo: view.topAnchor)
         ])
-        
-        // MARK: - TODO revisit this func
-//        showViewController(viewController: UINavigationController.self, storyboardId: "HomeNavID")
     }
 }
 
@@ -108,7 +99,7 @@ extension TabBarController: SideMenuVCDelegate {
                 vc.view.frame.origin.x = self.sideMenuRevealWidth
             }
             if self.sideMenuShadowView != nil {
-                vc.view.addSubview(self.sideMenuShadowView)
+                vc.view.addSubview(self.sideMenuShadowView!)
             }
         }
         vc.didMove(toParent: self)
@@ -120,14 +111,14 @@ extension TabBarController: SideMenuVCDelegate {
                 self.isExpanded = true
             }
             // Animate Shadow (Fade In)
-            UIView.animate(withDuration: 0.5) { self.sideMenuShadowView.alpha = 0.6 }
+            UIView.animate(withDuration: 0.5) { self.sideMenuShadowView?.alpha = 0.6 }
         }
         else {
             self.animateSideMenu(targetPosition: self.revealSideMenuOnTop ? (-self.sideMenuRevealWidth - self.paddingForRotation) : 0) { _ in
                 self.isExpanded = false
             }
             // Animate Shadow (Fade Out)
-            UIView.animate(withDuration: 0.5) { self.sideMenuShadowView.alpha = 0.0 }
+            UIView.animate(withDuration: 0.5) { self.sideMenuShadowView?.alpha = 0.0 }
         }
     }
 
@@ -153,8 +144,8 @@ extension TabBarController: UIGestureRecognizerDelegate {
         }
     }
 
-    // Close side menu when you tap on the shadow background view
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        guard ((sideMenuViewController?.view) != nil) else { return true }
         if (touch.view?.isDescendant(of: (self.sideMenuViewController?.view)!))! {
             return false
         }
@@ -167,13 +158,13 @@ extension TabBarController: UIGestureRecognizerDelegate {
 extension TabBarController {
     // With this extension you can access the MainViewController from the child view controllers.
     func revealViewController() -> TabBarController? {
-        var viewController: UIViewController? = self
+        var viewController: UITabBarController? = self
         
         if viewController != nil && viewController is TabBarController {
             return viewController! as? TabBarController
         }
         while (!(viewController is TabBarController) && viewController?.parent != nil) {
-            viewController = viewController?.parent as! UITabBarController
+            viewController = viewController?.parent as? UITabBarController
         }
         if viewController is TabBarController {
             return viewController as? TabBarController
@@ -184,6 +175,5 @@ extension TabBarController {
     @IBAction open func revealSideMenu() {
         self.sideMenuState(expanded: self.isExpanded ? false : true)
     }
-    
 }
 

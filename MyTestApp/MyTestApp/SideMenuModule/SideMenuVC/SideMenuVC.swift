@@ -15,32 +15,37 @@ class SideMenuVC: UIViewController {
     
     @IBOutlet weak var sideMenuTableView: UITableView!
     
+    let cellId = "sideMenuCell"
+    let cellName = "SideMenuCell"
+    
     var defaultHighlightedCell: Int = 0
     weak var delegate: SideMenuVCDelegate?
     
     var menuItems: [SideMenuModel] = [
-        SideMenuModel(icon: UIImage(systemName: "house.fill")!, title: "Home"),
-        SideMenuModel(icon: UIImage(systemName: "music.note")!, title: "Music"),
-        SideMenuModel(icon: UIImage(systemName: "film.fill")!, title: "Movies"),
-        SideMenuModel(icon: UIImage(systemName: "person.fill")!, title: "Profile"),
-        SideMenuModel(icon: UIImage(systemName: "slider.horizontal.3")!, title: "Settings")
+        SideMenuModel(icon: UIImage(systemName: "house.fill"), title: "Home"),
+        SideMenuModel(icon: UIImage(systemName: "music.note"), title: "Music"),
+        SideMenuModel(icon: UIImage(systemName: "film.fill"), title: "Movies"),
+        SideMenuModel(icon: UIImage(systemName: "person.fill"), title: "Profile"),
+        SideMenuModel(icon: UIImage(systemName: "slider.horizontal.3"), title: "Settings")
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerCell()
         setupDelegates()
         setupView()
         setHighlightedCell()
-        registerCell()
-        updateDataSource()
+        
     }
     
     func registerCell() {
-        sideMenuTableView.register(SideMenuCell.nib, forCellReuseIdentifier: SideMenuCell.identifier)
+        //        sideMenuTableView.register(SideMenuCell.nib, forCellReuseIdentifier: SideMenuCell.identifier)
+        sideMenuTableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellId)
     }
     func setupDelegates() {
         sideMenuTableView.delegate = self
         sideMenuTableView.dataSource = self
+        updateDataSource()
     }
     
     func updateDataSource() {
@@ -50,7 +55,7 @@ class SideMenuVC: UIViewController {
     }
     
     func setupView() {
-        sideMenuTableView.backgroundColor = .systemGray
+        sideMenuTableView.backgroundColor = .systemTeal
         sideMenuTableView.separatorStyle = .none
     }
     
@@ -77,7 +82,7 @@ extension SideMenuVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = sideMenuTableView.dequeueReusableCell(withIdentifier: SideMenuCell.identifier, for: indexPath) as? SideMenuCell else { fatalError("Cell's xib file doesn't exist") }
+        guard let cell = sideMenuTableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? SideMenuCell else { fatalError("Cell's xib file doesn't exist") }
         cell.cellImageView.image = menuItems[indexPath.row].icon
         cell.cellLabel.text = menuItems[indexPath.row].title
         return cell
