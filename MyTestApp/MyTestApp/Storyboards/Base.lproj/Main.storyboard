@@ -158,10 +158,10 @@
             </objects>
             <point key="canvasLocation" x="671" y="88"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="2ob-hb-w5Y">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="ocB-rm-nHk" customClass="MainViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="ocB-rm-nHk" customClass="HomeViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VyJ-v4-R9p">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

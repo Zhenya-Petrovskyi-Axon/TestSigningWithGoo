@@ -7,8 +7,17 @@
 
 import UIKit
 
-class TabBarController: UITabBarController, TabBarHiddenProtocol {
+protocol TabBarControllerDelegate {
+    func didSelectItem(item: Int)
+}
 
+//protocol BurgerMenuDelegate: AnyObject {
+//    func didSelectProfile()
+//    func didSelectMain()
+////    ...
+//}
+
+class TabBarController: UITabBarController {
     // MARK: - Side menu
     private var sideMenuViewController: SideMenuVC?
     private var sideMenuRevealWidth: CGFloat = 260
@@ -21,14 +30,8 @@ class TabBarController: UITabBarController, TabBarHiddenProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         sideMenuInit()
-//        hideTabBarMenu()
     }
     
-    // MARK: - Hide Tabbar
-//    func hideTabBarMenu() {
-//        tabBarController?.tabBar.isHidden = true
-//        tabBarController?.tabBar.frame = .zero
-//    }
     // MARK: - SideMenu
     func sideMenuInit() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -38,7 +41,6 @@ class TabBarController: UITabBarController, TabBarHiddenProtocol {
         view.insertSubview(sideMenuViewController.view, at: revealSideMenuOnTop ? 2 : 0)
         /// AUTO - Layout
         sideMenuViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        
         if revealSideMenuOnTop {
             sideMenuTrailingConstraint = sideMenuViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -sideMenuRevealWidth - paddingForRotation)
             sideMenuTrailingConstraint.isActive = true
@@ -56,5 +58,7 @@ class TabBarController: UITabBarController, TabBarHiddenProtocol {
 
 extension TabBarController: SideMenuVCDelegate {
     func selectedCell(_ row: Int) {
+        
     }
 }
+

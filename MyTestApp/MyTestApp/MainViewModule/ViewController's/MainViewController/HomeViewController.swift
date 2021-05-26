@@ -8,14 +8,14 @@
 import UIKit
 import GoogleSignIn
 
-protocol MainViewControllerDelegate: AnyObject {
+protocol HomeViewControllerDelegate: AnyObject {
     func signOut()
     func showDetails(teamModel: TeamDetailViewModel)
 }
 
-class MainViewController: UIViewController, Storyboarded {
+class HomeViewController: BaseViewController, Storyboarded {
     var mainViewModel: MainViewModelProtocol!
-    weak var delegate: MainViewControllerDelegate?
+    weak var delegate: HomeViewControllerDelegate?
     
     let mainCellId = "mainCell"
     let mainCellNibName = "MainTableViewCell"
@@ -59,7 +59,7 @@ class MainViewController: UIViewController, Storyboarded {
     }
 }
 
-extension MainViewController: UITableViewDelegate {
+extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let teamModel = mainViewModel.viewModelForDetailsVC(indexPath)
@@ -67,7 +67,7 @@ extension MainViewController: UITableViewDelegate {
     }
 }
 
-extension MainViewController: UITableViewDataSource {
+extension HomeViewController: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         mainViewModel.itemsCount
     }

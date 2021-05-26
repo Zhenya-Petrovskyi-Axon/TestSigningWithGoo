@@ -7,7 +7,7 @@
 
 import UIKit
 
-class YellowViewController: UIViewController, Storyboarded {
+class YellowViewController: BaseViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()

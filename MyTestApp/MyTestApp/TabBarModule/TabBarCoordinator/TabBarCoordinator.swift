@@ -27,15 +27,42 @@ class TabBarCoordinator: CoordinatorProtocol {
     }
     
     func setTabs() {
+        // Main
         let mainCoordNavVC = UINavigationController()
-        let mainCoordinator = MainFlowCoordinator(navigationController: mainCoordNavVC, service: service, networkService: networkService)
-        
-        childCoordinators.append(mainCoordinator)
-        tabBarController.setViewControllers([mainCoordNavVC], animated: false)
+        let homeVCCoordinator = HomeVCCoordinator(navigationController: mainCoordNavVC, service: service, networkService: networkService)
+        childCoordinators.append(homeVCCoordinator)
+        homeVCCoordinator.start()
+        // Green
+        let greenCoordNavVC = UINavigationController()
+        let greenVCCoordinator = GreenVCCoordinator(navigationController: greenCoordNavVC)
+        childCoordinators.append(greenVCCoordinator)
+        greenVCCoordinator.start()
+        // Yellow
+        let yellowCoordNavVC = UINavigationController()
+        let yellowVCCoordinator = YellowVCCoordinator(navigationController: yellowCoordNavVC)
+        childCoordinators.append(yellowVCCoordinator)
+        yellowVCCoordinator.start()
+        // Black
+        let blackNavVC = UINavigationController()
+        let blackVCCoordinator = BlackVCCoordinator(navigationController: blackNavVC)
+        childCoordinators.append(blackVCCoordinator)
+        blackVCCoordinator.start()
+        // Pink
+        let pinkNavVC = UINavigationController()
+        let pinkVCCoordinator = PinkVCCoordinator(navigationController: pinkNavVC)
+        childCoordinators.append(pinkVCCoordinator)
+        pinkVCCoordinator.start()
+        // Set Tab Bar tabs
+        tabBarController.setViewControllers([mainCoordNavVC, greenCoordNavVC, yellowCoordNavVC, blackNavVC, pinkNavVC], animated: false)
         tabBarController.tabBar.isHidden = true
-        mainCoordinator.start()
+        
     }
     
+    func didSelectProfile() {
+        tabBarController.selectedIndex = 1
+    }
     
+    func didSelectMain() {
+        tabBarController.selectedIndex = 0
+    }
 }
-

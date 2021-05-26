@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		452201A226528E9F003C8215 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201A126528E9F003C8215 /* LoginViewModel.swift */; };
 		452201A42652900F003C8215 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 452201A32652900F003C8215 /* credentials.plist */; };
-		452201A72652BB63003C8215 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201A62652BB63003C8215 /* MainViewController.swift */; };
+		452201A72652BB63003C8215 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201A62652BB63003C8215 /* HomeViewController.swift */; };
 		452201AA2653A4CD003C8215 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201A92653A4CD003C8215 /* CoordinatorProtocol.swift */; };
 		452201AC2653A547003C8215 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201AB2653A547003C8215 /* AppCoordinator.swift */; };
 		452201AE2653A720003C8215 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201AD2653A720003C8215 /* Storyboarded.swift */; };
 		452201B02653D5BF003C8215 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201AF2653D5BF003C8215 /* MainViewModel.swift */; };
 		45333E0F26564FCE00954176 /* GoggleSignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E0E26564FCE00954176 /* GoggleSignInService.swift */; };
-		45333E12265653FD00954176 /* MainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E11265653FD00954176 /* MainFlowCoordinator.swift */; };
+		45333E12265653FD00954176 /* HomeVCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E11265653FD00954176 /* HomeVCCoordinator.swift */; };
 		45333E1426565A9300954176 /* LoginFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E1326565A9300954176 /* LoginFlowCoordinator.swift */; };
 		45333E1F2657976900954176 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E1E2657976900954176 /* NetworkManager.swift */; };
 		45333E21265798E800954176 /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E20265798E700954176 /* TeamModel.swift */; };
@@ -37,6 +37,12 @@
 		45333E56265D3E3B00954176 /* YellowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E55265D3E3B00954176 /* YellowViewController.swift */; };
 		45333E58265D3E6400954176 /* BlackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E57265D3E6400954176 /* BlackViewController.swift */; };
 		45333E5A265D3E8900954176 /* PinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E59265D3E8900954176 /* PinkViewController.swift */; };
+		45333E5C265E2D1200954176 /* BaseVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E5B265E2D1200954176 /* BaseVIewController.swift */; };
+		45333E63265E3BEA00954176 /* BlueVCCoordinatro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E62265E3BEA00954176 /* BlueVCCoordinatro.swift */; };
+		45333E65265E3CBE00954176 /* GreenVCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E64265E3CBE00954176 /* GreenVCCoordinator.swift */; };
+		45333E67265E3CF500954176 /* YellowVCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E66265E3CF500954176 /* YellowVCCoordinator.swift */; };
+		45333E69265E3D4700954176 /* BlackVCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E68265E3D4700954176 /* BlackVCCoordinator.swift */; };
+		45333E6B265E3D7700954176 /* PinkVCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E6A265E3D7700954176 /* PinkVCCoordinator.swift */; };
 		45A732E926528BF800598FC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A732E826528BF800598FC2 /* AppDelegate.swift */; };
 		45A732ED26528BF800598FC2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A732EC26528BF800598FC2 /* LoginViewController.swift */; };
 		45A732F026528BF800598FC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A732EE26528BF800598FC2 /* Main.storyboard */; };
@@ -50,13 +56,13 @@
 		174D9B6C98CE93608F1E8A68 /* Pods-MyTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTestApp.debug.xcconfig"; path = "Target Support Files/Pods-MyTestApp/Pods-MyTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		452201A126528E9F003C8215 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		452201A32652900F003C8215 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = credentials.plist; path = ../../../../../Downloads/credentials.plist; sourceTree = "<group>"; };
-		452201A62652BB63003C8215 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		452201A62652BB63003C8215 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		452201A92653A4CD003C8215 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		452201AB2653A547003C8215 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		452201AD2653A720003C8215 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		452201AF2653D5BF003C8215 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		45333E0E26564FCE00954176 /* GoggleSignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoggleSignInService.swift; sourceTree = "<group>"; };
-		45333E11265653FD00954176 /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
+		45333E11265653FD00954176 /* HomeVCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCCoordinator.swift; sourceTree = "<group>"; };
 		45333E1326565A9300954176 /* LoginFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowCoordinator.swift; sourceTree = "<group>"; };
 		45333E1E2657976900954176 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		45333E20265798E700954176 /* TeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
@@ -78,6 +84,12 @@
 		45333E55265D3E3B00954176 /* YellowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowViewController.swift; sourceTree = "<group>"; };
 		45333E57265D3E6400954176 /* BlackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackViewController.swift; sourceTree = "<group>"; };
 		45333E59265D3E8900954176 /* PinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinkViewController.swift; sourceTree = "<group>"; };
+		45333E5B265E2D1200954176 /* BaseVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVIewController.swift; sourceTree = "<group>"; };
+		45333E62265E3BEA00954176 /* BlueVCCoordinatro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueVCCoordinatro.swift; sourceTree = "<group>"; };
+		45333E64265E3CBE00954176 /* GreenVCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenVCCoordinator.swift; sourceTree = "<group>"; };
+		45333E66265E3CF500954176 /* YellowVCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowVCCoordinator.swift; sourceTree = "<group>"; };
+		45333E68265E3D4700954176 /* BlackVCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackVCCoordinator.swift; sourceTree = "<group>"; };
+		45333E6A265E3D7700954176 /* PinkVCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinkVCCoordinator.swift; sourceTree = "<group>"; };
 		45A732E526528BF800598FC2 /* MyTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A732E826528BF800598FC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45A732EC26528BF800598FC2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +130,7 @@
 				45333E1826568F1900954176 /* Coordinator's */,
 				45333E1C26568F4200954176 /* ViewModel's */,
 				45333E1A26568F2E00954176 /* ViewController's */,
+				45333E50265D3B2900954176 /* MenuViewControllers */,
 			);
 			path = MainViewModule;
 			sourceTree = "<group>";
@@ -166,7 +179,7 @@
 		45333E1826568F1900954176 /* Coordinator's */ = {
 			isa = PBXGroup;
 			children = (
-				45333E11265653FD00954176 /* MainFlowCoordinator.swift */,
+				45333E11265653FD00954176 /* HomeVCCoordinator.swift */,
 			);
 			path = "Coordinator's";
 			sourceTree = "<group>";
@@ -203,6 +216,7 @@
 			children = (
 				45333E242657B40400954176 /* ViewControllerExtensions.swift */,
 				45333E32265B8CC200954176 /* UIViewExtension.swift */,
+				45333E5B265E2D1200954176 /* BaseVIewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -228,7 +242,7 @@
 		45333E35265B8F5C00954176 /* MainViewController */ = {
 			isa = PBXGroup;
 			children = (
-				452201A62652BB63003C8215 /* MainViewController.swift */,
+				452201A62652BB63003C8215 /* HomeViewController.swift */,
 			);
 			path = MainViewController;
 			sourceTree = "<group>";
@@ -305,13 +319,58 @@
 		45333E50265D3B2900954176 /* MenuViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				45333E51265D3DE300954176 /* BlueViewController.swift */,
-				45333E53265D3E0600954176 /* GreenViewController.swift */,
-				45333E55265D3E3B00954176 /* YellowViewController.swift */,
-				45333E57265D3E6400954176 /* BlackViewController.swift */,
-				45333E59265D3E8900954176 /* PinkViewController.swift */,
+				45333E5D265E3B8D00954176 /* BlueViewController */,
+				45333E5E265E3B9D00954176 /* GreenViewController */,
+				45333E5F265E3BAE00954176 /* YellowViewController */,
+				45333E60265E3BBC00954176 /* BlackViewCintroller */,
+				45333E61265E3BCB00954176 /* PinkViewController */,
 			);
 			path = MenuViewControllers;
+			sourceTree = "<group>";
+		};
+		45333E5D265E3B8D00954176 /* BlueViewController */ = {
+			isa = PBXGroup;
+			children = (
+				45333E51265D3DE300954176 /* BlueViewController.swift */,
+				45333E62265E3BEA00954176 /* BlueVCCoordinatro.swift */,
+			);
+			path = BlueViewController;
+			sourceTree = "<group>";
+		};
+		45333E5E265E3B9D00954176 /* GreenViewController */ = {
+			isa = PBXGroup;
+			children = (
+				45333E53265D3E0600954176 /* GreenViewController.swift */,
+				45333E64265E3CBE00954176 /* GreenVCCoordinator.swift */,
+			);
+			path = GreenViewController;
+			sourceTree = "<group>";
+		};
+		45333E5F265E3BAE00954176 /* YellowViewController */ = {
+			isa = PBXGroup;
+			children = (
+				45333E55265D3E3B00954176 /* YellowViewController.swift */,
+				45333E66265E3CF500954176 /* YellowVCCoordinator.swift */,
+			);
+			path = YellowViewController;
+			sourceTree = "<group>";
+		};
+		45333E60265E3BBC00954176 /* BlackViewCintroller */ = {
+			isa = PBXGroup;
+			children = (
+				45333E57265D3E6400954176 /* BlackViewController.swift */,
+				45333E68265E3D4700954176 /* BlackVCCoordinator.swift */,
+			);
+			path = BlackViewCintroller;
+			sourceTree = "<group>";
+		};
+		45333E61265E3BCB00954176 /* PinkViewController */ = {
+			isa = PBXGroup;
+			children = (
+				45333E59265D3E8900954176 /* PinkViewController.swift */,
+				45333E6A265E3D7700954176 /* PinkVCCoordinator.swift */,
+			);
+			path = PinkViewController;
 			sourceTree = "<group>";
 		};
 		45A732DC26528BF800598FC2 = {
@@ -336,7 +395,6 @@
 			isa = PBXGroup;
 			children = (
 				452201AB2653A547003C8215 /* AppCoordinator.swift */,
-				45333E50265D3B2900954176 /* MenuViewControllers */,
 				45A7330126528CB500598FC2 /* LoginViewModule */,
 				452201A52652BB29003C8215 /* MainViewModule */,
 				45333E4D265D334C00954176 /* Service */,
@@ -525,12 +583,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				45A732ED26528BF800598FC2 /* LoginViewController.swift in Sources */,
+				45333E5C265E2D1200954176 /* BaseVIewController.swift in Sources */,
 				452201AC2653A547003C8215 /* AppCoordinator.swift in Sources */,
 				45333E3C265CD7F500954176 /* SideMenuVC.swift in Sources */,
+				45333E69265E3D4700954176 /* BlackVCCoordinator.swift in Sources */,
+				45333E6B265E3D7700954176 /* PinkVCCoordinator.swift in Sources */,
 				45A732F326528BF800598FC2 /* MyTestApp.xcdatamodeld in Sources */,
 				45A732E926528BF800598FC2 /* AppDelegate.swift in Sources */,
 				45333E21265798E800954176 /* TeamModel.swift in Sources */,
-				452201A72652BB63003C8215 /* MainViewController.swift in Sources */,
+				452201A72652BB63003C8215 /* HomeViewController.swift in Sources */,
 				45333E33265B8CC200954176 /* UIViewExtension.swift in Sources */,
 				45333E52265D3DE300954176 /* BlueViewController.swift in Sources */,
 				45333E39265BDE9D00954176 /* TeamDetailsModel.swift in Sources */,
@@ -546,10 +607,13 @@
 				45333E37265B8F9000954176 /* DetailsViewController.swift in Sources */,
 				45333E58265D3E6400954176 /* BlackViewController.swift in Sources */,
 				452201A226528E9F003C8215 /* LoginViewModel.swift in Sources */,
+				45333E65265E3CBE00954176 /* GreenVCCoordinator.swift in Sources */,
+				45333E63265E3BEA00954176 /* BlueVCCoordinatro.swift in Sources */,
 				45333E3E265CD80400954176 /* SideMenuModel.swift in Sources */,
-				45333E12265653FD00954176 /* MainFlowCoordinator.swift in Sources */,
+				45333E12265653FD00954176 /* HomeVCCoordinator.swift in Sources */,
 				45333E5A265D3E8900954176 /* PinkViewController.swift in Sources */,
 				452201AA2653A4CD003C8215 /* CoordinatorProtocol.swift in Sources */,
+				45333E67265E3CF500954176 /* YellowVCCoordinator.swift in Sources */,
 				45333E56265D3E3B00954176 /* YellowViewController.swift in Sources */,
 				45333E1F2657976900954176 /* NetworkManager.swift in Sources */,
 				452201B02653D5BF003C8215 /* MainViewModel.swift in Sources */,

@@ -49,7 +49,7 @@ extension AppCoordinator {
     }
 }
 
-extension AppCoordinator: LoginFlowCoordinatorDelegate, MainFlowCoordinatorDelegate {
+extension AppCoordinator: LoginFlowCoordinatorDelegate, HomeVCCoordinatorDelegate {
     
     // MARK : - Login flow delegate
     func didLogin() {

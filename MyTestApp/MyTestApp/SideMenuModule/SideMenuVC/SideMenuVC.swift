@@ -17,7 +17,7 @@ class SideMenuVC: UIViewController {
     
     var defaultHighlightedCell: Int = 0
     weak var delegate: SideMenuVCDelegate?
-
+    
     var menuItems: [SideMenuModel] = [
         SideMenuModel(icon: UIImage(systemName: "house.fill")!, title: "Home"),
         SideMenuModel(icon: UIImage(systemName: "music.note")!, title: "Music"),
