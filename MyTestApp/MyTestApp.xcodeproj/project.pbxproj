@@ -31,7 +31,7 @@
 		45333E42265CD98400954176 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E40265CD98400954176 /* SideMenuCell.swift */; };
 		45333E43265CD98400954176 /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45333E41265CD98400954176 /* SideMenuCell.xib */; };
 		45333E47265D063900954176 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E46265D063900954176 /* TabBarCoordinator.swift */; };
-		45333E49265D301D00954176 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E48265D301D00954176 /* TabBarController.swift */; };
+		45333E49265D301D00954176 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E48265D301D00954176 /* TabBarViewController.swift */; };
 		45333E52265D3DE300954176 /* BlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E51265D3DE300954176 /* BlueViewController.swift */; };
 		45333E54265D3E0600954176 /* GreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E53265D3E0600954176 /* GreenViewController.swift */; };
 		45333E56265D3E3B00954176 /* YellowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E55265D3E3B00954176 /* YellowViewController.swift */; };
@@ -78,7 +78,7 @@
 		45333E40265CD98400954176 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		45333E41265CD98400954176 /* SideMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
 		45333E46265D063900954176 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
-		45333E48265D301D00954176 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		45333E48265D301D00954176 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		45333E51265D3DE300954176 /* BlueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueViewController.swift; sourceTree = "<group>"; };
 		45333E53265D3E0600954176 /* GreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenViewController.swift; sourceTree = "<group>"; };
 		45333E55265D3E3B00954176 /* YellowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowViewController.swift; sourceTree = "<group>"; };
@@ -294,7 +294,7 @@
 		45333E4B265D32D400954176 /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				45333E48265D301D00954176 /* TabBarController.swift */,
+				45333E48265D301D00954176 /* TabBarViewController.swift */,
 			);
 			path = TabBarController;
 			sourceTree = "<group>";
@@ -599,7 +599,7 @@
 				45333E232657992800954176 /* TeamEndpoint.swift in Sources */,
 				452201AE2653A720003C8215 /* Storyboarded.swift in Sources */,
 				45333E252657B40400954176 /* ViewControllerExtensions.swift in Sources */,
-				45333E49265D301D00954176 /* TabBarController.swift in Sources */,
+				45333E49265D301D00954176 /* TabBarViewController.swift in Sources */,
 				45333E47265D063900954176 /* TabBarCoordinator.swift in Sources */,
 				45333E1426565A9300954176 /* LoginFlowCoordinator.swift in Sources */,
 				45333E0F26564FCE00954176 /* GoggleSignInService.swift in Sources */,

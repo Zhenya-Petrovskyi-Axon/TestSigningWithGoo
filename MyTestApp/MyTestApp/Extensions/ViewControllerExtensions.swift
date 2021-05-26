@@ -18,22 +18,3 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
 }
-
-extension UIViewController {
-    
-    // With this extension you can access the MainViewController from the child view controllers.
-    func revealViewController() -> TabBarController? {
-        var viewController: UIViewController? = self
-        
-        if viewController != nil && viewController is TabBarController {
-            return viewController! as? TabBarController
-        }
-        while (!(viewController is TabBarController) && viewController?.parent != nil) {
-            viewController = viewController?.parent
-        }
-        if viewController is TabBarController {
-            return viewController as? TabBarController
-        }
-        return nil
-    }
-}
