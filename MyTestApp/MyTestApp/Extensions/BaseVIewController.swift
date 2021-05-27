@@ -10,6 +10,9 @@ import UIKit
 class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.barTintColor = self.view.backgroundColor
+        
         let controller = revealViewController()
         let button = UIBarButtonItem(title: "Menu", style: .plain, target: controller, action: #selector(controller?.revealSideMenu))
         navigationItem.leftBarButtonItem = button
