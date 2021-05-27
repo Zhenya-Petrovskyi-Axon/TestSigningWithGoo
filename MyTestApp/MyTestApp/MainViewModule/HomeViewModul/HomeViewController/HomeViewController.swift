@@ -14,7 +14,7 @@ protocol HomeViewControllerDelegate: AnyObject {
 }
 
 class HomeViewController: BaseViewController, Storyboarded {
-    var mainViewModel: MainViewModelProtocol!
+    var mainViewModel: HomeViewModelProtocol!
     weak var delegate: HomeViewControllerDelegate?
     
     let mainCellId = "mainCell"

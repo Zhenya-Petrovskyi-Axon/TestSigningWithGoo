@@ -20,14 +20,8 @@ class SideMenuVC: UIViewController {
     
     var defaultHighlightedCell: Int = 0
     weak var delegate: SideMenuVCDelegate?
+    let cellViewModel = CellViewModel()
     
-    var menuItems: [SideMenuModel] = [
-        SideMenuModel(icon: UIImage(systemName: "house.fill"), title: "Home"),
-        SideMenuModel(icon: UIImage(systemName: "music.note"), title: "Music"),
-        SideMenuModel(icon: UIImage(systemName: "film.fill"), title: "Movies"),
-        SideMenuModel(icon: UIImage(systemName: "person.fill"), title: "Profile"),
-        SideMenuModel(icon: UIImage(systemName: "slider.horizontal.3"), title: "Settings")
-    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +33,9 @@ class SideMenuVC: UIViewController {
     }
     
     func registerCell() {
-        //        sideMenuTableView.register(SideMenuCell.nib, forCellReuseIdentifier: SideMenuCell.identifier)
         sideMenuTableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellId)
     }
+    
     func setupDelegates() {
         sideMenuTableView.delegate = self
         sideMenuTableView.dataSource = self
@@ -70,6 +64,7 @@ class SideMenuVC: UIViewController {
 extension SideMenuVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         delegate?.selectedCell(indexPath.row)
     }
     
@@ -77,13 +72,16 @@ extension SideMenuVC: UITableViewDelegate {
 
 extension SideMenuVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        menuItems.count
+        cellViewModel.menuItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = sideMenuTableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? SideMenuCell else { fatalError("Cell's xib file doesn't exist") }
-        cell.cellImageView.image = menuItems[indexPath.row].icon
-        cell.cellLabel.text = menuItems[indexPath.row].title
+        cell.viewModel = cellViewModel.viewModelForCell(indexPath)
+        let myCustomSelectionColorView = UIView()
+        myCustomSelectionColorView.backgroundColor = .systemBlue
+        
+        cell.selectedBackgroundView = myCustomSelectionColorView
         return cell
     }
     

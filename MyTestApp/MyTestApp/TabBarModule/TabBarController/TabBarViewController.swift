@@ -9,14 +9,14 @@ import UIKit
 
 class TabBarController: UITabBarController {
     // MARK: - Side menu
-    private var sideMenuViewController: SideMenuVC?
+    private var sideMenuViewController: SideMenuVC!
     private var sideMenuShadowView: UIView!
-    private var sideMenuRevealWidth: CGFloat = 200
+    private var sideMenuRevealWidth: CGFloat = 180
     private var paddingForRotation: CGFloat = 150
     var isExpanded: Bool = false
     // MARK: - Collapse side menu by changing trailing's constant
     private var sideMenuTrailingConstraint: NSLayoutConstraint!
-    private var revealSideMenuOnTop: Bool = true
+    private var revealSideMenuOnTop: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +39,9 @@ class TabBarController: UITabBarController {
         }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let sideMenuViewController = storyboard.instantiateViewController(identifier: "SideMenuID") as? SideMenuVC else { return }
-        sideMenuViewController.defaultHighlightedCell = 0
-        sideMenuViewController.delegate = self
+        sideMenuViewController = storyboard.instantiateViewController(identifier: "SideMenuID") as? SideMenuVC
+        self.sideMenuViewController.defaultHighlightedCell = 0
+        self.sideMenuViewController.delegate = self
         view.insertSubview(sideMenuViewController.view, at: revealSideMenuOnTop ? 2 : 0)
         /// AUTO - Layout
         sideMenuViewController.view.translatesAutoresizingMaskIntoConstraints = false
@@ -61,50 +61,30 @@ extension TabBarController: SideMenuVCDelegate {
     func selectedCell(_ row: Int) {
         switch row {
         case 0:
-            // Home
-            self.showViewController(viewController: UINavigationController.self, storyboardId: "BlueViewController")
+            print("0")
+        // Home
+        //            self.showViewController(viewController: UINavigationController.self, storyboardId: "BlueViewController")
         case 1:
-            // Music
-            self.showViewController(viewController: UINavigationController.self, storyboardId: "GreenViewController")
+            print("1")
+        // Music
+        //            self.showViewController(viewController: UINavigationController.self, storyboardId: "GreenViewController")
         case 2:
-            // Movies
-            self.showViewController(viewController: UINavigationController.self, storyboardId: "YellowViewController")
+            print("2")
+        // Movies
+        //            self.showViewController(viewController: UINavigationController.self, storyboardId: "YellowViewController")
         case 3:
-            // Books
-            self.showViewController(viewController: UINavigationController.self, storyboardId: "BlackViewController")
+            print("3")
+        // Books
+        //            self.showViewController(viewController: UINavigationController.self, storyboardId: "BlackViewController")
         case 4:
-            self.showViewController(viewController: UINavigationController.self, storyboardId: "PinkViewController")
+            print("4")
+        //            self.showViewController(viewController: UINavigationController.self, storyboardId: "PinkViewController")
         default:
             break
         }
-
-        // Collapse side menu with animation
         DispatchQueue.main.async { self.sideMenuState(expanded: false) }
     }
-
-    func showViewController<T: UIViewController>(viewController: T.Type, storyboardId: String) -> () {
-        // Remove the previous View
-        for subview in view.subviews {
-            if subview.tag == 99 {
-                subview.removeFromSuperview()
-            }
-        }
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: storyboardId) as! T
-        vc.view.tag = 99
-        view.insertSubview(vc.view, at: self.revealSideMenuOnTop ? 0 : 1)
-        addChild(vc)
-        if !self.revealSideMenuOnTop {
-            if isExpanded {
-                vc.view.frame.origin.x = self.sideMenuRevealWidth
-            }
-            if self.sideMenuShadowView != nil {
-                vc.view.addSubview(self.sideMenuShadowView!)
-            }
-        }
-        vc.didMove(toParent: self)
-    }
-
+    
     func sideMenuState(expanded: Bool) {
         if expanded {
             self.animateSideMenu(targetPosition: self.revealSideMenuOnTop ? 0 : self.sideMenuRevealWidth) { _ in
@@ -121,9 +101,9 @@ extension TabBarController: SideMenuVCDelegate {
             UIView.animate(withDuration: 0.5) { self.sideMenuShadowView?.alpha = 0.0 }
         }
     }
-
+    
     func animateSideMenu(targetPosition: CGFloat, completion: @escaping (Bool) -> ()) {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: .layoutSubviews, animations: {
+        UIView.animate(withDuration: 1, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .layoutSubviews, animations: {
             if self.revealSideMenuOnTop {
                 self.sideMenuTrailingConstraint.constant = targetPosition
                 self.view.layoutIfNeeded()
@@ -133,6 +113,12 @@ extension TabBarController: SideMenuVCDelegate {
             }
         }, completion: completion)
     }
+    
+    // Call this Button Action from the View Controller you want to Expand/Collapse when you tap a button
+    @objc func revealSideMenu() {
+        self.sideMenuState(expanded: self.isExpanded ? false : true)
+    }
+    
 }
 
 extension TabBarController: UIGestureRecognizerDelegate {
@@ -143,7 +129,7 @@ extension TabBarController: UIGestureRecognizerDelegate {
             }
         }
     }
-
+    
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         guard ((sideMenuViewController?.view) != nil) else { return true }
         if (touch.view?.isDescendant(of: (self.sideMenuViewController?.view)!))! {
@@ -151,29 +137,24 @@ extension TabBarController: UIGestureRecognizerDelegate {
         }
         return true
     }
-    
-    // ...
 }
 
-extension TabBarController {
+extension UIViewController {
     // With this extension you can access the MainViewController from the child view controllers.
     func revealViewController() -> TabBarController? {
-        var viewController: UITabBarController? = self
-        
-        if viewController != nil && viewController is TabBarController {
-            return viewController! as? TabBarController
-        }
-        while (!(viewController is TabBarController) && viewController?.parent != nil) {
-            viewController = viewController?.parent as? TabBarController
-        }
-        if viewController is TabBarController {
-            return viewController as? TabBarController
-        }
-        return nil
-    }
-    // Call this Button Action from the View Controller you want to Expand/Collapse when you tap a button
-    @IBAction open func revealSideMenu() {
-        self.sideMenuState(expanded: self.isExpanded ? false : true)
+        tabBarController as? TabBarController
+        //        var viewController: UITabBarController? = self
+        //
+        //        if viewController != nil && viewController is TabBarController {
+        //            return viewController! as? TabBarController
+        //        }
+        //        while (!(viewController is TabBarController) && viewController?.parent != nil) {
+        //            viewController = viewController?.parent as? TabBarController
+        //        }
+        //        if viewController is TabBarController {
+        //            return viewController as? TabBarController
+        //        }
+        //        return nil
     }
 }
 

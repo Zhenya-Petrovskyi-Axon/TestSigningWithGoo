@@ -13,31 +13,39 @@
             <objects>
                 <viewController storyboardIdentifier="SideMenuID" id="FBL-h0-CC2" customClass="SideMenuVC" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OLs-LT-H5T">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="260" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bzi-3u-ZWX">
-                                <rect key="frame" x="0.0" y="44" width="300" height="818"/>
+                                <rect key="frame" x="0.0" y="124" width="260" height="738"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h56-QN-8yX">
+                                <rect key="frame" x="0.0" y="0.0" width="260" height="124"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2AE-8P-WL7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bzi-3u-ZWX" firstAttribute="top" secondItem="2AE-8P-WL7" secondAttribute="top" id="B91-RC-4Gh"/>
+                            <constraint firstItem="h56-QN-8yX" firstAttribute="top" secondItem="OLs-LT-H5T" secondAttribute="top" id="1ff-il-cgL"/>
+                            <constraint firstItem="h56-QN-8yX" firstAttribute="leading" secondItem="2AE-8P-WL7" secondAttribute="leading" id="4A9-YQ-O4H"/>
+                            <constraint firstItem="bzi-3u-ZWX" firstAttribute="top" secondItem="h56-QN-8yX" secondAttribute="bottom" id="4eQ-ES-N2f"/>
+                            <constraint firstItem="bzi-3u-ZWX" firstAttribute="top" secondItem="2AE-8P-WL7" secondAttribute="top" constant="80" id="B91-RC-4Gh"/>
                             <constraint firstAttribute="trailing" secondItem="bzi-3u-ZWX" secondAttribute="trailing" id="GRa-dT-K30"/>
+                            <constraint firstItem="2AE-8P-WL7" firstAttribute="trailing" secondItem="h56-QN-8yX" secondAttribute="trailing" id="KJk-2y-RHY"/>
                             <constraint firstItem="bzi-3u-ZWX" firstAttribute="leading" secondItem="OLs-LT-H5T" secondAttribute="leading" id="Trz-We-XFM"/>
                             <constraint firstItem="2AE-8P-WL7" firstAttribute="bottom" secondItem="bzi-3u-ZWX" secondAttribute="bottom" id="nuw-0L-7ia"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="300" height="896"/>
+                    <size key="freeformSize" width="260" height="896"/>
                     <connections>
                         <outlet property="sideMenuTableView" destination="bzi-3u-ZWX" id="eeL-YZ-RDn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nns-cU-Ear" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="88"/>
+            <point key="canvasLocation" x="31.884057971014496" y="87.723214285714278"/>
         </scene>
         <!--Blue View Controller-->
         <scene sceneID="88W-SZ-1KU">
@@ -318,6 +326,9 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -7,12 +7,31 @@
 
 import UIKit
 
+struct MenuCellModel {
+    var icon: UIImage
+    var title: String
+}
+
+class MenuCellViewModel {
+    let menuModel: MenuCellModel
+    init(menuModel: MenuCellModel) {
+        self.menuModel = menuModel
+    }
+}
+
 class SideMenuCell: UITableViewCell {
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var cellLabel: UILabel!
     
-    class var identifier: String { String(describing: self) }
-    class var nib: UINib { UINib(nibName: identifier, bundle: nil) }
+//    class var identifier: String { String(describing: self) }
+//    class var nib: UINib { UINib(nibName: identifier, bundle: nil) }
+    
+    var viewModel: MenuCellViewModel! {
+        didSet {
+            cellImageView.image = viewModel.menuModel.icon
+            cellLabel.text = viewModel.menuModel.title
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

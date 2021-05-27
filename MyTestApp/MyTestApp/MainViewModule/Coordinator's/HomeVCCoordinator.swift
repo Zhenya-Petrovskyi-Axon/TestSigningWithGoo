@@ -26,7 +26,7 @@ class HomeVCCoordinator: CoordinatorProtocol {
     
     func start() {
         let vc = HomeViewController.instantiate()
-        let viewModel = MainViewModel(service: service, networkService: networkService)
+        let viewModel = HomeViewModel(service: service, networkService: networkService)
         vc.mainViewModel = viewModel
         vc.delegate = self
         navigationController.setViewControllers([vc], animated: true)
