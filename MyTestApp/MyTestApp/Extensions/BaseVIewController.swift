@@ -20,7 +20,12 @@ class BaseViewController: UIViewController {
     
     func setupButton() {
         let controller = revealViewController()
-        let button = UIBarButtonItem(title: "Menu", style: .plain, target: controller, action: #selector(controller?.revealSideMenu))
+        let button = UIBarButtonItem(
+            image: UIImage(systemName: "list.bullet"),
+            style: .plain,
+            target: controller,
+            action: #selector(controller?.revealSideMenu))
         navigationItem.leftBarButtonItem = button
+        navigationItem.leftBarButtonItem?.tintColor = .white
     }
 }
