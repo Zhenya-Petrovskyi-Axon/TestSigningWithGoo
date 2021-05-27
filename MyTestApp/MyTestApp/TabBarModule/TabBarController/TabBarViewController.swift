@@ -18,6 +18,12 @@ class TabBarController: UITabBarController {
     private var sideMenuTrailingConstraint: NSLayoutConstraint!
     private var revealSideMenuOnTop: Bool = false
     
+    private let didSelectHome = "didSelectHome"
+    private let didSelectMusic = "didSelectMusic"
+    private let didSelectMovies = "didSeclectMovies"
+    private let didSelectProfile = "didSelectProfile"
+    private let didSelectSettings = "didSelectSettings"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sideMenuInit()
@@ -62,19 +68,19 @@ extension TabBarController: SideMenuVCDelegate {
         switch row {
         case 0:
             // Home
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didSelectHome"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: didSelectHome), object: nil)
         case 1:
             // Music
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didSelectMusic"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: didSelectMusic), object: nil)
         case 2:
             // Movies
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didSeclectMovies"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: didSelectMovies), object: nil)
         case 3:
             // Profile
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didSelectProfile"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: didSelectProfile), object: nil)
         case 4:
             // Settings
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didTapSettings"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: didSelectSettings), object: nil)
         default:
             break
         }
