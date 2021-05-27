@@ -8,7 +8,6 @@
 import UIKit
 
 class CellViewModel {
-    
     var menuItems: [MenuCellModel] = [
         MenuCellModel(icon: UIImage(systemName: "house.fill")!, title: "Home"),
         MenuCellModel(icon: UIImage(systemName: "music.note")!, title: "Music"),

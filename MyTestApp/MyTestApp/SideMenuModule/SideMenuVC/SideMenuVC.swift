@@ -12,16 +12,12 @@ protocol SideMenuVCDelegate: AnyObject {
 }
 
 class SideMenuVC: UIViewController {
-    
     @IBOutlet weak var sideMenuTableView: UITableView!
-    
-    let cellId = "sideMenuCell"
-    let cellName = "SideMenuCell"
-    
+    private let cellId = "sideMenuCell"
+    private let cellName = "SideMenuCell"
     var defaultHighlightedCell: Int = 0
     weak var delegate: SideMenuVCDelegate?
-    let cellViewModel = CellViewModel()
-    
+    private let cellViewModel = CellViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,12 +58,10 @@ class SideMenuVC: UIViewController {
 }
 
 extension SideMenuVC: UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         delegate?.selectedCell(indexPath.row)
     }
-    
 }
 
 extension SideMenuVC: UITableViewDataSource {
@@ -84,6 +78,4 @@ extension SideMenuVC: UITableViewDataSource {
         cell.selectedBackgroundView = myCustomSelectionColorView
         return cell
     }
-    
-    
 }

@@ -28,10 +28,10 @@ class TabBarCoordinator: CoordinatorProtocol {
     
     func setTabs() {
         // Home
-//        let mainCoordNavVC = UINavigationController()
-//        let homeVCCoordinator = HomeVCCoordinator(navigationController: mainCoordNavVC, service: service, networkService: networkService)
-//        childCoordinators.append(homeVCCoordinator)
-//        homeVCCoordinator.start()
+        let mainCoordNavVC = UINavigationController()
+        let homeVCCoordinator = HomeVCCoordinator(navigationController: mainCoordNavVC, service: service, networkService: networkService)
+        childCoordinators.append(homeVCCoordinator)
+        homeVCCoordinator.start()
         // Green
         let greenCoordNavVC = UINavigationController()
         let greenVCCoordinator = GreenVCCoordinator(navigationController: greenCoordNavVC)
@@ -53,7 +53,7 @@ class TabBarCoordinator: CoordinatorProtocol {
         childCoordinators.append(pinkVCCoordinator)
         pinkVCCoordinator.start()
         // Set Tab Bar tabs
-        tabBarController.setViewControllers([greenCoordNavVC, yellowCoordNavVC, blackNavVC, pinkNavVC], animated: false)
+        tabBarController.setViewControllers([mainCoordNavVC, greenCoordNavVC, yellowCoordNavVC, blackNavVC, pinkNavVC], animated: false)
         tabBarController.tabBar.isHidden = true
     }
     

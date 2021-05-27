@@ -22,10 +22,6 @@ class MenuCellViewModel {
 class SideMenuCell: UITableViewCell {
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var cellLabel: UILabel!
-    
-//    class var identifier: String { String(describing: self) }
-//    class var nib: UINib { UINib(nibName: identifier, bundle: nil) }
-    
     var viewModel: MenuCellViewModel! {
         didSet {
             cellImageView.image = viewModel.menuModel.icon
