@@ -24,6 +24,11 @@ class TabBarCoordinator: CoordinatorProtocol {
     func start() {
         navigationController.setViewControllers([tabBarController], animated: true)
         setTabs()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectMain), name: NSNotification.Name(rawValue: "didTapedHome0"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectMusic), name: NSNotification.Name(rawValue: "didTapedMusic1"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectMovies), name: NSNotification.Name(rawValue: "didTapedMovies2"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectProfile), name: NSNotification.Name(rawValue: "didTapedProfile3"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectSettings), name: NSNotification.Name(rawValue: "didTapedSettings4"), object: nil)
     }
     
     func setTabs() {
@@ -57,11 +62,23 @@ class TabBarCoordinator: CoordinatorProtocol {
         tabBarController.tabBar.isHidden = true
     }
     
-    func didSelectProfile() {
+    @objc func didSelectMain() {
+        tabBarController.selectedIndex = 0
+    }
+    
+    @objc func didSelectMusic() {
         tabBarController.selectedIndex = 1
     }
     
-    func didSelectMain() {
-        tabBarController.selectedIndex = 0
+    @objc func didSelectMovies() {
+        tabBarController.selectedIndex = 2
+    }
+    
+    @objc func didSelectProfile() {
+        tabBarController.selectedIndex = 3
+    }
+    
+    @objc func didSelectSettings() {
+        tabBarController.selectedIndex = 4
     }
 }

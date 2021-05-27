@@ -63,21 +63,26 @@ extension TabBarController: SideMenuVCDelegate {
         case 0:
             print("0")
         // Home
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didTapedHome0"), object: nil)
         //            self.showViewController(viewController: UINavigationController.self, storyboardId: "BlueViewController")
         case 1:
             print("1")
         // Music
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didTapedMusic1"), object: nil)
         //            self.showViewController(viewController: UINavigationController.self, storyboardId: "GreenViewController")
         case 2:
             print("2")
         // Movies
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didTapedMovies2"), object: nil)
         //            self.showViewController(viewController: UINavigationController.self, storyboardId: "YellowViewController")
         case 3:
             print("3")
         // Books
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didTapedProfile3"), object: nil)
         //            self.showViewController(viewController: UINavigationController.self, storyboardId: "BlackViewController")
         case 4:
             print("4")
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didTapedSettings4"), object: nil)
         //            self.showViewController(viewController: UINavigationController.self, storyboardId: "PinkViewController")
         default:
             break
