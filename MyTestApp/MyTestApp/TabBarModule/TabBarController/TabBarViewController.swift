@@ -61,29 +61,20 @@ extension TabBarController: SideMenuVCDelegate {
     func selectedCell(_ row: Int) {
         switch row {
         case 0:
-            print("0")
-        // Home
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didTapedHome0"), object: nil)
-        //            self.showViewController(viewController: UINavigationController.self, storyboardId: "BlueViewController")
+            // Home
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didSelectHome"), object: nil)
         case 1:
-            print("1")
-        // Music
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didTapedMusic1"), object: nil)
-        //            self.showViewController(viewController: UINavigationController.self, storyboardId: "GreenViewController")
+            // Music
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didSelectMusic"), object: nil)
         case 2:
-            print("2")
-        // Movies
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didTapedMovies2"), object: nil)
-        //            self.showViewController(viewController: UINavigationController.self, storyboardId: "YellowViewController")
+            // Movies
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didSeclectMovies"), object: nil)
         case 3:
-            print("3")
-        // Books
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didTapedProfile3"), object: nil)
-        //            self.showViewController(viewController: UINavigationController.self, storyboardId: "BlackViewController")
+            // Profile
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didSelectProfile"), object: nil)
         case 4:
-            print("4")
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didTapedSettings4"), object: nil)
-        //            self.showViewController(viewController: UINavigationController.self, storyboardId: "PinkViewController")
+            // Settings
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didTapSettings"), object: nil)
         default:
             break
         }
@@ -148,18 +139,6 @@ extension UIViewController {
     // With this extension you can access the MainViewController from the child view controllers.
     func revealViewController() -> TabBarController? {
         tabBarController as? TabBarController
-        //        var viewController: UITabBarController? = self
-        //
-        //        if viewController != nil && viewController is TabBarController {
-        //            return viewController! as? TabBarController
-        //        }
-        //        while (!(viewController is TabBarController) && viewController?.parent != nil) {
-        //            viewController = viewController?.parent as? TabBarController
-        //        }
-        //        if viewController is TabBarController {
-        //            return viewController as? TabBarController
-        //        }
-        //        return nil
     }
 }
 

@@ -24,11 +24,11 @@ class TabBarCoordinator: CoordinatorProtocol {
     func start() {
         navigationController.setViewControllers([tabBarController], animated: true)
         setTabs()
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectMain), name: NSNotification.Name(rawValue: "didTapedHome0"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectMusic), name: NSNotification.Name(rawValue: "didTapedMusic1"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectMovies), name: NSNotification.Name(rawValue: "didTapedMovies2"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectProfile), name: NSNotification.Name(rawValue: "didTapedProfile3"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectSettings), name: NSNotification.Name(rawValue: "didTapedSettings4"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectMain), name: NSNotification.Name(rawValue: "didSelectHome"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectMusic), name: NSNotification.Name(rawValue: "didSelectMusic"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectMovies), name: NSNotification.Name(rawValue: "didSeclectMovies"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectProfile), name: NSNotification.Name(rawValue: "didSelectProfile"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectSettings), name: NSNotification.Name(rawValue: "didTapSettings"), object: nil)
     }
     
     func setTabs() {
