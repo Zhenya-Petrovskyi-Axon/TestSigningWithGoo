@@ -27,9 +27,6 @@ class MainViewModel: MainViewModelProtocol {
             self.didLoadData()
         }
     }
-    var itemsCount: Int {
-        return teams.count
-    }
     let service: GoogleSignInService
     let networkService: NetworkService
     init(service: GoogleSignInService, networkService: NetworkService) {
@@ -43,6 +40,7 @@ class MainViewModel: MainViewModelProtocol {
     var onError: (String) -> Void = { _ in }
     var currentPage: Int = 1
     var isPaginating: Bool = false
+    var itemsCount: Int { teams.count }
     
     func getData() {
         networkService.getTeamData(page: currentPage, method: .get) { [weak self] result in

@@ -164,7 +164,7 @@ extension TabBarController {
             return viewController! as? TabBarController
         }
         while (!(viewController is TabBarController) && viewController?.parent != nil) {
-            viewController = viewController?.parent as? UITabBarController
+            viewController = viewController?.parent as? TabBarController
         }
         if viewController is TabBarController {
             return viewController as? TabBarController

@@ -35,7 +35,7 @@ class SideMenuVC: UIViewController {
         setupDelegates()
         setupView()
         setHighlightedCell()
-        
+        updateDataSource()
     }
     
     func registerCell() {
@@ -45,7 +45,6 @@ class SideMenuVC: UIViewController {
     func setupDelegates() {
         sideMenuTableView.delegate = self
         sideMenuTableView.dataSource = self
-        updateDataSource()
     }
     
     func updateDataSource() {
