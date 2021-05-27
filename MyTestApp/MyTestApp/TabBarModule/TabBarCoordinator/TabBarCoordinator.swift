@@ -14,11 +14,11 @@ class TabBarCoordinator: CoordinatorProtocol {
     var navigationController: UINavigationController
     var tabBarController: UITabBarController
     
-    init(navigationController: UINavigationController, service: GoogleSignInService, networkService: NetworkService) {
+    init(navigationController: UINavigationController, service: GoogleSignInService, networkService: NetworkService, tabBarController: UITabBarController) {
         self.service = service
         self.networkService = networkService
         self.navigationController = navigationController
-        tabBarController = TabBarController()
+        self.tabBarController = tabBarController
     }
     
     func start() {
