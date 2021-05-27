@@ -11,12 +11,12 @@ class TabBarController: UITabBarController {
     // MARK: - Side menu
     private var sideMenuViewController: SideMenuVC!
     private var sideMenuShadowView: UIView!
-    private var sideMenuRevealWidth: CGFloat = 180
+    private var sideMenuRevealWidth: CGFloat = 150
     private var paddingForRotation: CGFloat = 150
     var isExpanded: Bool = false
     // MARK: - Collapse side menu by changing trailing's constant
     private var sideMenuTrailingConstraint: NSLayoutConstraint!
-    private var revealSideMenuOnTop: Bool = false
+    private var revealSideMenuOnTop: Bool = true
     
     private let didSelectHome = "didSelectHome"
     private let didSelectMusic = "didSelectMusic"
@@ -32,7 +32,7 @@ class TabBarController: UITabBarController {
     // MARK: - SideMenu
     func sideMenuInit() {
         // Shadow Background View
-        sideMenuShadowView = UIView(frame: self.view.bounds)
+        sideMenuShadowView = GestureRecognizerTappableView(frame: self.view.bounds)
         sideMenuShadowView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         sideMenuShadowView?.backgroundColor = .black
         sideMenuShadowView?.alpha = 0.0
@@ -43,7 +43,6 @@ class TabBarController: UITabBarController {
         if self.revealSideMenuOnTop {
             view.insertSubview(self.sideMenuShadowView!, at: 1)
         }
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         sideMenuViewController = storyboard.instantiateViewController(identifier: "SideMenuID") as? SideMenuVC
         self.sideMenuViewController.defaultHighlightedCell = 0
@@ -94,8 +93,7 @@ extension TabBarController: SideMenuVCDelegate {
             }
             // Animate Shadow (Fade In)
             UIView.animate(withDuration: 0.5) { self.sideMenuShadowView?.alpha = 0.6 }
-        }
-        else {
+        } else {
             self.animateSideMenu(targetPosition: self.revealSideMenuOnTop ? (-self.sideMenuRevealWidth - self.paddingForRotation) : 0) { _ in
                 self.isExpanded = false
             }
@@ -133,11 +131,15 @@ extension TabBarController: UIGestureRecognizerDelegate {
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        guard ((sideMenuViewController?.view) != nil) else { return true }
+        guard ((sideMenuViewController?.view) != nil) else { return false }
         if (touch.view?.isDescendant(of: (self.sideMenuViewController?.view)!))! {
             return false
         }
-        return true
+        if (touch.view is GestureRecognizerTappable) {
+            return true
+        } else {
+            return false
+        }
     }
 }
 

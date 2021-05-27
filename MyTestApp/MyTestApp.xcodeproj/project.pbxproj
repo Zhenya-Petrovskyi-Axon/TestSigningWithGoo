@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4521A8C0265F8B55008EDD6A /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4521A8BF265F8B55008EDD6A /* CellViewModel.swift */; };
+		4521A8C3265FCDB2008EDD6A /* GestureRecognizerTappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4521A8C2265FCDB2008EDD6A /* GestureRecognizerTappable.swift */; };
 		452201A226528E9F003C8215 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201A126528E9F003C8215 /* LoginViewModel.swift */; };
 		452201A42652900F003C8215 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 452201A32652900F003C8215 /* credentials.plist */; };
 		452201A72652BB63003C8215 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201A62652BB63003C8215 /* HomeViewController.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		174D9B6C98CE93608F1E8A68 /* Pods-MyTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTestApp.debug.xcconfig"; path = "Target Support Files/Pods-MyTestApp/Pods-MyTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		4521A8BF265F8B55008EDD6A /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
+		4521A8C2265FCDB2008EDD6A /* GestureRecognizerTappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureRecognizerTappable.swift; sourceTree = "<group>"; };
 		452201A126528E9F003C8215 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		452201A32652900F003C8215 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = credentials.plist; path = ../../../../../Downloads/credentials.plist; sourceTree = "<group>"; };
 		452201A62652BB63003C8215 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 				734264BDB1B532F0FA6C5D6A /* Pods-MyTestApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		4521A8C1265FCDA2008EDD6A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4521A8C2265FCDB2008EDD6A /* GestureRecognizerTappable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		452201A52652BB29003C8215 /* MainViewModule */ = {
@@ -397,6 +407,7 @@
 		45A732E726528BF800598FC2 /* MyTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				4521A8C1265FCDA2008EDD6A /* Protocols */,
 				452201AB2653A547003C8215 /* AppCoordinator.swift */,
 				45A7330126528CB500598FC2 /* LoginViewModule */,
 				452201A52652BB29003C8215 /* MainViewModule */,
@@ -601,6 +612,7 @@
 				4521A8C0265F8B55008EDD6A /* CellViewModel.swift in Sources */,
 				45333E2E2657F7D800954176 /* MainTableViewCell.swift in Sources */,
 				45333E232657992800954176 /* TeamEndpoint.swift in Sources */,
+				4521A8C3265FCDB2008EDD6A /* GestureRecognizerTappable.swift in Sources */,
 				452201AE2653A720003C8215 /* Storyboarded.swift in Sources */,
 				45333E252657B40400954176 /* ViewControllerExtensions.swift in Sources */,
 				45333E49265D301D00954176 /* TabBarViewController.swift in Sources */,
