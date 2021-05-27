@@ -28,12 +28,12 @@ class MainTableViewCell: UITableViewCell {
     @IBOutlet weak var devisionNameLabel: UILabel!
     
     var viewModel: TeamCellViewModel! {
-            didSet {
-                fullNameLabel.text = viewModel.teamCellModel.fullName
-                cityNameLabel.text = viewModel.teamCellModel.cityName
-                devisionNameLabel.text = viewModel.teamCellModel.devisionName
-            }
+        didSet {
+            fullNameLabel.text = viewModel.teamCellModel.fullName
+            cityNameLabel.text = viewModel.teamCellModel.cityName
+            devisionNameLabel.text = viewModel.teamCellModel.devisionName
         }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,7 +45,6 @@ class MainTableViewCell: UITableViewCell {
         underLabelView.layer.cornerRadius = 8
         underLabelView.layer.borderWidth = 0.8
         underLabelView.layer.borderColor = UIColor.systemGray.cgColor
-        
         underLabelView.addShadow(offset: CGSize.init(width: 0, height: 3), color: .black, radius: 8, opacity: 0.7)
         
     }

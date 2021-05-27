@@ -32,7 +32,7 @@ class TabBarController: UITabBarController {
     // MARK: - SideMenu
     func sideMenuInit() {
         // Shadow Background View
-        sideMenuShadowView = GestureRecognizerTappableView(frame: self.view.bounds)
+        sideMenuShadowView = TapGestureRecognizableView(frame: self.view.bounds)
         sideMenuShadowView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         sideMenuShadowView?.backgroundColor = .black
         sideMenuShadowView?.alpha = 0.0
@@ -135,7 +135,7 @@ extension TabBarController: UIGestureRecognizerDelegate {
         if (touch.view?.isDescendant(of: (self.sideMenuViewController?.view)!))! {
             return false
         }
-        if (touch.view is GestureRecognizerTappable) {
+        if (touch.view is TapGestureRecognizable) {
             return true
         } else {
             return false

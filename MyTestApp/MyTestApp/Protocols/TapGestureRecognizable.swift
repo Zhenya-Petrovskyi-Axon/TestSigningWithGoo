@@ -8,6 +8,6 @@
 import UIKit
 
 /// Protocol used to handle gestures
-protocol GestureRecognizerTappable { }
+protocol TapGestureRecognizable { }
 /// Which view can handle with gestures & which is not. Further usage by returning true or false by gestureRecognizer delegate.
-class GestureRecognizerTappableView: UIView, GestureRecognizerTappable { }
+class TapGestureRecognizableView: UIView, TapGestureRecognizable { }

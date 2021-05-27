@@ -72,8 +72,9 @@ class HomeViewModel: HomeViewModelProtocol {
     
     func viewModelForCell(_ indexPath: IndexPath) -> TeamCellViewModel {
         let team = teams[indexPath.row]
-        return TeamCellViewModel(teamModel: TeamCellModel(fullName: team.fullName,
-                                                          cityName: team.city,
-                                                          devisionName: team.division))
+        return TeamCellViewModel(teamModel: TeamCellModel(
+                                    fullName: team.fullName,
+                                    cityName: team.city,
+                                    devisionName: team.division))
     }
 }

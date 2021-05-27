@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4521A8C0265F8B55008EDD6A /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4521A8BF265F8B55008EDD6A /* CellViewModel.swift */; };
-		4521A8C3265FCDB2008EDD6A /* GestureRecognizerTappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4521A8C2265FCDB2008EDD6A /* GestureRecognizerTappable.swift */; };
+		4521A8C3265FCDB2008EDD6A /* TapGestureRecognizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4521A8C2265FCDB2008EDD6A /* TapGestureRecognizable.swift */; };
 		452201A226528E9F003C8215 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201A126528E9F003C8215 /* LoginViewModel.swift */; };
 		452201A42652900F003C8215 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 452201A32652900F003C8215 /* credentials.plist */; };
 		452201A72652BB63003C8215 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201A62652BB63003C8215 /* HomeViewController.swift */; };
@@ -57,7 +57,7 @@
 /* Begin PBXFileReference section */
 		174D9B6C98CE93608F1E8A68 /* Pods-MyTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTestApp.debug.xcconfig"; path = "Target Support Files/Pods-MyTestApp/Pods-MyTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		4521A8BF265F8B55008EDD6A /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
-		4521A8C2265FCDB2008EDD6A /* GestureRecognizerTappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureRecognizerTappable.swift; sourceTree = "<group>"; };
+		4521A8C2265FCDB2008EDD6A /* TapGestureRecognizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureRecognizable.swift; sourceTree = "<group>"; };
 		452201A126528E9F003C8215 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		452201A32652900F003C8215 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = credentials.plist; path = ../../../../../Downloads/credentials.plist; sourceTree = "<group>"; };
 		452201A62652BB63003C8215 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -130,18 +130,34 @@
 		4521A8C1265FCDA2008EDD6A /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				4521A8C2265FCDB2008EDD6A /* GestureRecognizerTappable.swift */,
+				4521A8C2265FCDB2008EDD6A /* TapGestureRecognizable.swift */,
+				452201A92653A4CD003C8215 /* CoordinatorProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4521A8C6265FD361008EDD6A /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				452201AB2653A547003C8215 /* AppCoordinator.swift */,
+				45333E4C265D32E200954176 /* TabBarCoordinator */,
+				45333E1526568ED700954176 /* LoginFlowCoordinator */,
+				45333E1826568F1900954176 /* HomeVCCoordinator's */,
+				45333E68265E3D4700954176 /* BlackVCCoordinator.swift */,
+				45333E62265E3BEA00954176 /* BlueVCCoordinatro.swift */,
+				45333E64265E3CBE00954176 /* GreenVCCoordinator.swift */,
+				45333E66265E3CF500954176 /* YellowVCCoordinator.swift */,
+				45333E6A265E3D7700954176 /* PinkVCCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		452201A52652BB29003C8215 /* MainViewModule */ = {
 			isa = PBXGroup;
 			children = (
 				45333E272657DD7A00954176 /* Cell */,
-				45333E1826568F1900954176 /* Coordinator's */,
 				45333E1C26568F4200954176 /* ViewModel's */,
-				45333E1A26568F2E00954176 /* HomeViewModul */,
+				45333E1A26568F2E00954176 /* HomeViewModule */,
 				45333E50265D3B2900954176 /* MenuViewControllers */,
 			);
 			path = MainViewModule;
@@ -150,7 +166,6 @@
 		452201A82653A4AD003C8215 /* CoordinatorService */ = {
 			isa = PBXGroup;
 			children = (
-				452201A92653A4CD003C8215 /* CoordinatorProtocol.swift */,
 				452201AD2653A720003C8215 /* Storyboarded.swift */,
 			);
 			path = CoordinatorService;
@@ -164,12 +179,12 @@
 			path = SignInService;
 			sourceTree = "<group>";
 		};
-		45333E1526568ED700954176 /* Coordinator */ = {
+		45333E1526568ED700954176 /* LoginFlowCoordinator */ = {
 			isa = PBXGroup;
 			children = (
 				45333E1326565A9300954176 /* LoginFlowCoordinator.swift */,
 			);
-			path = Coordinator;
+			path = LoginFlowCoordinator;
 			sourceTree = "<group>";
 		};
 		45333E1626568EE600954176 /* ViewModel */ = {
@@ -188,21 +203,21 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		45333E1826568F1900954176 /* Coordinator's */ = {
+		45333E1826568F1900954176 /* HomeVCCoordinator's */ = {
 			isa = PBXGroup;
 			children = (
 				45333E11265653FD00954176 /* HomeVCCoordinator.swift */,
 			);
-			path = "Coordinator's";
+			path = "HomeVCCoordinator's";
 			sourceTree = "<group>";
 		};
-		45333E1A26568F2E00954176 /* HomeViewModul */ = {
+		45333E1A26568F2E00954176 /* HomeViewModule */ = {
 			isa = PBXGroup;
 			children = (
 				45333E35265B8F5C00954176 /* HomeViewController */,
 				45333E34265B8F0F00954176 /* DetailsViewController */,
 			);
-			path = HomeViewModul;
+			path = HomeViewModule;
 			sourceTree = "<group>";
 		};
 		45333E1C26568F4200954176 /* ViewModel's */ = {
@@ -298,7 +313,6 @@
 		45333E4A265D32B600954176 /* TabBarModule */ = {
 			isa = PBXGroup;
 			children = (
-				45333E4C265D32E200954176 /* TabBarCoordinator */,
 				45333E4B265D32D400954176 /* TabBarController */,
 			);
 			path = TabBarModule;
@@ -345,7 +359,6 @@
 			isa = PBXGroup;
 			children = (
 				45333E51265D3DE300954176 /* BlueViewController.swift */,
-				45333E62265E3BEA00954176 /* BlueVCCoordinatro.swift */,
 			);
 			path = BlueViewController;
 			sourceTree = "<group>";
@@ -354,7 +367,6 @@
 			isa = PBXGroup;
 			children = (
 				45333E53265D3E0600954176 /* GreenViewController.swift */,
-				45333E64265E3CBE00954176 /* GreenVCCoordinator.swift */,
 			);
 			path = GreenViewController;
 			sourceTree = "<group>";
@@ -363,7 +375,6 @@
 			isa = PBXGroup;
 			children = (
 				45333E55265D3E3B00954176 /* YellowViewController.swift */,
-				45333E66265E3CF500954176 /* YellowVCCoordinator.swift */,
 			);
 			path = YellowViewController;
 			sourceTree = "<group>";
@@ -372,7 +383,6 @@
 			isa = PBXGroup;
 			children = (
 				45333E57265D3E6400954176 /* BlackViewController.swift */,
-				45333E68265E3D4700954176 /* BlackVCCoordinator.swift */,
 			);
 			path = BlackViewCintroller;
 			sourceTree = "<group>";
@@ -381,7 +391,6 @@
 			isa = PBXGroup;
 			children = (
 				45333E59265D3E8900954176 /* PinkViewController.swift */,
-				45333E6A265E3D7700954176 /* PinkVCCoordinator.swift */,
 			);
 			path = PinkViewController;
 			sourceTree = "<group>";
@@ -407,8 +416,9 @@
 		45A732E726528BF800598FC2 /* MyTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				4521A8C6265FD361008EDD6A /* Coordinators */,
 				4521A8C1265FCDA2008EDD6A /* Protocols */,
-				452201AB2653A547003C8215 /* AppCoordinator.swift */,
+				45333E262657DD4100954176 /* Extensions */,
 				45A7330126528CB500598FC2 /* LoginViewModule */,
 				452201A52652BB29003C8215 /* MainViewModule */,
 				45333E4D265D334C00954176 /* Service */,
@@ -416,7 +426,6 @@
 				45333E4A265D32B600954176 /* TabBarModule */,
 				45333E3A265CD7CF00954176 /* SideMenuModule */,
 				45A732FF26528C8500598FC2 /* MainAppDelegates */,
-				45333E262657DD4100954176 /* Extensions */,
 				45A7330026528C9A00598FC2 /* Storyboards */,
 				45A732F426528BF900598FC2 /* Assets.xcassets */,
 				45A732F926528BF900598FC2 /* Info.plist */,
@@ -446,7 +455,6 @@
 		45A7330126528CB500598FC2 /* LoginViewModule */ = {
 			isa = PBXGroup;
 			children = (
-				45333E1526568ED700954176 /* Coordinator */,
 				45333E1626568EE600954176 /* ViewModel */,
 				45333E1726568EF300954176 /* ViewController */,
 			);
@@ -612,7 +620,7 @@
 				4521A8C0265F8B55008EDD6A /* CellViewModel.swift in Sources */,
 				45333E2E2657F7D800954176 /* MainTableViewCell.swift in Sources */,
 				45333E232657992800954176 /* TeamEndpoint.swift in Sources */,
-				4521A8C3265FCDB2008EDD6A /* GestureRecognizerTappable.swift in Sources */,
+				4521A8C3265FCDB2008EDD6A /* TapGestureRecognizable.swift in Sources */,
 				452201AE2653A720003C8215 /* Storyboarded.swift in Sources */,
 				45333E252657B40400954176 /* ViewControllerExtensions.swift in Sources */,
 				45333E49265D301D00954176 /* TabBarViewController.swift in Sources */,
