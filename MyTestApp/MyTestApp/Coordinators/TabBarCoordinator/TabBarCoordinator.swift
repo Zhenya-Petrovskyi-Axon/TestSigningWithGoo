@@ -7,12 +7,18 @@
 
 import UIKit
 
+protocol TabBarCoordinatorDelegate: AnyObject {
+    func logout()
+}
+
 class TabBarCoordinator: CoordinatorProtocol {
     var childCoordinators = [CoordinatorProtocol]()
     let service: GoogleSignInService
     let networkService: NetworkService
     var navigationController: UINavigationController
     var tabBarController: UITabBarController
+    
+    weak var deleagte: TabBarCoordinatorDelegate?
     
     init(navigationController: UINavigationController, service: GoogleSignInService, networkService: NetworkService, tabBarController: UITabBarController) {
         self.service = service
@@ -24,6 +30,10 @@ class TabBarCoordinator: CoordinatorProtocol {
     func start() {
         navigationController.setViewControllers([tabBarController], animated: true)
         setTabs()
+        setupNotifications()
+    }
+    
+    func setupNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectMain), name: NSNotification.Name(rawValue: "didSelectHome"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectMusic), name: NSNotification.Name(rawValue: "didSelectMusic"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectMovies), name: NSNotification.Name(rawValue: "didSeclectMovies"), object: nil)
@@ -33,32 +43,33 @@ class TabBarCoordinator: CoordinatorProtocol {
     
     func setTabs() {
         // Home
-        let mainCoordNavVC = UINavigationController()
-        let homeVCCoordinator = HomeVCCoordinator(navigationController: mainCoordNavVC, service: service, networkService: networkService)
+        let homeCoordNavVC = UINavigationController()
+        let homeVCCoordinator = HomeVCCoordinator(navigationController: homeCoordNavVC, service: service, networkService: networkService)
         childCoordinators.append(homeVCCoordinator)
         homeVCCoordinator.start()
         // Green
-        let greenCoordNavVC = UINavigationController()
-        let greenVCCoordinator = GreenVCCoordinator(navigationController: greenCoordNavVC)
-        childCoordinators.append(greenVCCoordinator)
-        greenVCCoordinator.start()
+        let musicCoordNavVC = UINavigationController()
+        let musicVCCoordinator = MusicVCCoordinator(navigationController: musicCoordNavVC)
+        childCoordinators.append(musicVCCoordinator)
+        musicVCCoordinator.start()
         // Yellow
-        let yellowCoordNavVC = UINavigationController()
-        let yellowVCCoordinator = YellowVCCoordinator(navigationController: yellowCoordNavVC)
-        childCoordinators.append(yellowVCCoordinator)
-        yellowVCCoordinator.start()
+        let moviesCoordNavVC = UINavigationController()
+        let moviesVCCoordinator = MoviesVCCoordinator(navigationController: moviesCoordNavVC)
+        childCoordinators.append(moviesVCCoordinator)
+        moviesVCCoordinator.start()
         // Black
-        let blackNavVC = UINavigationController()
-        let blackVCCoordinator = BlackVCCoordinator(navigationController: blackNavVC)
-        childCoordinators.append(blackVCCoordinator)
-        blackVCCoordinator.start()
+        let profileNavVC = UINavigationController()
+        let profileVCCoordinator = ProfileVCCoordinator(navigationController: profileNavVC)
+        childCoordinators.append(profileVCCoordinator)
+        profileVCCoordinator.start()
         // Pink
-        let pinkNavVC = UINavigationController()
-        let pinkVCCoordinator = PinkVCCoordinator(navigationController: pinkNavVC)
-        childCoordinators.append(pinkVCCoordinator)
-        pinkVCCoordinator.start()
+        let settingskNavVC = UINavigationController()
+        let settingsVCCoordinator = SettingsVCCoordinator(navigationController: settingskNavVC)
+        childCoordinators.append(settingsVCCoordinator)
+        settingsVCCoordinator.delegate = self
+        settingsVCCoordinator.start()
         // Set Tab Bar tabs
-        tabBarController.setViewControllers([mainCoordNavVC, greenCoordNavVC, yellowCoordNavVC, blackNavVC, pinkNavVC], animated: false)
+        tabBarController.setViewControllers([homeCoordNavVC, musicCoordNavVC, moviesCoordNavVC, profileNavVC, settingskNavVC], animated: false)
         tabBarController.tabBar.isHidden = true
     }
     
@@ -82,3 +93,12 @@ class TabBarCoordinator: CoordinatorProtocol {
         tabBarController.selectedIndex = 4
     }
 }
+
+extension TabBarCoordinator: SettingsCoordinatorDelegate {
+    func onLogout() {
+        deleagte?.logout()
+    }
+    
+    
+}
+

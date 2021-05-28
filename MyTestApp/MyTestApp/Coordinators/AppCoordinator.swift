@@ -9,7 +9,7 @@ import UIKit
 import GoogleSignIn
 
 // MARK: - Main Coordinator Class
-class AppCoordinator: CoordinatorProtocol {
+class AppCoordinator: CoordinatorProtocol, LoginFlowCoordinatorDelegate {
     let service = GoogleSignInService()
     let networkService = NetworkService()
     let tabBarController = TabBarController()
@@ -35,7 +35,7 @@ extension AppCoordinator {
     func goToMainFlow() {
         childCoordinators.removeAll()
         let coordinator = TabBarCoordinator(navigationController: navigationController, service: service, networkService: networkService, tabBarController: tabBarController)
-//        coordinator.delegate = self
+        coordinator.deleagte = self
         childCoordinators.append(coordinator)
         navigationController.setNavigationBarHidden(true, animated: false)
         coordinator.start()
@@ -50,7 +50,13 @@ extension AppCoordinator {
     }
 }
 
-extension AppCoordinator: LoginFlowCoordinatorDelegate, HomeVCCoordinatorDelegate {
+extension AppCoordinator: HomeVCCoordinatorDelegate, TabBarCoordinatorDelegate {
+    
+    // MARK: - TabBarCoordinatorDelegate
+    func logout() {
+        service.logout(completion: goToLoginFlow)
+    }
+    
     // MARK : - Login flow delegate
     func didLogin() {
         goToMainFlow()

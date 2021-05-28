@@ -1,5 +1,5 @@
 //
-//  BlueVCCoordinatro.swift
+//  PinkVCCoordinator.swift
 //  MyTestApp
 //
 //  Created by Evhen Petrovskyi on 26.05.2021.
@@ -7,8 +7,13 @@
 
 import UIKit
 
-class BlueVCCoordinator: CoordinatorProtocol {
+protocol SettingsCoordinatorDelegate: AnyObject {
+    func onLogout()
+}
+
+class SettingsVCCoordinator: CoordinatorProtocol {
     var childCoordinators = [CoordinatorProtocol]()
+    weak var delegate: SettingsCoordinatorDelegate?
     
     var navigationController: UINavigationController
     
@@ -17,8 +22,15 @@ class BlueVCCoordinator: CoordinatorProtocol {
     }
     
     func start() {
-        let vc = BlueViewController.instantiate()
+        let vc = SettingsViewController.instantiate()
+        vc.delegate = self
         navigationController.setViewControllers([vc], animated: true)
+    }
+}
+
+extension SettingsVCCoordinator: SettingsViewControllerLogoutDelegate {
+    func logout() {
+        delegate?.onLogout()
     }
     
     

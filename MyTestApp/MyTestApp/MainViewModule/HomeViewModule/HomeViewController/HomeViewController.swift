@@ -58,9 +58,9 @@ class HomeViewController: BaseViewController, Storyboarded {
         }
     }
     
-    @IBAction func logOutButtonAction(_ sender: UIButton) {
-        mainViewModel.logout()
-    }
+//    @IBAction func logOutButtonAction(_ sender: UIButton) {
+//        mainViewModel.logout()
+//    }
 }
 
 extension HomeViewController: UITableViewDelegate {

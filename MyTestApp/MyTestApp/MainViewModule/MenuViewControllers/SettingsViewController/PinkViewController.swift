@@ -6,11 +6,18 @@
 //
 
 import UIKit
+protocol <#name#> {
+    <#requirements#>
+}
 
-class PinkViewController: BaseViewController, Storyboarded {
+class SettingsViewController: BaseViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
+    }
+    @IBAction func logoutButtonAction(_ sender: Any) {
         
     }
 }

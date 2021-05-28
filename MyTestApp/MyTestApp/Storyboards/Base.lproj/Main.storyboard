@@ -47,25 +47,10 @@
             </objects>
             <point key="canvasLocation" x="31.884057971014496" y="87.723214285714278"/>
         </scene>
-        <!--Blue View Controller-->
-        <scene sceneID="88W-SZ-1KU">
-            <objects>
-                <viewController storyboardIdentifier="BlueViewController" id="wIq-Ll-okj" customClass="BlueViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="c07-y9-p9Q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="RAP-jD-ccz"/>
-                        <color key="backgroundColor" systemColor="systemBlueColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jF6-m8-5nC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-214" y="783"/>
-        </scene>
-        <!--Green View Controller-->
+        <!--Music View Controller-->
         <scene sceneID="Ly0-Pr-StX">
             <objects>
-                <viewController storyboardIdentifier="GreenViewController" id="VQY-nw-lum" customClass="GreenViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MusicViewController" id="VQY-nw-lum" customClass="MusicViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vtq-2r-Kfr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="483" y="783"/>
         </scene>
-        <!--Yellow View Controller-->
+        <!--Movies View Controller-->
         <scene sceneID="3rO-W9-d9W">
             <objects>
-                <viewController storyboardIdentifier="YellowViewController" id="lgq-ao-cpi" customClass="YellowViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoviesViewController" id="lgq-ao-cpi" customClass="MoviesViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fav-JY-hYN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="1193" y="783"/>
         </scene>
-        <!--Black View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="SU9-6h-4gr">
             <objects>
-                <viewController storyboardIdentifier="BlackViewController" id="XTI-DS-Kxz" customClass="BlackViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="XTI-DS-Kxz" customClass="ProfileViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oc0-ak-B57">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,15 +92,29 @@
             </objects>
             <point key="canvasLocation" x="1903" y="783"/>
         </scene>
-        <!--Pink View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="Zkt-vK-zUG">
             <objects>
-                <viewController storyboardIdentifier="PinkViewController" id="YE7-98-jte" customClass="PinkViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="YE7-98-jte" customClass="SettingsViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aG0-uv-XOG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="la5-XB-KWu">
+                                <rect key="frame" x="141" y="415.5" width="132" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButtonAction:" destination="YE7-98-jte" eventType="touchUpInside" id="dlE-FX-IN5"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="PDd-4A-sql"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <constraints>
+                            <constraint firstItem="la5-XB-KWu" firstAttribute="centerY" secondItem="aG0-uv-XOG" secondAttribute="centerY" id="fSg-kc-mWP"/>
+                            <constraint firstItem="la5-XB-KWu" firstAttribute="centerX" secondItem="aG0-uv-XOG" secondAttribute="centerX" id="zix-Cr-zc5"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gon-ch-muf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -317,9 +316,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

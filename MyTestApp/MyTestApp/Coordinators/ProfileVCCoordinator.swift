@@ -1,5 +1,5 @@
 //
-//  GreenVCCoordinator.swift
+//  BlackVCCoordinator.swift
 //  MyTestApp
 //
 //  Created by Evhen Petrovskyi on 26.05.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GreenVCCoordinator: CoordinatorProtocol {
+class ProfileVCCoordinator: CoordinatorProtocol {
     var childCoordinators = [CoordinatorProtocol]()
     
     var navigationController: UINavigationController
@@ -17,9 +17,8 @@ class GreenVCCoordinator: CoordinatorProtocol {
     }
     
     func start() {
-        let vc = GreenViewController.instantiate()
+        let vc = ProfileViewController.instantiate()
         navigationController.setViewControllers([vc], animated: true)
     }
-    
     
 }

@@ -1,5 +1,5 @@
 //
-//  PinkVCCoordinator.swift
+//  YellowVCCoordinator.swift
 //  MyTestApp
 //
 //  Created by Evhen Petrovskyi on 26.05.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PinkVCCoordinator: CoordinatorProtocol {
+class MoviesVCCoordinator: CoordinatorProtocol {
     var childCoordinators = [CoordinatorProtocol]()
     
     var navigationController: UINavigationController
@@ -17,7 +17,7 @@ class PinkVCCoordinator: CoordinatorProtocol {
     }
     
     func start() {
-        let vc = PinkViewController.instantiate()
+        let vc = MoviesViewController.instantiate()
         navigationController.setViewControllers([vc], animated: true)
     }
     

@@ -11,14 +11,14 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationColor()
-        setupButton()
+        setupMenuButton()
     }
     
     func setupNavigationColor() {
         navigationController?.navigationBar.barTintColor = self.view.backgroundColor
     }
     
-    func setupButton() {
+    func setupMenuButton() {
         let controller = revealViewController()
         let button = UIBarButtonItem(
             image: UIImage(systemName: "list.bullet"),
@@ -29,3 +29,17 @@ class BaseViewController: UIViewController {
         navigationItem.leftBarButtonItem?.tintColor = .white
     }
 }
+
+//extension BaseViewController: UIScrollViewDelegate {
+//        func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//            let pan = scrollView.panGestureRecognizer
+//            let velocity = pan.velocity(in: scrollView).y
+//            if velocity < -5 {
+//                self.navigationController?.setNavigationBarHidden(true, animated: true)
+//                self.navigationController?.setToolbarHidden(true, animated: true)
+//            } else if velocity > 5 {
+//                self.navigationController?.setNavigationBarHidden(false, animated: true)
+//                self.navigationController?.setToolbarHidden(false, animated: true)
+//            }
+//        }
+//}

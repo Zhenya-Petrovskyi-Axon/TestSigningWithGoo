@@ -1,5 +1,5 @@
 //
-//  GreenViewController.swift
+//  BlackViewController.swift
 //  MyTestApp
 //
 //  Created by Evhen Petrovskyi on 25.05.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GreenViewController: BaseViewController, Storyboarded {
+class ProfileViewController: BaseViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()

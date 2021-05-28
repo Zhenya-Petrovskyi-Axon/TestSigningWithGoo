@@ -1,5 +1,5 @@
 //
-//  YellowVCCoordinator.swift
+//  GreenVCCoordinator.swift
 //  MyTestApp
 //
 //  Created by Evhen Petrovskyi on 26.05.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class YellowVCCoordinator: CoordinatorProtocol {
+class MusicVCCoordinator: CoordinatorProtocol {
     var childCoordinators = [CoordinatorProtocol]()
     
     var navigationController: UINavigationController
@@ -17,7 +17,7 @@ class YellowVCCoordinator: CoordinatorProtocol {
     }
     
     func start() {
-        let vc = YellowViewController.instantiate()
+        let vc = MusicViewController.instantiate()
         navigationController.setViewControllers([vc], animated: true)
     }
     
