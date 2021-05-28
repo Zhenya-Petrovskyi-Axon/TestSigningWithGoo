@@ -7,10 +7,12 @@
 
 import UIKit
 
+/// Delegate protocol to logout from appCoordinator
 protocol TabBarCoordinatorDelegate: AnyObject {
     func logout()
 }
 
+// MARK: - Main Tab Bar coordintor
 class TabBarCoordinator: CoordinatorProtocol {
     var childCoordinators = [CoordinatorProtocol]()
     let service: GoogleSignInService
@@ -33,44 +35,51 @@ class TabBarCoordinator: CoordinatorProtocol {
         setupNotifications()
     }
     
-    func setupNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectMain), name: NSNotification.Name(rawValue: "didSelectHome"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectMusic), name: NSNotification.Name(rawValue: "didSelectMusic"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectMovies), name: NSNotification.Name(rawValue: "didSeclectMovies"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectProfile), name: NSNotification.Name(rawValue: "didSelectProfile"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectSettings), name: NSNotification.Name(rawValue: "didSelectSettings"), object: nil)
-    }
-    
+    // MARK: - Setup tabs
     func setTabs() {
         // Home
         let homeCoordNavVC = UINavigationController()
         let homeVCCoordinator = HomeVCCoordinator(navigationController: homeCoordNavVC, service: service, networkService: networkService)
         childCoordinators.append(homeVCCoordinator)
         homeVCCoordinator.start()
-        // Green
+        // Music
         let musicCoordNavVC = UINavigationController()
         let musicVCCoordinator = MusicVCCoordinator(navigationController: musicCoordNavVC)
         childCoordinators.append(musicVCCoordinator)
         musicVCCoordinator.start()
-        // Yellow
+        // Movies
         let moviesCoordNavVC = UINavigationController()
         let moviesVCCoordinator = MoviesVCCoordinator(navigationController: moviesCoordNavVC)
         childCoordinators.append(moviesVCCoordinator)
         moviesVCCoordinator.start()
-        // Black
+        // Profile
         let profileNavVC = UINavigationController()
         let profileVCCoordinator = ProfileVCCoordinator(navigationController: profileNavVC)
         childCoordinators.append(profileVCCoordinator)
         profileVCCoordinator.start()
-        // Pink
+        // Settings
         let settingskNavVC = UINavigationController()
         let settingsVCCoordinator = SettingsVCCoordinator(navigationController: settingskNavVC)
         childCoordinators.append(settingsVCCoordinator)
         settingsVCCoordinator.delegate = self
         settingsVCCoordinator.start()
-        // Set Tab Bar tabs
+        // Set Tab Bar Items
         tabBarController.setViewControllers([homeCoordNavVC, musicCoordNavVC, moviesCoordNavVC, profileNavVC, settingskNavVC], animated: false)
         tabBarController.tabBar.isHidden = true
+    }
+    
+    // MARK: - Setup sliding menu switch observers
+    func setupNotifications() {
+        /// Home vc
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectMain), name: NSNotification.Name(rawValue: "didSelectHome"), object: nil)
+        /// Music vc
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectMusic), name: NSNotification.Name(rawValue: "didSelectMusic"), object: nil)
+        /// Movies vc
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectMovies), name: NSNotification.Name(rawValue: "didSeclectMovies"), object: nil)
+        /// Profile vc
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectProfile), name: NSNotification.Name(rawValue: "didSelectProfile"), object: nil)
+        /// Settings vc
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didSelectSettings), name: NSNotification.Name(rawValue: "didSelectSettings"), object: nil)
     }
     
     @objc func didSelectMain() {
@@ -94,11 +103,9 @@ class TabBarCoordinator: CoordinatorProtocol {
     }
 }
 
+// MARK: - LogoutDelegate
 extension TabBarCoordinator: SettingsCoordinatorDelegate {
     func onLogout() {
         deleagte?.logout()
     }
-    
-    
 }
-
