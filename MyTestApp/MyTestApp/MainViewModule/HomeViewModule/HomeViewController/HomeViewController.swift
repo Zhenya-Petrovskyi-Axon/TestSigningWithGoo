@@ -8,15 +8,14 @@
 import UIKit
 import GoogleSignIn
 
-protocol MainViewControllerDelegate: AnyObject {
+protocol HomeViewControllerDelegate: AnyObject {
     func signOut()
     func showDetails(teamModel: TeamDetailViewModel)
 }
 
-class MainViewController: UIViewController, Storyboarded {
-    
-    var mainViewModel: MainViewModelProtocol!
-    weak var delegate: MainViewControllerDelegate?
+class HomeViewController: BaseViewController, Storyboarded {
+    var mainViewModel: HomeViewModelProtocol!
+    weak var delegate: HomeViewControllerDelegate?
     
     let mainCellId = "mainCell"
     let mainCellNibName = "MainTableViewCell"
@@ -30,6 +29,10 @@ class MainViewController: UIViewController, Storyboarded {
         setupDelegates()
     }
     
+    func setUpView() {
+        mainTableView.separatorStyle = .none
+    }
+    
     func registerCell() {
         self.mainTableView.register(UINib(nibName: mainCellNibName, bundle: nil), forCellReuseIdentifier: mainCellId)
     }
@@ -40,9 +43,6 @@ class MainViewController: UIViewController, Storyboarded {
     }
     
     func setupCompletions() {
-        //        mainViewModel.cellSelected = {
-        //            //            self.delegate?.showDetails()
-        //        }
         mainViewModel.onLogout = {
             self.delegate?.signOut()
         }
@@ -58,27 +58,20 @@ class MainViewController: UIViewController, Storyboarded {
         }
     }
     
-    @IBAction func logOutButtonAction(_ sender: UIButton) {
-        mainViewModel.logout()
-    }
+//    @IBAction func logOutButtonAction(_ sender: UIButton) {
+//        mainViewModel.logout()
+//    }
 }
 
-extension MainViewController: UITableViewDelegate {
+extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let teamModel = mainViewModel.viewModelForDetailsVC(indexPath)
         delegate?.showDetails(teamModel: teamModel)
     }
-    
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        if indexPath.row == mainViewModel.itemsCount - 1 {
-//            print("Bottom reached - user need's more data")
-//            mainViewModel.getData()
-//        }
-//    }
 }
 
-extension MainViewController: UITableViewDataSource {
+extension HomeViewController: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         mainViewModel.itemsCount
     }

@@ -8,6 +8,119 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Side MenuVC-->
+        <scene sceneID="3h9-ew-gf3">
+            <objects>
+                <viewController storyboardIdentifier="SideMenuID" id="FBL-h0-CC2" customClass="SideMenuVC" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OLs-LT-H5T">
+                        <rect key="frame" x="0.0" y="0.0" width="260" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bzi-3u-ZWX">
+                                <rect key="frame" x="0.0" y="124" width="260" height="738"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h56-QN-8yX">
+                                <rect key="frame" x="0.0" y="0.0" width="260" height="124"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2AE-8P-WL7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="h56-QN-8yX" firstAttribute="top" secondItem="OLs-LT-H5T" secondAttribute="top" id="1ff-il-cgL"/>
+                            <constraint firstItem="h56-QN-8yX" firstAttribute="leading" secondItem="2AE-8P-WL7" secondAttribute="leading" id="4A9-YQ-O4H"/>
+                            <constraint firstItem="bzi-3u-ZWX" firstAttribute="top" secondItem="h56-QN-8yX" secondAttribute="bottom" id="4eQ-ES-N2f"/>
+                            <constraint firstItem="bzi-3u-ZWX" firstAttribute="top" secondItem="2AE-8P-WL7" secondAttribute="top" constant="80" id="B91-RC-4Gh"/>
+                            <constraint firstAttribute="trailing" secondItem="bzi-3u-ZWX" secondAttribute="trailing" id="GRa-dT-K30"/>
+                            <constraint firstItem="2AE-8P-WL7" firstAttribute="trailing" secondItem="h56-QN-8yX" secondAttribute="trailing" id="KJk-2y-RHY"/>
+                            <constraint firstItem="bzi-3u-ZWX" firstAttribute="leading" secondItem="OLs-LT-H5T" secondAttribute="leading" id="Trz-We-XFM"/>
+                            <constraint firstItem="2AE-8P-WL7" firstAttribute="bottom" secondItem="bzi-3u-ZWX" secondAttribute="bottom" id="nuw-0L-7ia"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="260" height="896"/>
+                    <connections>
+                        <outlet property="sideMenuTableView" destination="bzi-3u-ZWX" id="eeL-YZ-RDn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nns-cU-Ear" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31.884057971014496" y="87.723214285714278"/>
+        </scene>
+        <!--Music View Controller-->
+        <scene sceneID="Ly0-Pr-StX">
+            <objects>
+                <viewController storyboardIdentifier="MusicViewController" id="VQY-nw-lum" customClass="MusicViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vtq-2r-Kfr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="9OO-EY-pER"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kd3-6x-d4o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="483" y="783"/>
+        </scene>
+        <!--Movies View Controller-->
+        <scene sceneID="3rO-W9-d9W">
+            <objects>
+                <viewController storyboardIdentifier="MoviesViewController" id="lgq-ao-cpi" customClass="MoviesViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fav-JY-hYN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="mQK-zL-8p0"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kts-RR-48P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1193" y="783"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="SU9-6h-4gr">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="XTI-DS-Kxz" customClass="ProfileViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oc0-ak-B57">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6j1-HN-Z0U"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ooD-7h-exV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1903" y="783"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="Zkt-vK-zUG">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="YE7-98-jte" customClass="SettingsViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aG0-uv-XOG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="la5-XB-KWu">
+                                <rect key="frame" x="141" y="415.5" width="132" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButtonAction:" destination="YE7-98-jte" eventType="touchUpInside" id="dlE-FX-IN5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PDd-4A-sql"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <constraints>
+                            <constraint firstItem="la5-XB-KWu" firstAttribute="centerY" secondItem="aG0-uv-XOG" secondAttribute="centerY" id="fSg-kc-mWP"/>
+                            <constraint firstItem="la5-XB-KWu" firstAttribute="centerX" secondItem="aG0-uv-XOG" secondAttribute="centerX" id="zix-Cr-zc5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gon-ch-muf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2609" y="783"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -50,23 +163,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="939.13043478260875" y="88.392857142857139"/>
+            <point key="canvasLocation" x="671" y="88"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="2ob-hb-w5Y">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="ocB-rm-nHk" customClass="MainViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="ocB-rm-nHk" customClass="HomeViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VyJ-v4-R9p">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yyi-z8-UNv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yyi-z8-UNv">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nTp-Ur-ptV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
                             <constraint firstItem="nTp-Ur-ptV" firstAttribute="trailing" secondItem="yyi-z8-UNv" secondAttribute="trailing" id="LnV-nb-rPG"/>
                             <constraint firstItem="yyi-z8-UNv" firstAttribute="leading" secondItem="nTp-Ur-ptV" secondAttribute="leading" id="d0i-Am-Rco"/>
@@ -80,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJY-Bf-VfO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1710.144927536232" y="87.723214285714278"/>
+            <point key="canvasLocation" x="1322" y="88"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="GM9-ol-uUb">
@@ -197,12 +310,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YSX-me-AEf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2491" y="88"/>
+            <point key="canvasLocation" x="1971" y="88"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

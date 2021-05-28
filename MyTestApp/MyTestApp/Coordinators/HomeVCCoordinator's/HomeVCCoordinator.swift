@@ -7,14 +7,14 @@
 
 import UIKit
 
-protocol MainFlowCoordinatorDelegate: AnyObject {
+protocol HomeVCCoordinatorDelegate: AnyObject {
     func didLogout()
 } 
 
-class MainFlowCoordinator: CoordinatorProtocol {
+class HomeVCCoordinator: CoordinatorProtocol {
     let service: GoogleSignInService
     let networkService: NetworkService
-    weak var delegate: MainFlowCoordinatorDelegate?
+    weak var delegate: HomeVCCoordinatorDelegate?
     var childCoordinators = [CoordinatorProtocol]()
     var navigationController: UINavigationController
     
@@ -25,8 +25,8 @@ class MainFlowCoordinator: CoordinatorProtocol {
     }
     
     func start() {
-        let vc = MainViewController.instantiate()
-        let viewModel = MainViewModel(service: service, networkService: networkService)
+        let vc = HomeViewController.instantiate()
+        let viewModel = HomeViewModel(service: service, networkService: networkService)
         vc.mainViewModel = viewModel
         vc.delegate = self
         navigationController.setViewControllers([vc], animated: true)
@@ -41,7 +41,7 @@ class MainFlowCoordinator: CoordinatorProtocol {
     }
 }
 
-extension MainFlowCoordinator: MainViewControllerDelegate {
+extension HomeVCCoordinator: HomeViewControllerDelegate {
     func showDetails(teamModel: TeamDetailViewModel) {
         print(teamModel.teamModel.fullName)
         goToDetails(viewModel: teamModel)

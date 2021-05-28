@@ -8,7 +8,7 @@
 import UIKit
 import GoogleSignIn
 
-protocol MainViewModelProtocol {
+protocol HomeViewModelProtocol {
     var currentPage: Int { get set }
     var itemsCount: Int { get }
     var didLoadData: () -> Void { get set }
@@ -21,7 +21,7 @@ protocol MainViewModelProtocol {
     func viewModelForDetailsVC(_ indexPath: IndexPath) -> TeamDetailViewModel
 }
 
-class HomeViewModel: MainViewModelProtocol {
+class HomeViewModel: HomeViewModelProtocol {
     private(set) var teams: [Team] = [] {
         didSet {
             self.didLoadData()
@@ -72,8 +72,9 @@ class HomeViewModel: MainViewModelProtocol {
     
     func viewModelForCell(_ indexPath: IndexPath) -> TeamCellViewModel {
         let team = teams[indexPath.row]
-        return TeamCellViewModel(teamModel: TeamCellModel(fullName: team.fullName,
-                                                          cityName: team.city,
-                                                          devisionName: team.division))
+        return TeamCellViewModel(teamModel: TeamCellModel(
+                                    fullName: team.fullName,
+                                    cityName: team.city,
+                                    devisionName: team.division))
     }
 }
