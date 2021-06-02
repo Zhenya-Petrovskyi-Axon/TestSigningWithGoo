@@ -136,10 +136,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qMf-jb-5Oj" customClass="GIDSignInButton">
-                                <rect key="frame" x="20" y="430.5" width="374" height="35"/>
+                                <rect key="frame" x="127" y="430.5" width="160" height="35"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="2It-Vn-Qr7"/>
+                                    <constraint firstAttribute="width" constant="160" id="T34-oI-8vG"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -148,8 +149,6 @@
                         <constraints>
                             <constraint firstItem="qMf-jb-5Oj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2I6-AV-NTH"/>
                             <constraint firstItem="qMf-jb-5Oj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3lv-QN-XeR"/>
-                            <constraint firstItem="qMf-jb-5Oj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6AW-aC-sga"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qMf-jb-5Oj" secondAttribute="trailing" constant="20" id="8ZH-8I-bQ6"/>
                             <constraint firstItem="lKt-7B-Tqk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="86" id="VaT-0t-9bi"/>
                             <constraint firstItem="lKt-7B-Tqk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="ncv-Th-JZh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lKt-7B-Tqk" secondAttribute="trailing" constant="15" id="wMu-Eg-VZh"/>
