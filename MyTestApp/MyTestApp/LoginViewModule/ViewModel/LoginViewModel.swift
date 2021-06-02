@@ -13,7 +13,7 @@ protocol LoginViewModelProtocol {
 }
 
 class LoginViewModel: LoginViewModelProtocol {
-    var onLogedIn: () -> Void = { }
+    var onLogedIn = { }
     var service: GoogleSignInService
     
     init(service: GoogleSignInService) {
