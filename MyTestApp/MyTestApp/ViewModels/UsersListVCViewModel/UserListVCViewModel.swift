@@ -15,13 +15,15 @@ protocol UserListVCViewModelProtocol {
     var onError: (String) -> Void { get set }
     func viewModelForCell(_ indexPath: IndexPath) -> UserCellViewModel
     func getData()
+    func dataEnded()
+    var isPaginating: Bool { get }
 }
 
 class UserVCViewModel: UserListVCViewModelProtocol {
     var didLoadData = { }
     var onError: (String) -> Void = { _ in }
     var itemsCount: Int { usersArray.count }
-    var service: AlamoNetworkManager?
+    var service: AlamoNetworkManager
     init(networkService: AlamoNetworkManager) {
         service = networkService
         getData()
@@ -34,10 +36,11 @@ class UserVCViewModel: UserListVCViewModelProtocol {
     private var resultsPerPage = 20
     private var maxUsersCount = 5000
     internal var currentPage = 1
+    var isPaginating: Bool { service.isPaginating }
     
     func getData() {
         let fullUrl = "\(baseUrl)\(resultsPerPage)\(resultsForPage)\(currentPage)"
-        service?.getData(type: DataBox<User>.self, url: fullUrl, completion: { [weak self] data in
+        service.getData(type: DataBox<User>.self, url: fullUrl, pagination: true, completion: { [weak self] data in
             switch data {
             case .success(let users):
                 self?.usersArray.append(contentsOf: users.results)
@@ -46,6 +49,10 @@ class UserVCViewModel: UserListVCViewModelProtocol {
                 self?.onError("\(error.localizedDescription)")
             }
         })
+    }
+    
+    func dataEnded() {
+        getData()
     }
     
     func viewModelForCell(_ indexPath: IndexPath) -> UserCellViewModel {
