@@ -8,11 +8,18 @@
 import Alamofire
 
 protocol AlamoNetworkManagerProtocol {
-    func getData<T: Codable>(type: T.Type, url: String, completion: @escaping (Result<T, NetworkError>) -> Void)
+    func getData<T: Codable>(type: T.Type, url: String, pagination: Bool, completion: @escaping (Result<T, NetworkError>) -> Void)
+    var isPaginating: Bool { get set }
 }
 
 class AlamoNetworkManager: AlamoNetworkManagerProtocol {
-    func getData<T: Codable>(type: T.Type, url: String, completion: @escaping (Result<T, NetworkError>) -> Void) {
+    
+    public var isPaginating = false
+    
+    func getData<T: Codable>(type: T.Type, url: String, pagination: Bool, completion: @escaping (Result<T, NetworkError>) -> Void) {
+        if pagination {
+            isPaginating = true
+        }
         guard let url = URL(string: url) else {
             completion(.failure(.urlIsNotValid))
             return
@@ -23,6 +30,9 @@ class AlamoNetworkManager: AlamoNetworkManagerProtocol {
                 return
             }
             completion(.success(data))
+            if pagination {
+                self.isPaginating = false
+            }
         }
     }
 }

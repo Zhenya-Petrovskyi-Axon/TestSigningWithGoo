@@ -40,7 +40,9 @@ class UserListVC: BaseViewController, Storyboarded {
     // MARK: - Call usersViewModel to bind data
     func setupBindings() {
         self.viewModel.didLoadData = { [weak self] in
-            self?.usersCollectionView.reloadData()
+            DispatchQueue.main.async {
+                self?.usersCollectionView.reloadData()
+            }
         }
         self.viewModel.onError = { error in
             print("\(error)")
@@ -50,8 +52,9 @@ class UserListVC: BaseViewController, Storyboarded {
 
 extension UserListVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == viewModel.itemsCount - 1 {
-            viewModel.getData()
+        if indexPath.row == viewModel.itemsCount - 4 {
+            guard !viewModel.isPaginating else { return }
+            viewModel.dataEnded()
         }
     }
 }
