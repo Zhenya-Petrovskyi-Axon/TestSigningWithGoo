@@ -9,8 +9,8 @@ import UIKit
 
 class UserListVC: BaseViewController, Storyboarded {
     @IBOutlet weak var usersCollectionView: UICollectionView!
-    let cellID = "usersCollectionViewCell"
-    let cellName = "UsersCollectionViewCell"
+    let cellID = "userCell"
+    let cellName = "UserCell"
     var viewModel: UserListVCViewModelProtocol!
 
     override func viewDidLoad() {
@@ -58,8 +58,11 @@ extension UserListVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = usersCollectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! UsersCollectionViewCell
+        let cell = usersCollectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! UserCell
         cell.viewModel = viewModel.viewModelForCell(indexPath)
+//        cell.userImage.layer.masksToBounds = true
+//        cell.userImage.layer.cornerRadius = cell.userImage.frame.height / 2
+        cell.awakeFromNib()
         return cell
     }
     
