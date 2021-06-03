@@ -16,30 +16,20 @@ protocol UserListVCViewModelProtocol {
 }
 
 class UserVCViewModel: UserListVCViewModelProtocol {
-    
     var didLoadData = { }
     var onError: (String) -> Void = { _ in }
-    
-    var service: AlamoNetworkManager!
-    
-    private(set) var usersArray: [User] = [] {
-        didSet {
-            self.didLoadData()
-        }
-    }
-    
     var itemsCount: Int { usersArray.count }
-    
+    var service: AlamoNetworkManager?
     init(networkService: AlamoNetworkManager) {
         service = networkService
         getData()
     }
-    
+    private(set) var usersArray: [User] = [] {
+        didSet { self.didLoadData() }
+    }
     private let baseUrl = "https://randomuser.me/api/?seed=abc&results="
     private let resultsForPage = "&page="
-    
     private var resultsPerPage = 20
-    
     private var maxUsersCount = 5000
     internal var currentPage = 1
     
@@ -49,12 +39,17 @@ class UserVCViewModel: UserListVCViewModelProtocol {
             switch data {
             case .success(let users):
                 self?.usersArray.append(contentsOf: users.results)
-                print(self?.usersArray.first?.gender as Any)
                 self?.currentPage += 1
             case .failure(let error):
                 self?.onError("\(error.localizedDescription)")
             }
         })
+    }
+    
+    func viewModelForCell(_ indexPath: IndexPath) -> UserCellViewModel {
+        let user = usersArray[indexPath.row]
+        UserCellViewModel(model: UsersCellModel(
+                            image: user.picture, label: user.fullname))
     }
     
     
