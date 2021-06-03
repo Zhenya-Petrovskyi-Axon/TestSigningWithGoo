@@ -13,6 +13,7 @@ class AppCoordinator: CoordinatorProtocol {
     let service = GoogleSignInService()
     let networkService = NetworkService()
     let tabBarController = TabBarController()
+    let alamoService = AlamoNetworkManager()
     var childCoordinators = [CoordinatorProtocol]()
     var navigationController: UINavigationController
     init(navigationController: UINavigationController) {
@@ -34,7 +35,7 @@ class AppCoordinator: CoordinatorProtocol {
 extension AppCoordinator {
     func goToMainFlow() {
         childCoordinators.removeAll()
-        let coordinator = TabBarCoordinator(navigationController: navigationController, service: service, networkService: networkService, tabBarController: tabBarController)
+        let coordinator = TabBarCoordinator(navigationController: navigationController, service: service, networkService: networkService, tabBarController: tabBarController, alamoService: alamoService)
         coordinator.deleagte = self
         childCoordinators.append(coordinator)
         navigationController.setNavigationBarHidden(true, animated: false)

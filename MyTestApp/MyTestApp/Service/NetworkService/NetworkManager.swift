@@ -60,8 +60,8 @@ class NetworkService: NetworkServiceProtocol {
             switch response.statusCode {
             case 200...202:
                 do {
-                    let teamData = try self.decoder.decode(TeamEndpoint.self, from: catchedData)
-                    completion(.success(teamData.data))
+                    let teamData = try self.decoder.decode(TeamResponse.self, from: catchedData)
+                    completion(.success(teamData.results))
                 } catch let error {
                     completion(.failure(.unableToDecode("\(error)")))
                 }

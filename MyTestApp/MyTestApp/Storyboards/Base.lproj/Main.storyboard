@@ -62,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="483" y="783"/>
         </scene>
-        <!--Movies View Controller-->
+        <!--User ListVC-->
         <scene sceneID="3rO-W9-d9W">
             <objects>
-                <viewController storyboardIdentifier="MoviesViewController" id="lgq-ao-cpi" customClass="MoviesViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserListVC" id="lgq-ao-cpi" customClass="UserListVC" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fav-JY-hYN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -7,17 +7,20 @@
 
 import UIKit
 
-class MoviesVCCoordinator: CoordinatorProtocol {
+class UserListVCCoordinator: CoordinatorProtocol {
     var childCoordinators = [CoordinatorProtocol]()
     
     var navigationController: UINavigationController
+    var networkService: AlamoNetworkManager
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, networkService: AlamoNetworkManager ) {
         self.navigationController = navigationController
+        self.networkService = networkService
     }
     
     func start() {
-        let vc = MoviesViewController.instantiate()
+        let vc = UserListVC.instantiate()
+        vc.viewModel = UserVCViewModel(networkService: networkService)
         navigationController.setViewControllers([vc], animated: true)
     }
     
