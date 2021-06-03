@@ -34,6 +34,4 @@ class GoogleSignInService: NSObject, GIDSignInDelegate {
         completion(user, error)
         self.completion = nil
     }
-    
-
 }

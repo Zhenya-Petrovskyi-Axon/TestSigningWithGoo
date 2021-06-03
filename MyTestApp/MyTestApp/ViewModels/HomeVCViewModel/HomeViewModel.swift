@@ -23,9 +23,7 @@ protocol HomeViewModelProtocol {
 
 class HomeViewModel: HomeViewModelProtocol {
     private(set) var teams: [Team] = [] {
-        didSet {
-            self.didLoadData()
-        }
+        didSet { self.didLoadData() }
     }
     let service: GoogleSignInService
     let networkService: NetworkService

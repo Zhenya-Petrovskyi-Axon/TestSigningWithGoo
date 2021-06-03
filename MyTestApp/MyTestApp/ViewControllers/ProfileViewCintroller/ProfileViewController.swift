@@ -8,9 +8,8 @@
 import UIKit
 
 class ProfileViewController: BaseViewController, Storyboarded {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 }

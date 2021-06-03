@@ -9,7 +9,6 @@ import UIKit
 
 class ProfileVCCoordinator: CoordinatorProtocol {
     var childCoordinators = [CoordinatorProtocol]()
-    
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
@@ -20,5 +19,4 @@ class ProfileVCCoordinator: CoordinatorProtocol {
         let vc = ProfileViewController.instantiate()
         navigationController.setViewControllers([vc], animated: true)
     }
-    
 }

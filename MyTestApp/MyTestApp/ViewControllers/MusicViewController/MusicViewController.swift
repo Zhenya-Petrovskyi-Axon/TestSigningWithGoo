@@ -11,6 +11,5 @@ class MusicViewController: BaseViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 }

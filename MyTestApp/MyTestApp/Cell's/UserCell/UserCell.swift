@@ -32,12 +32,10 @@ class UserCell: UICollectionViewCell {
             }
         }
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         userImage.layer.masksToBounds = true
         userImage.layer.cornerRadius = userImage.frame.width / 2
     }
-
 }
-

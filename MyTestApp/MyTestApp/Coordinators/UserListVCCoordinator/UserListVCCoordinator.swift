@@ -9,7 +9,6 @@ import UIKit
 
 class UserListVCCoordinator: CoordinatorProtocol {
     var childCoordinators = [CoordinatorProtocol]()
-    
     var navigationController: UINavigationController
     var networkService: AlamoNetworkManager
     
@@ -23,6 +22,4 @@ class UserListVCCoordinator: CoordinatorProtocol {
         vc.viewModel = UserVCViewModel(networkService: networkService)
         navigationController.setViewControllers([vc], animated: true)
     }
-    
-    
 }

@@ -9,7 +9,6 @@ import UIKit
 
 class MusicVCCoordinator: CoordinatorProtocol {
     var childCoordinators = [CoordinatorProtocol]()
-    
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
@@ -19,7 +18,5 @@ class MusicVCCoordinator: CoordinatorProtocol {
     func start() {
         let vc = MusicViewController.instantiate()
         navigationController.setViewControllers([vc], animated: true)
-    }
-    
-    
+    } 
 }

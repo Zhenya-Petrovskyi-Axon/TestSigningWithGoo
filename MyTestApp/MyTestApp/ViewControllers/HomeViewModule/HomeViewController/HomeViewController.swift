@@ -14,13 +14,11 @@ protocol HomeViewControllerDelegate: AnyObject {
 }
 
 class HomeViewController: BaseViewController, Storyboarded {
+    @IBOutlet weak var mainTableView: UITableView!
     var mainViewModel: HomeViewModelProtocol!
-    weak var delegate: HomeViewControllerDelegate?
-    
     let mainCellId = "mainCell"
     let mainCellNibName = "MainTableViewCell"
-    
-    @IBOutlet weak var mainTableView: UITableView!
+    weak var delegate: HomeViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,10 +55,6 @@ class HomeViewController: BaseViewController, Storyboarded {
             }
         }
     }
-    
-//    @IBAction func logOutButtonAction(_ sender: UIButton) {
-//        mainViewModel.logout()
-//    }
 }
 
 extension HomeViewController: UITableViewDelegate {

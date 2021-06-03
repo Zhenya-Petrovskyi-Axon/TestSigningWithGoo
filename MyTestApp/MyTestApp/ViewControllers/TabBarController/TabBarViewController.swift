@@ -118,7 +118,6 @@ extension TabBarController: SideMenuVCDelegate {
     @objc func revealSideMenu() {
         self.sideMenuState(expanded: self.isExpanded ? false : true)
     }
-    
 }
 
 extension TabBarController: UIGestureRecognizerDelegate {
@@ -149,4 +148,3 @@ extension UIViewController {
         tabBarController as? TabBarController
     }
 }
-

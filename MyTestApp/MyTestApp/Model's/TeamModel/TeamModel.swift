@@ -12,7 +12,7 @@ struct Team: Codable {
     let id: Int
     let abbreviation, city, conference, division: String
     let fullName, name: String
-
+    
     enum CodingKeys: String, CodingKey {
         case id, abbreviation, city, conference, division
         case fullName = "full_name"

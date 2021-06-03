@@ -16,12 +16,9 @@ class SettingsViewController: BaseViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
     
     @IBAction func logoutButtonAction(_ sender: UIButton) {
         delegate?.logout()
     }
-    
 }

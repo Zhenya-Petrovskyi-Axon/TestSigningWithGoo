@@ -12,7 +12,7 @@ class UserListVC: BaseViewController, Storyboarded {
     let cellID = "userCell"
     let cellName = "UserCell"
     var viewModel: UserListVCViewModelProtocol!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
@@ -46,12 +46,10 @@ class UserListVC: BaseViewController, Storyboarded {
             print("\(error)")
         }
     }
-    
 }
 
-extension UserListVC: UICollectionViewDelegate {
-    
-}
+extension UserListVC: UICollectionViewDelegate { }
+
 extension UserListVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.itemsCount
@@ -60,11 +58,7 @@ extension UserListVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = usersCollectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! UserCell
         cell.viewModel = viewModel.viewModelForCell(indexPath)
-//        cell.userImage.layer.masksToBounds = true
-//        cell.userImage.layer.cornerRadius = cell.userImage.frame.height / 2
         cell.awakeFromNib()
         return cell
     }
-    
-    
 }

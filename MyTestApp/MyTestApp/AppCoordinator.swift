@@ -12,8 +12,8 @@ import GoogleSignIn
 class AppCoordinator: CoordinatorProtocol {
     let service = GoogleSignInService()
     let networkService = NetworkService()
-    let tabBarController = TabBarController()
     let alamoService = AlamoNetworkManager()
+    let tabBarController = TabBarController()
     var childCoordinators = [CoordinatorProtocol]()
     var navigationController: UINavigationController
     init(navigationController: UINavigationController) {

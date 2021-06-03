@@ -53,6 +53,4 @@ class UserVCViewModel: UserListVCViewModelProtocol {
         return UserCellViewModel(model: UsersCellModel(
                             image: user.picture.large, label: user.fullname))
     }
-    
-    
 }

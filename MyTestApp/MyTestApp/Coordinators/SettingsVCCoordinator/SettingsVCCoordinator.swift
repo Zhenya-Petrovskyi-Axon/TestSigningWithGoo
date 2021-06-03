@@ -13,9 +13,8 @@ protocol SettingsCoordinatorDelegate: AnyObject {
 
 class SettingsVCCoordinator: CoordinatorProtocol {
     var childCoordinators = [CoordinatorProtocol]()
-    weak var delegate: SettingsCoordinatorDelegate?
-    
     var navigationController: UINavigationController
+    weak var delegate: SettingsCoordinatorDelegate?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -32,6 +31,4 @@ extension SettingsVCCoordinator: SettingsViewControllerLogoutDelegate {
     func logout() {
         delegate?.onLogout()
     }
-    
-    
 }
