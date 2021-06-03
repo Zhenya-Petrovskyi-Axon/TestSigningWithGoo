@@ -48,7 +48,13 @@ class UserListVC: BaseViewController, Storyboarded {
     }
 }
 
-extension UserListVC: UICollectionViewDelegate { }
+extension UserListVC: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == viewModel.itemsCount - 1 {
+            viewModel.getData()
+        }
+    }
+}
 
 extension UserListVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -58,7 +64,6 @@ extension UserListVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = usersCollectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! UserCell
         cell.viewModel = viewModel.viewModelForCell(indexPath)
-        cell.awakeFromNib()
         return cell
     }
 }
