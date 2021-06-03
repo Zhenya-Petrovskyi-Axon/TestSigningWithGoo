@@ -302,13 +302,13 @@
 			path = TabBarCoordinator;
 			sourceTree = "<group>";
 		};
-		45333E4D265D334C00954176 /* Service */ = {
+		45333E4D265D334C00954176 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				45333E1D2657973E00954176 /* NetworkService */,
 				45333E10265650AC00954176 /* SignInService */,
 			);
-			path = Service;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		45333E5E265E3B9D00954176 /* MusicViewController */ = {
@@ -372,7 +372,7 @@
 				45C3F16F2667D530004543D2 /* Model's */,
 				45C3F1772668BF26004543D2 /* ViewModels */,
 				45C3F1702667D557004543D2 /* Cell's */,
-				45333E4D265D334C00954176 /* Service */,
+				45333E4D265D334C00954176 /* Network */,
 				45A732FF26528C8500598FC2 /* MainAppDelegates */,
 				45A7330026528C9A00598FC2 /* Storyboards */,
 				45A732F426528BF900598FC2 /* Assets.xcassets */,
