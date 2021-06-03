@@ -16,8 +16,15 @@ class UserListVC: BaseViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
+        setUpDelegates()
         setupCollectionView()
         registerCell()
+    }
+    
+    // MARK: - Setup coleection view delegates
+    func setUpDelegates() {
+        usersCollectionView.delegate = self
+        usersCollectionView.dataSource = self
     }
     
     // MARK: - Register cell
@@ -51,7 +58,8 @@ extension UserListVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = usersCollectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
+        let cell = usersCollectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! UsersCollectionViewCell
+        cell.viewModel = viewModel.viewModelForCell(indexPath)
         return cell
     }
     

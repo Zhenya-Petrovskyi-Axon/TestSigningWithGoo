@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import Kingfisher
 
 protocol UserListVCViewModelProtocol {
     var currentPage: Int { get set }
     var itemsCount: Int { get }
     var didLoadData: () -> Void { get set }
     var onError: (String) -> Void { get set }
+    func viewModelForCell(_ indexPath: IndexPath) -> UserCellViewModel
     func getData()
 }
 
@@ -48,8 +50,8 @@ class UserVCViewModel: UserListVCViewModelProtocol {
     
     func viewModelForCell(_ indexPath: IndexPath) -> UserCellViewModel {
         let user = usersArray[indexPath.row]
-        UserCellViewModel(model: UsersCellModel(
-                            image: user.picture, label: user.fullname))
+        return UserCellViewModel(model: UsersCellModel(
+                            image: user.picture.large, label: user.fullname))
     }
     
     
