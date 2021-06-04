@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.4.3)
+  - ANActivityIndicator (1.2.0)
   - AppAuth (1.4.0):
     - AppAuth/Core (= 1.4.0)
     - AppAuth/ExternalUserAgent (= 1.4.0)
@@ -17,12 +18,14 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - ANActivityIndicator
   - GoogleSignIn
   - Kingfisher (~> 6.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - ANActivityIndicator
     - AppAuth
     - GoogleSignIn
     - GTMAppAuth
@@ -31,12 +34,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  ANActivityIndicator: 44a996931d0c554cf157b31056603b23bbdbe76a
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GTMAppAuth: ad5c2b70b9a8689e1a04033c9369c4915bfcbe89
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
 
-PODFILE CHECKSUM: 20390570d80d58b52432b2fde9ecc2b313a2a626
+PODFILE CHECKSUM: 9b66db135c42bfc0d798193bced7081d5e174a4a
 
 COCOAPODS: 1.10.1

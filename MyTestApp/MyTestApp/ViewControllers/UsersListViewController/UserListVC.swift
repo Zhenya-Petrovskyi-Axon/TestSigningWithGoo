@@ -42,16 +42,15 @@ class UserListVC: BaseViewController, Storyboarded {
         self.viewModel.didLoadData = { [weak self] in
             DispatchQueue.main.async {
                 self?.usersCollectionView.reloadData()
+                self?.hideActivityIndicator()
             }
         }
         self.viewModel.onError = { error in
+            self.hideActivityIndicator()
             self.showAlert(text: error)
         }
         self.viewModel.onLoadData = {
             self.showActivityIndicator()
-        }
-        self.viewModel.loadDataSuccess = {
-            self.hideActivityIndicator()
         }
     }
 }

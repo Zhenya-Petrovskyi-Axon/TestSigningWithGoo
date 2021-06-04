@@ -6,24 +6,24 @@
 //
 
 import UIKit
+import ANActivityIndicator
 
-var activityView: UIActivityIndicatorView?
+var indicatorView: ANActivityIndicatorView?
 
 extension UIViewController {
     func showActivityIndicator() {
-        activityView = UIActivityIndicatorView(style: .large)
-        activityView?.center = self.view.center
-        activityView?.color = .black
-        self.view.addSubview(activityView!)
-        activityView?.startAnimating()
-        print("Showing activity indicator")
+        indicatorView = ANActivityIndicatorView(
+            frame: CGRect.init(x: 0, y: 0, width: 75, height: 75),
+            animationType: .ballSpinFadeLoader,
+            color: .orange,
+            padding: .none)
+        indicatorView?.center = self.view.center
+        indicatorView?.startAnimating()
+        self.view.addSubview(indicatorView!)
     }
-
-    func hideActivityIndicator(){
-        if (activityView != nil){
-            activityView?.stopAnimating()
+    func hideActivityIndicator() {
+        if indicatorView != nil {
+            indicatorView?.stopAnimating()
         }
     }
-    
-    
 }

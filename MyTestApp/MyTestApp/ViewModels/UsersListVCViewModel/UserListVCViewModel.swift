@@ -18,8 +18,6 @@ protocol UserListVCViewModelProtocol {
     func dataEnded()
     var isPaginating: Bool { get }
     var onLoadData: () -> Void { get set }
-    var loadDataSuccess: () -> Void { get set }
-    
 }
 
 class UserVCViewModel: UserListVCViewModelProtocol {
@@ -41,7 +39,6 @@ class UserVCViewModel: UserListVCViewModelProtocol {
     internal var currentPage = 1
     var isPaginating: Bool { service.isPaginating }
     var onLoadData: () -> Void = { }
-    var loadDataSuccess: () -> Void = { }
     
     func getData() {
         onLoadData()
@@ -51,9 +48,7 @@ class UserVCViewModel: UserListVCViewModelProtocol {
             case .success(let users):
                 self?.usersArray.append(contentsOf: users.results)
                 self?.currentPage += 1
-                self?.loadDataSuccess()
-            case .failure(let error):
-                self?.onError("\(error.localizedDescription)")
+            case .failure(let error): self?.onError("\(error.localizedDescription)")
             }
         })
     }
@@ -65,6 +60,6 @@ class UserVCViewModel: UserListVCViewModelProtocol {
     func viewModelForCell(_ indexPath: IndexPath) -> UserCellViewModel {
         let user = usersArray[indexPath.row]
         return UserCellViewModel(model: UsersCellModel(
-                            image: user.picture.large, label: user.fullname))
+                                    image: user.picture.large, label: user.fullname))
     }
 }
