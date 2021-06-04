@@ -56,7 +56,7 @@ class TabBarCoordinator: CoordinatorProtocol {
         userListVCCoordinator.start()
         // Profile
         let profileNavVC = UINavigationController()
-        let profileVCCoordinator = ProfileVCCoordinator(navigationController: profileNavVC)
+        let profileVCCoordinator = ProfileVCCoordinator(navigationController: profileNavVC, networkService: alamoService)
         childCoordinators.append(profileVCCoordinator)
         profileVCCoordinator.start()
         // Settings

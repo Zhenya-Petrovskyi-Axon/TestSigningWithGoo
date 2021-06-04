@@ -56,6 +56,8 @@
 		45C3F1942668E05B004543D2 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3F1922668E05B004543D2 /* UserCell.swift */; };
 		45C3F1952668E05B004543D2 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C3F1932668E05B004543D2 /* UserCell.xib */; };
 		45CFBC0B266A08FC002D8BFC /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CFBC0A266A08FC002D8BFC /* ActivityIndicator.swift */; };
+		45CFBC0F266A697A002D8BFC /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CFBC0D266A697A002D8BFC /* UserCollectionViewCell.swift */; };
+		45CFBC10266A697A002D8BFC /* UserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45CFBC0E266A697A002D8BFC /* UserCollectionViewCell.xib */; };
 		CAF428E0680E380D2752A433 /* Pods_MyTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEC6706E60AB10F4571EF97 /* Pods_MyTestApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +114,8 @@
 		45C3F1922668E05B004543D2 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		45C3F1932668E05B004543D2 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		45CFBC0A266A08FC002D8BFC /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		45CFBC0D266A697A002D8BFC /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
+		45CFBC0E266A697A002D8BFC /* UserCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCollectionViewCell.xib; sourceTree = "<group>"; };
 		734264BDB1B532F0FA6C5D6A /* Pods-MyTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTestApp.release.xcconfig"; path = "Target Support Files/Pods-MyTestApp/Pods-MyTestApp.release.xcconfig"; sourceTree = "<group>"; };
 		7EEC6706E60AB10F4571EF97 /* Pods_MyTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -435,6 +439,7 @@
 		45C3F1702667D557004543D2 /* Cell's */ = {
 			isa = PBXGroup;
 			children = (
+				45CFBC0C266A6951002D8BFC /* ProfileUserCell */,
 				45C3F1912668E02B004543D2 /* UserCell */,
 				45333E3F265CD95900954176 /* SideMenuCell */,
 				45333E272657DD7A00954176 /* HomeTableViewCell */,
@@ -524,6 +529,15 @@
 			path = UserCell;
 			sourceTree = "<group>";
 		};
+		45CFBC0C266A6951002D8BFC /* ProfileUserCell */ = {
+			isa = PBXGroup;
+			children = (
+				45CFBC0D266A697A002D8BFC /* UserCollectionViewCell.swift */,
+				45CFBC0E266A697A002D8BFC /* UserCollectionViewCell.xib */,
+			);
+			path = ProfileUserCell;
+			sourceTree = "<group>";
+		};
 		CD3415E50444FD8690F96A07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -593,6 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45A732F826528BF900598FC2 /* LaunchScreen.storyboard in Resources */,
+				45CFBC10266A697A002D8BFC /* UserCollectionViewCell.xib in Resources */,
 				45C3F1952668E05B004543D2 /* UserCell.xib in Resources */,
 				452201A42652900F003C8215 /* credentials.plist in Resources */,
 				45A732F526528BF900598FC2 /* Assets.xcassets in Resources */,
@@ -702,6 +717,7 @@
 				45333E3E265CD80400954176 /* SideMenuViewModel.swift in Sources */,
 				45333E12265653FD00954176 /* HomeVCCoordinator.swift in Sources */,
 				45333E5A265D3E8900954176 /* SettingsViewController.swift in Sources */,
+				45CFBC0F266A697A002D8BFC /* UserCollectionViewCell.swift in Sources */,
 				452201AA2653A4CD003C8215 /* CoordinatorProtocol.swift in Sources */,
 				45C3F1942668E05B004543D2 /* UserCell.swift in Sources */,
 				45333E67265E3CF500954176 /* UserListVCCoordinator.swift in Sources */,
