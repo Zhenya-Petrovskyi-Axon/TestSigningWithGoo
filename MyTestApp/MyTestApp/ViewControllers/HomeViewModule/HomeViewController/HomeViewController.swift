@@ -9,7 +9,6 @@ import UIKit
 import GoogleSignIn
 
 protocol HomeViewControllerDelegate: AnyObject {
-    func signOut()
     func showDetails(teamModel: TeamDetailViewModel)
 }
 
@@ -41,9 +40,6 @@ class HomeViewController: BaseViewController, Storyboarded {
     }
     
     func setupCompletions() {
-        mainViewModel.onLogout = {
-            self.delegate?.signOut()
-        }
         mainViewModel.onError = { [weak self] error in
             DispatchQueue.main.async {
                 self?.showAlert(text: error.description)
@@ -52,6 +48,7 @@ class HomeViewController: BaseViewController, Storyboarded {
         mainViewModel.didLoadData = { [weak self] in
             DispatchQueue.main.async {
                 self?.mainTableView.reloadData()
+                self?.hideActivityIndicator()
             }
         }
     }

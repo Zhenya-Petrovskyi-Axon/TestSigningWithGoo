@@ -22,10 +22,10 @@
 		45333E1F2657976900954176 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E1E2657976900954176 /* NetworkManager.swift */; };
 		45333E21265798E800954176 /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E20265798E700954176 /* TeamModel.swift */; };
 		45333E232657992800954176 /* TeamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E222657992800954176 /* TeamResponse.swift */; };
-		45333E252657B40400954176 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E242657B40400954176 /* ViewControllerExtensions.swift */; };
+		45333E252657B40400954176 /* Allert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E242657B40400954176 /* Allert.swift */; };
 		45333E2E2657F7D800954176 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E2C2657F7D800954176 /* MainTableViewCell.swift */; };
 		45333E2F2657F7D800954176 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45333E2D2657F7D800954176 /* MainTableViewCell.xib */; };
-		45333E33265B8CC200954176 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E32265B8CC200954176 /* UIViewExtension.swift */; };
+		45333E33265B8CC200954176 /* UIViewAddShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E32265B8CC200954176 /* UIViewAddShadow.swift */; };
 		45333E37265B8F9000954176 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E36265B8F9000954176 /* DetailsViewController.swift */; };
 		45333E39265BDE9D00954176 /* TeamDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E38265BDE9D00954176 /* TeamDetailsModel.swift */; };
 		45333E3C265CD7F500954176 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E3B265CD7F500954176 /* SideMenuVC.swift */; };
@@ -76,10 +76,10 @@
 		45333E1E2657976900954176 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		45333E20265798E700954176 /* TeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
 		45333E222657992800954176 /* TeamResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamResponse.swift; sourceTree = "<group>"; };
-		45333E242657B40400954176 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
+		45333E242657B40400954176 /* Allert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allert.swift; sourceTree = "<group>"; };
 		45333E2C2657F7D800954176 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		45333E2D2657F7D800954176 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
-		45333E32265B8CC200954176 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		45333E32265B8CC200954176 /* UIViewAddShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewAddShadow.swift; sourceTree = "<group>"; };
 		45333E36265B8F9000954176 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		45333E38265BDE9D00954176 /* TeamDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsModel.swift; sourceTree = "<group>"; };
 		45333E3B265CD7F500954176 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
@@ -230,8 +230,8 @@
 		45333E262657DD4100954176 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				45333E242657B40400954176 /* ViewControllerExtensions.swift */,
-				45333E32265B8CC200954176 /* UIViewExtension.swift */,
+				45333E242657B40400954176 /* Allert.swift */,
+				45333E32265B8CC200954176 /* UIViewAddShadow.swift */,
 				45333E5B265E2D1200954176 /* BaseVIewController.swift */,
 				45CFBC0A266A08FC002D8BFC /* ActivityIndicator.swift */,
 			);
@@ -681,14 +681,14 @@
 				45A732E926528BF800598FC2 /* AppDelegate.swift in Sources */,
 				45333E21265798E800954176 /* TeamModel.swift in Sources */,
 				452201A72652BB63003C8215 /* HomeViewController.swift in Sources */,
-				45333E33265B8CC200954176 /* UIViewExtension.swift in Sources */,
+				45333E33265B8CC200954176 /* UIViewAddShadow.swift in Sources */,
 				45333E39265BDE9D00954176 /* TeamDetailsModel.swift in Sources */,
 				4521A8C0265F8B55008EDD6A /* CellViewModel.swift in Sources */,
 				45333E2E2657F7D800954176 /* MainTableViewCell.swift in Sources */,
 				45333E232657992800954176 /* TeamResponse.swift in Sources */,
 				4521A8C3265FCDB2008EDD6A /* TapGestureRecognizable.swift in Sources */,
 				452201AE2653A720003C8215 /* Storyboarded.swift in Sources */,
-				45333E252657B40400954176 /* ViewControllerExtensions.swift in Sources */,
+				45333E252657B40400954176 /* Allert.swift in Sources */,
 				45C3F16D2667B96B004543D2 /* UserListVCViewModel.swift in Sources */,
 				45333E49265D301D00954176 /* TabBarViewController.swift in Sources */,
 				45333E47265D063900954176 /* TabBarCoordinator.swift in Sources */,

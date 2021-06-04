@@ -8,7 +8,7 @@
 import UIKit
 import ANActivityIndicator
 
-var indicatorView: ANActivityIndicatorView?
+var indicatorView: ANActivityIndicatorView!
 
 extension UIViewController {
     func showActivityIndicator() {
@@ -19,7 +19,7 @@ extension UIViewController {
             padding: .none)
         indicatorView?.center = self.view.center
         indicatorView?.startAnimating()
-        self.view.addSubview(indicatorView!)
+        self.view.addSubview(indicatorView)
     }
     func hideActivityIndicator() {
         if indicatorView != nil {

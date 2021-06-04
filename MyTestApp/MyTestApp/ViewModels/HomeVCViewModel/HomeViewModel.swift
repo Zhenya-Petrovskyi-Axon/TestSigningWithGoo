@@ -12,10 +12,8 @@ protocol HomeViewModelProtocol {
     var currentPage: Int { get set }
     var itemsCount: Int { get }
     var didLoadData: () -> Void { get set }
-    var onLogout: () -> Void { get set }
     var onError: (String) -> Void { get set }
     var cellSelected: () -> Void { get set }
-    func logout()
     func getData()
     func viewModelForCell(_ indexPath: IndexPath) -> TeamCellViewModel
     func viewModelForDetailsVC(_ indexPath: IndexPath) -> TeamDetailViewModel
@@ -32,7 +30,6 @@ class HomeViewModel: HomeViewModelProtocol {
         self.networkService = networkService
         getData()
     }
-    var onLogout = { }
     var didLoadData = { }
     var cellSelected: () -> Void = {  }
     var onError: (String) -> Void = { _ in }
@@ -51,10 +48,6 @@ class HomeViewModel: HomeViewModelProtocol {
                 self?.onError("\(error)")
             }
         }
-    }
-    
-    func logout() {
-        service.logout(completion: onLogout)
     }
     
     func viewModelForDetailsVC(_ indexPath: IndexPath) -> TeamDetailViewModel {
