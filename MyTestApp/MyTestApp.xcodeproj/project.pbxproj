@@ -55,6 +55,7 @@
 		45C3F16D2667B96B004543D2 /* UserListVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3F16C2667B96B004543D2 /* UserListVCViewModel.swift */; };
 		45C3F1942668E05B004543D2 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3F1922668E05B004543D2 /* UserCell.swift */; };
 		45C3F1952668E05B004543D2 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C3F1932668E05B004543D2 /* UserCell.xib */; };
+		45CFBC0B266A08FC002D8BFC /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CFBC0A266A08FC002D8BFC /* ActivityIndicator.swift */; };
 		CAF428E0680E380D2752A433 /* Pods_MyTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEC6706E60AB10F4571EF97 /* Pods_MyTestApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +111,7 @@
 		45C3F16C2667B96B004543D2 /* UserListVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVCViewModel.swift; sourceTree = "<group>"; };
 		45C3F1922668E05B004543D2 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		45C3F1932668E05B004543D2 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		45CFBC0A266A08FC002D8BFC /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		734264BDB1B532F0FA6C5D6A /* Pods-MyTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTestApp.release.xcconfig"; path = "Target Support Files/Pods-MyTestApp/Pods-MyTestApp.release.xcconfig"; sourceTree = "<group>"; };
 		7EEC6706E60AB10F4571EF97 /* Pods_MyTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -231,6 +233,7 @@
 				45333E242657B40400954176 /* ViewControllerExtensions.swift */,
 				45333E32265B8CC200954176 /* UIViewExtension.swift */,
 				45333E5B265E2D1200954176 /* BaseVIewController.swift */,
+				45CFBC0A266A08FC002D8BFC /* ActivityIndicator.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				45A732ED26528BF800598FC2 /* LoginViewController.swift in Sources */,
 				45333E5C265E2D1200954176 /* BaseVIewController.swift in Sources */,
 				452201AC2653A547003C8215 /* AppCoordinator.swift in Sources */,
+				45CFBC0B266A08FC002D8BFC /* ActivityIndicator.swift in Sources */,
 				45333E3C265CD7F500954176 /* SideMenuVC.swift in Sources */,
 				45333E69265E3D4700954176 /* ProfileVCCoordinator.swift in Sources */,
 				45C3F1662667B3F9004543D2 /* AlamoNetworkManager.swift in Sources */,
