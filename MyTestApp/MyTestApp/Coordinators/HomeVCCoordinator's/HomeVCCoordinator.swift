@@ -30,6 +30,7 @@ class HomeVCCoordinator: CoordinatorProtocol {
         vc.mainViewModel = viewModel
         vc.delegate = self
         navigationController.setViewControllers([vc], animated: true)
+        vc.showActivityIndicator()
     }
     
     func goToDetails(viewModel: TeamDetailViewModel) {

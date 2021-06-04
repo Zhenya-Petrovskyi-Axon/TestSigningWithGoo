@@ -17,16 +17,18 @@ class TabBarCoordinator: CoordinatorProtocol {
     var childCoordinators = [CoordinatorProtocol]()
     let service: GoogleSignInService
     let networkService: NetworkService
+    let alamoService: AlamoNetworkManager
     var navigationController: UINavigationController
     var tabBarController: UITabBarController
     
     weak var deleagte: TabBarCoordinatorDelegate?
     
-    init(navigationController: UINavigationController, service: GoogleSignInService, networkService: NetworkService, tabBarController: UITabBarController) {
+    init(navigationController: UINavigationController, service: GoogleSignInService, networkService: NetworkService, tabBarController: UITabBarController, alamoService: AlamoNetworkManager) {
         self.service = service
         self.networkService = networkService
         self.navigationController = navigationController
         self.tabBarController = tabBarController
+        self.alamoService = alamoService
     }
     
     func start() {
@@ -47,11 +49,11 @@ class TabBarCoordinator: CoordinatorProtocol {
         let musicVCCoordinator = MusicVCCoordinator(navigationController: musicCoordNavVC)
         childCoordinators.append(musicVCCoordinator)
         musicVCCoordinator.start()
-        // Movies
-        let moviesCoordNavVC = UINavigationController()
-        let moviesVCCoordinator = MoviesVCCoordinator(navigationController: moviesCoordNavVC)
-        childCoordinators.append(moviesVCCoordinator)
-        moviesVCCoordinator.start()
+        // Users
+        let usersListCoordNavVC = UINavigationController()
+        let userListVCCoordinator = UserListVCCoordinator(navigationController: usersListCoordNavVC, networkService: alamoService)
+        childCoordinators.append(userListVCCoordinator)
+        userListVCCoordinator.start()
         // Profile
         let profileNavVC = UINavigationController()
         let profileVCCoordinator = ProfileVCCoordinator(navigationController: profileNavVC)
@@ -64,7 +66,7 @@ class TabBarCoordinator: CoordinatorProtocol {
         settingsVCCoordinator.delegate = self
         settingsVCCoordinator.start()
         // Set Tab Bar Items
-        tabBarController.setViewControllers([homeCoordNavVC, musicCoordNavVC, moviesCoordNavVC, profileNavVC, settingskNavVC], animated: false)
+        tabBarController.setViewControllers([homeCoordNavVC, musicCoordNavVC, usersListCoordNavVC, profileNavVC, settingskNavVC], animated: false)
         tabBarController.tabBar.isHidden = true
     }
     

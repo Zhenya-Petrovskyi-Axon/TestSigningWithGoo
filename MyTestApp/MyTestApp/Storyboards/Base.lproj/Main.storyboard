@@ -62,16 +62,38 @@
             </objects>
             <point key="canvasLocation" x="483" y="783"/>
         </scene>
-        <!--Movies View Controller-->
+        <!--User ListVC-->
         <scene sceneID="3rO-W9-d9W">
             <objects>
-                <viewController storyboardIdentifier="MoviesViewController" id="lgq-ao-cpi" customClass="MoviesViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserListVC" id="lgq-ao-cpi" customClass="UserListVC" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fav-JY-hYN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oHk-Kn-4FQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="pRJ-dd-Oke">
+                                    <size key="itemSize" width="190" height="220"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="mQK-zL-8p0"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="mQK-zL-8p0" firstAttribute="trailing" secondItem="oHk-Kn-4FQ" secondAttribute="trailing" id="Fqv-Ty-IWp"/>
+                            <constraint firstItem="oHk-Kn-4FQ" firstAttribute="leading" secondItem="mQK-zL-8p0" secondAttribute="leading" id="Oig-gB-KFB"/>
+                            <constraint firstItem="mQK-zL-8p0" firstAttribute="bottom" secondItem="oHk-Kn-4FQ" secondAttribute="bottom" id="QFU-10-STO"/>
+                            <constraint firstItem="oHk-Kn-4FQ" firstAttribute="top" secondItem="mQK-zL-8p0" secondAttribute="top" id="yZP-Az-VzT"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="usersCollectionView" destination="oHk-Kn-4FQ" id="YdU-aY-sVB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kts-RR-48P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
