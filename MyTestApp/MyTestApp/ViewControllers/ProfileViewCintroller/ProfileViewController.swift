@@ -55,6 +55,7 @@ extension ProfileViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = userCollectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! UserCollectionViewCell
         cell.viewModel = viewModel.viewModelForImageCell(indexPath)
+        cell.layer.cornerRadius = cell.frame.size.height / 2
         return cell
     }
     

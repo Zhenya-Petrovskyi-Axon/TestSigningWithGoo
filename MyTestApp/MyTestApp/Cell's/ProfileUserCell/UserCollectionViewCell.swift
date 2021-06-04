@@ -20,6 +20,7 @@ class ImageCellViewModel {
 }
 
 class UserCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var underImageView: UIView!
     @IBOutlet weak var userImage: UIImageView!
     var viewModel: ImageCellViewModel! {
         didSet {
@@ -39,6 +40,15 @@ class UserCollectionViewCell: UICollectionViewCell {
         userImage.layer.borderColor = UIColor.white.cgColor
         userImage.layer.masksToBounds = true
         userImage.layer.cornerRadius = userImage.frame.height / 2
+        underImageView.layer.borderWidth = 0.8
+        underImageView.layer.borderColor = UIColor.black.cgColor
+        underImageView.layer.masksToBounds = true
+        underImageView.layer.cornerRadius = underImageView.frame.height / 2
+        underImageView.addShadow(offset: CGSize.init(width: 15,height: 8),
+                                 color: .black,
+                                 radius: 4,
+                                 opacity: 0.4)
+
     }
     
 }
