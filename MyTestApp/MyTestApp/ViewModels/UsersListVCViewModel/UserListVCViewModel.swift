@@ -17,6 +17,9 @@ protocol UserListVCViewModelProtocol {
     func getData()
     func dataEnded()
     var isPaginating: Bool { get }
+    var onLoadData: () -> Void { get set }
+    var loadDataSuccess: () -> Void { get set }
+    
 }
 
 class UserVCViewModel: UserListVCViewModelProtocol {
@@ -37,14 +40,18 @@ class UserVCViewModel: UserListVCViewModelProtocol {
     private var maxUsersCount = 5000
     internal var currentPage = 1
     var isPaginating: Bool { service.isPaginating }
+    var onLoadData: () -> Void = { }
+    var loadDataSuccess: () -> Void = { }
     
     func getData() {
+        onLoadData()
         let fullUrl = "\(baseUrl)\(resultsPerPage)\(resultsForPage)\(currentPage)"
         service.getData(type: DataBox<User>.self, url: fullUrl, pagination: true, completion: { [weak self] data in
             switch data {
             case .success(let users):
                 self?.usersArray.append(contentsOf: users.results)
                 self?.currentPage += 1
+                self?.loadDataSuccess()
             case .failure(let error):
                 self?.onError("\(error.localizedDescription)")
             }

@@ -45,14 +45,20 @@ class UserListVC: BaseViewController, Storyboarded {
             }
         }
         self.viewModel.onError = { error in
-            print("\(error)")
+            self.showAlert(text: error)
+        }
+        self.viewModel.onLoadData = {
+            self.showActivityIndicator()
+        }
+        self.viewModel.loadDataSuccess = {
+            self.hideActivityIndicator()
         }
     }
 }
 
 extension UserListVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == viewModel.itemsCount - 4 {
+        if indexPath.row == viewModel.itemsCount - 1 {
             guard !viewModel.isPaginating else { return }
             viewModel.dataEnded()
         }
