@@ -29,10 +29,8 @@ class UserCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override func layoutSubviews() {
         setupView()
-        // Initialization code
     }
     
     func setupView() {
@@ -48,7 +46,5 @@ class UserCollectionViewCell: UICollectionViewCell {
                                  color: .black,
                                  radius: 4,
                                  opacity: 0.4)
-
     }
-    
 }
