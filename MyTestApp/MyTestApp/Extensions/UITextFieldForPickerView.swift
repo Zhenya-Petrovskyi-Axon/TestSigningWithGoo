@@ -10,4 +10,8 @@ import UIKit
 extension UITextField {
     func loadDropdownData(_ data: [String]) {
         self.inputView = MyPickerView(pickerData: data, dropdownField: self)
-    }}
+    }
+    func loadDropdownData(data: [String], onSelect selectionHandler : (selectedText: String) -> Void) {
+            self.inputView = MyPickerView(pickerData: data, dropdownField: self, onSelect: selectionHandler)
+        }
+}
