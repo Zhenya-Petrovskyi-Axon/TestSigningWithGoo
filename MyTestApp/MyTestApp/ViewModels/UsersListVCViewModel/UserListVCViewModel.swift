@@ -62,4 +62,9 @@ class UserVCViewModel: UserListVCViewModelProtocol {
         return UserCellViewModel(model: UsersCellModel(
                                     image: user.picture.large, label: user.fullname))
     }
+    
+    func viewModelForImageCell(_ indexPath: IndexPath) -> ImageCellViewModel {
+        let image = usersArray[indexPath.row]
+        return ImageCellViewModel(imageView: ImageCell(image: image.picture.large))
+    }
 }
