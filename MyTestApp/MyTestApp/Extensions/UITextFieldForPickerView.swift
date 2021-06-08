@@ -8,6 +8,6 @@
 import UIKit
 
 extension UITextField {
-    func loadDropdownData(data: [String]) {
+    func loadDropdownData(_ data: [String]) {
         self.inputView = MyPickerView(pickerData: data, dropdownField: self)
     }}

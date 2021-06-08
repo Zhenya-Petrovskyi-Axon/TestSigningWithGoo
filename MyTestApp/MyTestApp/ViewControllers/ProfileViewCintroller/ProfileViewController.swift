@@ -17,12 +17,19 @@ class ProfileViewController: BaseViewController, Storyboarded {
     var itemCellHeight: CGFloat { itemCellWidth }
     var viewModel: UserVCViewModel!
     
+    let salutations = ["", "Mr.", "Ms.", "Mrs."]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUserCollectionViewColor()
         registerImageCell()
         setupDelegates()
         setupBindings()
+        setupDropDownPicker()
+    }
+    
+    func setupDropDownPicker() {
+        pickerTextField.loadDropdownData(salutations)
     }
     
     func setupUserCollectionViewColor() {
