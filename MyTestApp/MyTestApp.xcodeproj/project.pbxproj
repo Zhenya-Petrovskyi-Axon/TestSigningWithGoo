@@ -44,6 +44,7 @@
 		45333E69265E3D4700954176 /* ProfileVCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E68265E3D4700954176 /* ProfileVCCoordinator.swift */; };
 		45333E6B265E3D7700954176 /* SettingsVCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E6A265E3D7700954176 /* SettingsVCCoordinator.swift */; };
 		457B4DFC266F92E500A0D21E /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457B4DFB266F92E500A0D21E /* PickerView.swift */; };
+		457B4DFE266F95CC00A0D21E /* UITextFieldForPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457B4DFD266F95CC00A0D21E /* UITextFieldForPickerView.swift */; };
 		45A732E926528BF800598FC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A732E826528BF800598FC2 /* AppDelegate.swift */; };
 		45A732ED26528BF800598FC2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A732EC26528BF800598FC2 /* LoginViewController.swift */; };
 		45A732F026528BF800598FC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A732EE26528BF800598FC2 /* Main.storyboard */; };
@@ -101,6 +102,7 @@
 		45333E68265E3D4700954176 /* ProfileVCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVCCoordinator.swift; sourceTree = "<group>"; };
 		45333E6A265E3D7700954176 /* SettingsVCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVCCoordinator.swift; sourceTree = "<group>"; };
 		457B4DFB266F92E500A0D21E /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		457B4DFD266F95CC00A0D21E /* UITextFieldForPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldForPickerView.swift; sourceTree = "<group>"; };
 		45A732E526528BF800598FC2 /* MyTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A732E826528BF800598FC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45A732EC26528BF800598FC2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				45333E32265B8CC200954176 /* UIViewAddShadow.swift */,
 				45333E5B265E2D1200954176 /* BaseVIewController.swift */,
 				45CFBC0A266A08FC002D8BFC /* ActivityIndicator.swift */,
+				457B4DFD266F95CC00A0D21E /* UITextFieldForPickerView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -700,6 +703,7 @@
 				45333E5C265E2D1200954176 /* BaseVIewController.swift in Sources */,
 				452201AC2653A547003C8215 /* AppCoordinator.swift in Sources */,
 				45CFBC0B266A08FC002D8BFC /* ActivityIndicator.swift in Sources */,
+				457B4DFE266F95CC00A0D21E /* UITextFieldForPickerView.swift in Sources */,
 				45333E3C265CD7F500954176 /* SideMenuVC.swift in Sources */,
 				45333E69265E3D4700954176 /* ProfileVCCoordinator.swift in Sources */,
 				45C3F1662667B3F9004543D2 /* AlamoNetworkManager.swift in Sources */,
