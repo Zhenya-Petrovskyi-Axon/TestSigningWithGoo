@@ -11,4 +11,7 @@ Test App:
     Alamofire
     KingFisher
     ANActivtyIndicator - custom activity indicator
+6. Horizontal collectionView
+    Paging between set of cell's
+    layout with round boarder
 
