@@ -9,7 +9,6 @@ import UIKit
 
 class ProfileViewController: BaseViewController, Storyboarded {
     @IBOutlet weak var userCollectionView: UICollectionView!
-    @IBOutlet weak var pickerTextField: UITextField!
     let cellID = "userCollectionViewCell"
     let cellName = "UserCollectionViewCell"
     var itemCellGap: CGFloat = 0
@@ -17,19 +16,12 @@ class ProfileViewController: BaseViewController, Storyboarded {
     var itemCellHeight: CGFloat { itemCellWidth }
     var viewModel: UserVCViewModel!
     
-    let salutations = ["", "Mr.", "Ms.", "Mrs."]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUserCollectionViewColor()
         registerImageCell()
         setupDelegates()
         setupBindings()
-        setupDropDownPicker()
-    }
-    
-    func setupDropDownPicker() {
-        pickerTextField.loadDropdownData(salutations)
     }
     
     func setupUserCollectionViewColor() {

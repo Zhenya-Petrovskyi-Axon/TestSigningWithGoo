@@ -8,7 +8,15 @@
 import UIKit
 
 extension UITextField {
-    func loadDropdownData(data: [String], selectionHandler : @escaping (_ selectedText: String) -> Void) {
+    func loadDropdownData(_ data: [String], _ selectionHandler : @escaping (_ selectedText: String) -> Void) {
         self.inputView = MyPickerView(pickerData: data, dropdownField: self, onSelect: selectionHandler)
+    }
+    
+    func unloadDropDown() {
+        self.inputView?.removeFromSuperview()
+    }
+    
+    func loadToSuperView() {
+        
     }
 }

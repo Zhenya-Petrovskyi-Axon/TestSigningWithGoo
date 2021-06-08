@@ -45,10 +45,10 @@ class TabBarCoordinator: CoordinatorProtocol {
         childCoordinators.append(homeVCCoordinator)
         homeVCCoordinator.start()
         // Music
-        let musicCoordNavVC = UINavigationController()
-        let musicVCCoordinator = MusicVCCoordinator(navigationController: musicCoordNavVC)
-        childCoordinators.append(musicVCCoordinator)
-        musicVCCoordinator.start()
+        let genderCoordNavVC = UINavigationController()
+        let genderVCCoordinator = GenderVCCoordinator(navigationController: genderCoordNavVC)
+        childCoordinators.append(genderVCCoordinator)
+        genderVCCoordinator.start()
         // Users
         let usersListCoordNavVC = UINavigationController()
         let userListVCCoordinator = UserListVCCoordinator(navigationController: usersListCoordNavVC, networkService: alamoService)
@@ -66,7 +66,7 @@ class TabBarCoordinator: CoordinatorProtocol {
         settingsVCCoordinator.delegate = self
         settingsVCCoordinator.start()
         // Set Tab Bar Items
-        tabBarController.setViewControllers([homeCoordNavVC, musicCoordNavVC, usersListCoordNavVC, profileNavVC, settingskNavVC], animated: false)
+        tabBarController.setViewControllers([homeCoordNavVC, genderCoordNavVC, usersListCoordNavVC, profileNavVC, settingskNavVC], animated: false)
         tabBarController.tabBar.isHidden = true
     }
     

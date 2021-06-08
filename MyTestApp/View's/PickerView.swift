@@ -27,9 +27,6 @@ class MyPickerView: UIPickerView {
                 self.pickerTextField.isEnabled = false
             }
         }
-        if self.pickerTextField.text != nil && self.selectionHandler != nil {
-            selectionHandler!(self.pickerTextField.text!)
-        }
     }
     
     convenience init(pickerData: [String], dropdownField: UITextField, onSelect selectionHandler : @escaping (_ selectedText: String) -> Void) {

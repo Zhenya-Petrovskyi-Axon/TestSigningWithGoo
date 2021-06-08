@@ -10,7 +10,7 @@ import UIKit
 class CellViewModel {
     var menuItems: [MenuCellModel] = [
         MenuCellModel(icon: UIImage(systemName: "house.fill")!, title: "Home"),
-        MenuCellModel(icon: UIImage(systemName: "music.note")!, title: "Music"),
+        MenuCellModel(icon: UIImage(systemName: "figure.stand.line.dotted.figure.stand")!, title: "Gender"),
         MenuCellModel(icon: UIImage(systemName: "film.fill")!, title: "Users"),
         MenuCellModel(icon: UIImage(systemName: "person.fill")!, title: "Profile"),
         MenuCellModel(icon: UIImage(systemName: "slider.horizontal.3")!, title: "Settings")

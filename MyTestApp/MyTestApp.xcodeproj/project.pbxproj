@@ -34,12 +34,12 @@
 		45333E43265CD98400954176 /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45333E41265CD98400954176 /* SideMenuCell.xib */; };
 		45333E47265D063900954176 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E46265D063900954176 /* TabBarCoordinator.swift */; };
 		45333E49265D301D00954176 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E48265D301D00954176 /* TabBarViewController.swift */; };
-		45333E54265D3E0600954176 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E53265D3E0600954176 /* MusicViewController.swift */; };
+		45333E54265D3E0600954176 /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E53265D3E0600954176 /* GenderViewController.swift */; };
 		45333E56265D3E3B00954176 /* UserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E55265D3E3B00954176 /* UserListVC.swift */; };
 		45333E58265D3E6400954176 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E57265D3E6400954176 /* ProfileViewController.swift */; };
 		45333E5A265D3E8900954176 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E59265D3E8900954176 /* SettingsViewController.swift */; };
 		45333E5C265E2D1200954176 /* BaseVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E5B265E2D1200954176 /* BaseVIewController.swift */; };
-		45333E65265E3CBE00954176 /* MusicVCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E64265E3CBE00954176 /* MusicVCCoordinator.swift */; };
+		45333E65265E3CBE00954176 /* GenderVCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E64265E3CBE00954176 /* GenderVCCoordinator.swift */; };
 		45333E67265E3CF500954176 /* UserListVCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E66265E3CF500954176 /* UserListVCCoordinator.swift */; };
 		45333E69265E3D4700954176 /* ProfileVCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E68265E3D4700954176 /* ProfileVCCoordinator.swift */; };
 		45333E6B265E3D7700954176 /* SettingsVCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45333E6A265E3D7700954176 /* SettingsVCCoordinator.swift */; };
@@ -92,12 +92,12 @@
 		45333E41265CD98400954176 /* SideMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
 		45333E46265D063900954176 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		45333E48265D301D00954176 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		45333E53265D3E0600954176 /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
+		45333E53265D3E0600954176 /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
 		45333E55265D3E3B00954176 /* UserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVC.swift; sourceTree = "<group>"; };
 		45333E57265D3E6400954176 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		45333E59265D3E8900954176 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		45333E5B265E2D1200954176 /* BaseVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVIewController.swift; sourceTree = "<group>"; };
-		45333E64265E3CBE00954176 /* MusicVCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicVCCoordinator.swift; sourceTree = "<group>"; };
+		45333E64265E3CBE00954176 /* GenderVCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderVCCoordinator.swift; sourceTree = "<group>"; };
 		45333E66265E3CF500954176 /* UserListVCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVCCoordinator.swift; sourceTree = "<group>"; };
 		45333E68265E3D4700954176 /* ProfileVCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVCCoordinator.swift; sourceTree = "<group>"; };
 		45333E6A265E3D7700954176 /* SettingsVCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVCCoordinator.swift; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 				45333E4C265D32E200954176 /* TabBarCoordinator */,
 				45333E1526568ED700954176 /* LoginFlowCoordinator */,
 				45333E1826568F1900954176 /* HomeVCCoordinator's */,
-				45C3F1722668BE95004543D2 /* MusicVCCoordinator */,
+				45C3F1722668BE95004543D2 /* GenderVCCoordinator */,
 				45C3F1732668BEA8004543D2 /* UserListVCCoordinator */,
 				45C3F1752668BEC3004543D2 /* ProfileVCCoordinator */,
 				45C3F1762668BED5004543D2 /* SettingsVCCoordinator */,
@@ -323,12 +323,12 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		45333E5E265E3B9D00954176 /* MusicViewController */ = {
+		45333E5E265E3B9D00954176 /* GenderViewController */ = {
 			isa = PBXGroup;
 			children = (
-				45333E53265D3E0600954176 /* MusicViewController.swift */,
+				45333E53265D3E0600954176 /* GenderViewController.swift */,
 			);
-			path = MusicViewController;
+			path = GenderViewController;
 			sourceTree = "<group>";
 		};
 		45333E5F265E3BAE00954176 /* UsersListViewController */ = {
@@ -462,12 +462,12 @@
 			path = "Cell's";
 			sourceTree = "<group>";
 		};
-		45C3F1722668BE95004543D2 /* MusicVCCoordinator */ = {
+		45C3F1722668BE95004543D2 /* GenderVCCoordinator */ = {
 			isa = PBXGroup;
 			children = (
-				45333E64265E3CBE00954176 /* MusicVCCoordinator.swift */,
+				45333E64265E3CBE00954176 /* GenderVCCoordinator.swift */,
 			);
-			path = MusicVCCoordinator;
+			path = GenderVCCoordinator;
 			sourceTree = "<group>";
 		};
 		45C3F1732668BEA8004543D2 /* UserListVCCoordinator */ = {
@@ -530,7 +530,7 @@
 				45333E60265E3BBC00954176 /* ProfileViewCintroller */,
 				45333E5F265E3BAE00954176 /* UsersListViewController */,
 				45333E1A26568F2E00954176 /* HomeViewModule */,
-				45333E5E265E3B9D00954176 /* MusicViewController */,
+				45333E5E265E3B9D00954176 /* GenderViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -726,11 +726,11 @@
 				45333E47265D063900954176 /* TabBarCoordinator.swift in Sources */,
 				45333E1426565A9300954176 /* LoginFlowCoordinator.swift in Sources */,
 				45333E0F26564FCE00954176 /* GoggleSignInService.swift in Sources */,
-				45333E54265D3E0600954176 /* MusicViewController.swift in Sources */,
+				45333E54265D3E0600954176 /* GenderViewController.swift in Sources */,
 				45333E37265B8F9000954176 /* DetailsViewController.swift in Sources */,
 				45333E58265D3E6400954176 /* ProfileViewController.swift in Sources */,
 				452201A226528E9F003C8215 /* LoginViewModel.swift in Sources */,
-				45333E65265E3CBE00954176 /* MusicVCCoordinator.swift in Sources */,
+				45333E65265E3CBE00954176 /* GenderVCCoordinator.swift in Sources */,
 				45333E3E265CD80400954176 /* SideMenuViewModel.swift in Sources */,
 				45333E12265653FD00954176 /* HomeVCCoordinator.swift in Sources */,
 				45333E5A265D3E8900954176 /* SettingsViewController.swift in Sources */,

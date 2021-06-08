@@ -48,16 +48,46 @@
             </objects>
             <point key="canvasLocation" x="31.884057971014496" y="87.723214285714278"/>
         </scene>
-        <!--Music View Controller-->
+        <!--Gender View Controller-->
         <scene sceneID="Ly0-Pr-StX">
             <objects>
-                <viewController storyboardIdentifier="MusicViewController" id="VQY-nw-lum" customClass="MusicViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GenderViewController" id="VQY-nw-lum" customClass="GenderViewController" customModule="MyTestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vtq-2r-Kfr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vm1-HB-jsh">
+                                <rect key="frame" x="107" y="346" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="UKO-NX-7PS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWp-Zj-xud">
+                                <rect key="frame" x="12" y="155" width="390" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GVp-hz-Tv1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9OO-EY-pER"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="Vm1-HB-jsh" firstAttribute="top" secondItem="9OO-EY-pER" secondAttribute="top" constant="302" id="KfL-yp-h05"/>
+                            <constraint firstItem="9OO-EY-pER" firstAttribute="trailing" secondItem="cWp-Zj-xud" secondAttribute="trailing" constant="12" id="a53-fL-Ucl"/>
+                            <constraint firstItem="cWp-Zj-xud" firstAttribute="top" secondItem="9OO-EY-pER" secondAttribute="top" constant="111" id="bB1-1n-SzX"/>
+                            <constraint firstItem="cWp-Zj-xud" firstAttribute="leading" secondItem="9OO-EY-pER" secondAttribute="leading" constant="12" id="euq-Px-QZ7"/>
+                            <constraint firstItem="Vm1-HB-jsh" firstAttribute="centerX" secondItem="vtq-2r-Kfr" secondAttribute="centerX" id="x1p-em-gzM"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="genderDescriptionLabel" destination="cWp-Zj-xud" id="Dn4-VF-JRC"/>
+                        <outlet property="pickerTextField" destination="Vm1-HB-jsh" id="5Qz-LB-aQQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kd3-6x-d4o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -145,28 +175,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
                             </collectionView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CEd-PZ-2SI">
-                                <rect key="frame" x="82" y="379" width="250" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="Ha1-jb-pmK"/>
-                                    <constraint firstAttribute="height" constant="34" id="uzk-XO-Egj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6j1-HN-Z0U"/>
                         <color key="backgroundColor" red="0.2901960784" green="0.31372549020000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="CEd-PZ-2SI" firstAttribute="top" secondItem="aP1-cQ-sDs" secondAttribute="bottom" constant="135" id="7mj-Lk-znx"/>
                             <constraint firstItem="aP1-cQ-sDs" firstAttribute="top" secondItem="6j1-HN-Z0U" secondAttribute="top" id="CjP-en-C9S"/>
-                            <constraint firstItem="CEd-PZ-2SI" firstAttribute="centerX" secondItem="oc0-ak-B57" secondAttribute="centerX" id="Okn-vW-oKv"/>
                             <constraint firstItem="aP1-cQ-sDs" firstAttribute="leading" secondItem="6j1-HN-Z0U" secondAttribute="leading" id="Rs8-cB-jWc"/>
                             <constraint firstItem="6j1-HN-Z0U" firstAttribute="trailing" secondItem="aP1-cQ-sDs" secondAttribute="trailing" id="Ru0-5E-A2N"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="pickerTextField" destination="CEd-PZ-2SI" id="v89-8U-Vl5"/>
                         <outlet property="userCollectionView" destination="aP1-cQ-sDs" id="Bhc-6q-E2M"/>
                     </connections>
                 </viewController>

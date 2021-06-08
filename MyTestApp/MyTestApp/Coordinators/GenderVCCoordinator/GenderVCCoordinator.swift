@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MusicVCCoordinator: CoordinatorProtocol {
+class GenderVCCoordinator: CoordinatorProtocol {
     var childCoordinators = [CoordinatorProtocol]()
     var navigationController: UINavigationController
     
@@ -16,7 +16,7 @@ class MusicVCCoordinator: CoordinatorProtocol {
     }
     
     func start() {
-        let vc = MusicViewController.instantiate()
+        let vc = GenderViewController.instantiate()
         navigationController.setViewControllers([vc], animated: true)
     } 
 }
