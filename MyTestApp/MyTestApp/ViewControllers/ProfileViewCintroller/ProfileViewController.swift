@@ -9,6 +9,7 @@ import UIKit
 
 class ProfileViewController: BaseViewController, Storyboarded {
     @IBOutlet weak var userCollectionView: UICollectionView!
+    @IBOutlet weak var pickerTextField: UITextField!
     let cellID = "userCollectionViewCell"
     let cellName = "UserCollectionViewCell"
     var itemCellGap: CGFloat = 0

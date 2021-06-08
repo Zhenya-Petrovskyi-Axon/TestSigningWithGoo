@@ -145,16 +145,28 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
                             </collectionView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CEd-PZ-2SI">
+                                <rect key="frame" x="82" y="379" width="250" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Ha1-jb-pmK"/>
+                                    <constraint firstAttribute="height" constant="34" id="uzk-XO-Egj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6j1-HN-Z0U"/>
                         <color key="backgroundColor" red="0.2901960784" green="0.31372549020000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="CEd-PZ-2SI" firstAttribute="top" secondItem="aP1-cQ-sDs" secondAttribute="bottom" constant="135" id="7mj-Lk-znx"/>
                             <constraint firstItem="aP1-cQ-sDs" firstAttribute="top" secondItem="6j1-HN-Z0U" secondAttribute="top" id="CjP-en-C9S"/>
+                            <constraint firstItem="CEd-PZ-2SI" firstAttribute="centerX" secondItem="oc0-ak-B57" secondAttribute="centerX" id="Okn-vW-oKv"/>
                             <constraint firstItem="aP1-cQ-sDs" firstAttribute="leading" secondItem="6j1-HN-Z0U" secondAttribute="leading" id="Rs8-cB-jWc"/>
                             <constraint firstItem="6j1-HN-Z0U" firstAttribute="trailing" secondItem="aP1-cQ-sDs" secondAttribute="trailing" id="Ru0-5E-A2N"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="pickerTextField" destination="CEd-PZ-2SI" id="v89-8U-Vl5"/>
                         <outlet property="userCollectionView" destination="aP1-cQ-sDs" id="Bhc-6q-E2M"/>
                     </connections>
                 </viewController>
