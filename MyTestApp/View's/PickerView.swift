@@ -9,7 +9,8 @@ import UIKit
 
 class MyPickerView: UIPickerView {
     var pickerData: [String]!
-    var pickerTextField : UITextField!
+    var pickerTextField: UITextField!
+    var selectionHandler: ((_ selectedText: String) -> Void)?
     
     init(pickerData: [String], dropdownField: UITextField) {
         super.init(frame: CGRect.zero)
@@ -26,7 +27,16 @@ class MyPickerView: UIPickerView {
                 self.pickerTextField.isEnabled = false
             }
         }
+        if self.pickerTextField.text != nil && self.selectionHandler != nil {
+            selectionHandler!(self.pickerTextField.text!)
+        }
     }
+    
+    convenience init(pickerData: [String], dropdownField: UITextField, onSelect selectionHandler : @escaping (_ selectedText: String) -> Void) {
+        self.init(pickerData: pickerData, dropdownField: dropdownField)
+        self.selectionHandler = selectionHandler
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:\(aDecoder) has not been implemented")
     }
@@ -43,18 +53,21 @@ extension MyPickerView: UIPickerViewDelegate {
     }
     // This function sets the text of the picker view to the content of the "salutations" array
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    pickerData[row]
+        pickerData[row]
     }
     
     // When user selects an option, this function will set the text of the text field to reflect
     // the selected option.
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerTextField.text = pickerData[row]
+        if self.pickerTextField.text != nil && self.selectionHandler != nil {
+            selectionHandler!(self.pickerTextField.text!)
+        }
     }
 }
 
 extension MyPickerView: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
-    } 
+    }
 }
