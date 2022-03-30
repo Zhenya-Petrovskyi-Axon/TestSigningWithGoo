@@ -10,7 +10,6 @@
 		4521A8C0265F8B55008EDD6A /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4521A8BF265F8B55008EDD6A /* CellViewModel.swift */; };
 		4521A8C3265FCDB2008EDD6A /* TapGestureRecognizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4521A8C2265FCDB2008EDD6A /* TapGestureRecognizable.swift */; };
 		452201A226528E9F003C8215 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201A126528E9F003C8215 /* LoginViewModel.swift */; };
-		452201A42652900F003C8215 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 452201A32652900F003C8215 /* credentials.plist */; };
 		452201A72652BB63003C8215 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201A62652BB63003C8215 /* HomeViewController.swift */; };
 		452201AA2653A4CD003C8215 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201A92653A4CD003C8215 /* CoordinatorProtocol.swift */; };
 		452201AC2653A547003C8215 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452201AB2653A547003C8215 /* AppCoordinator.swift */; };
@@ -59,6 +58,8 @@
 		45CFBC0F266A697A002D8BFC /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CFBC0D266A697A002D8BFC /* UserCollectionViewCell.swift */; };
 		45CFBC10266A697A002D8BFC /* UserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45CFBC0E266A697A002D8BFC /* UserCollectionViewCell.xib */; };
 		CAF428E0680E380D2752A433 /* Pods_MyTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEC6706E60AB10F4571EF97 /* Pods_MyTestApp.framework */; };
+		EE12DD0627707B7200E548CD /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE12DD0527707B7200E548CD /* credentials.plist */; };
+		EE743A29274FFD430055AF17 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE743A28274FFD430055AF17 /* credentials.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,7 +67,6 @@
 		4521A8BF265F8B55008EDD6A /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		4521A8C2265FCDB2008EDD6A /* TapGestureRecognizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureRecognizable.swift; sourceTree = "<group>"; };
 		452201A126528E9F003C8215 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		452201A32652900F003C8215 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = credentials.plist; path = ../../../../../Downloads/credentials.plist; sourceTree = "<group>"; };
 		452201A62652BB63003C8215 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		452201A92653A4CD003C8215 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		452201AB2653A547003C8215 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -118,6 +118,8 @@
 		45CFBC0E266A697A002D8BFC /* UserCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCollectionViewCell.xib; sourceTree = "<group>"; };
 		734264BDB1B532F0FA6C5D6A /* Pods-MyTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTestApp.release.xcconfig"; path = "Target Support Files/Pods-MyTestApp/Pods-MyTestApp.release.xcconfig"; sourceTree = "<group>"; };
 		7EEC6706E60AB10F4571EF97 /* Pods_MyTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE12DD0527707B7200E548CD /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = credentials.plist; path = ../../../Documents/credentials.plist; sourceTree = "<group>"; };
+		EE743A28274FFD430055AF17 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,8 +385,9 @@
 				45A732FF26528C8500598FC2 /* MainAppDelegates */,
 				45A7330026528C9A00598FC2 /* Storyboards */,
 				45A732F426528BF900598FC2 /* Assets.xcassets */,
+				EE12DD0527707B7200E548CD /* credentials.plist */,
 				45A732F926528BF900598FC2 /* Info.plist */,
-				452201A32652900F003C8215 /* credentials.plist */,
+				EE743A28274FFD430055AF17 /* credentials.plist */,
 				45A732F126528BF800598FC2 /* MyTestApp.xcdatamodeld */,
 			);
 			path = MyTestApp;
@@ -609,10 +612,11 @@
 				45A732F826528BF900598FC2 /* LaunchScreen.storyboard in Resources */,
 				45CFBC10266A697A002D8BFC /* UserCollectionViewCell.xib in Resources */,
 				45C3F1952668E05B004543D2 /* UserCell.xib in Resources */,
-				452201A42652900F003C8215 /* credentials.plist in Resources */,
 				45A732F526528BF900598FC2 /* Assets.xcassets in Resources */,
 				45A732F026528BF800598FC2 /* Main.storyboard in Resources */,
 				45333E2F2657F7D800954176 /* MainTableViewCell.xib in Resources */,
+				EE12DD0627707B7200E548CD /* credentials.plist in Resources */,
+				EE743A29274FFD430055AF17 /* credentials.plist in Resources */,
 				45333E43265CD98400954176 /* SideMenuCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
